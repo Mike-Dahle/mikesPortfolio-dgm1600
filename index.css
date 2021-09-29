@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+  background-color: #1E1E1E;
+  color: aliceblue;
+}
+
+.body {
+    font-family: "Gemunu Libre", sans-serif;
+  }
+  
+  p {
+    font-family: "Roboto", sans-serif;
+  }
