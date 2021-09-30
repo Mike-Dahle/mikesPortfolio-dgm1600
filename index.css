@@ -1,14 +1,64 @@
 * {
   margin: 0;
   padding: 0;
-  background-color: #1E1E1E;
   color: aliceblue;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 .body {
-    font-family: "Gemunu Libre", sans-serif;
-  }
-  
-  p {
-    font-family: "Roboto", sans-serif;
-  }
+  font-family: "Gemunu Libre", sans-serif;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+}
+
+#navbar {
+  width: 100%;
+  position: fixed;
+  background-color: crimson;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: flex-end;
+  list-style-type: none;
+  margin-right: 1rem;
+}
+
+.nav-list a {
+  display: block;
+  text-decoration: none;
+  padding: 1rem;
+  font-size: xx-large;
+}
+.nav-list a:hover {
+  background-color: red;
+}
+
+#welcome-section {
+  background-color: #1e1e1e;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: xx-large;
+}
+
+#projects {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.projects-grid {
+  width: 1280px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.project-tile {
+  margin: 1rem;
+}
