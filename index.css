@@ -17,7 +17,7 @@ p {
 #navbar {
   width: 100%;
   position: fixed;
-  background-color: crimson;
+  background-color: #9ACCBD;
 }
 
 .nav-list {
@@ -38,7 +38,7 @@ p {
 }
 
 #welcome-section {
-  background-color: #1e1e1e;
+  background-color: #283537;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -48,6 +48,7 @@ p {
 }
 
 #projects {
+  background-color: #0D3137;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,9 +57,31 @@ p {
 .projects-grid {
   width: 1280px;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
 .project-tile {
   margin: 1rem;
+}
+
+#contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #283537;
+  height: 40vh;
+  padding: 0 2rem;
+}
+
+#contact h2 {
+  font-size: 4rem;
+}
+
+#contact-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
 }
