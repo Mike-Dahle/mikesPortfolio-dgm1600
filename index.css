@@ -5,6 +5,21 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
+a {
+  text-decoration: none;
+}
+
+@media (max-width:1200px) {
+  * {
+    font-size: 80%;
+  }
+}
+
+@media (max-width:780px) {
+  * {
+    font-size: 60%;
+  }
+}
 
 .body {
   font-family: "Gemunu Libre", sans-serif;
@@ -17,7 +32,7 @@ p {
 #navbar {
   width: 100%;
   position: fixed;
-  background-color: #9ACCBD;
+  background-color: #F031AA;
 }
 
 .nav-list {
@@ -34,11 +49,11 @@ p {
   font-size: xx-large;
 }
 .nav-list a:hover {
-  background-color: red;
+  background-color:#582172;
 }
 
 #welcome-section {
-  background-color: #283537;
+  background-color: #4715A3;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -48,10 +63,16 @@ p {
 }
 
 #projects {
-  background-color: #0D3137;
+  background-color: #0A1C3F;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+#projects h1 {
+  font-size: xx-large;
+  padding: 2rem;
 }
 
 .projects-grid {
@@ -59,29 +80,73 @@ p {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  padding-bottom: 1rem;
 }
 
 .project-tile {
   margin: 1rem;
 }
 
-#contact {
-  display: flex;
-  flex-direction: column;
+.project-tile figcaption{
+  text-align: center;
+  background: #F1D556;
+  color: #0A1C3F;
+  padding: .5rem;
+}
+
+#contact div {
+  height: 25vh;
   justify-content: center;
   align-items: center;
   text-align: center;
   background-color: #283537;
-  height: 40vh;
-  padding: 0 2rem;
+}
+
+#contact-pitch {
+  height: 45vh;
+  padding: 2rem;
 }
 
 #contact h2 {
   font-size: 4rem;
+  padding-bottom: 1rem;
+}
+
+#contact p {
+  font-style: italic;
+}
+
+#contact-links a {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1rem;
+  align-items: center;
+  text-align: center;
+  font-size: 32px;
+  transition: transform;
+}
+
+#contact-links a > i {
+  padding-right: .5rem;
+}
+
+#contact-links a:hover {
+  transform: translate(8px);
 }
 
 #contact-links {
   display: flex;
+  width: 100%;
+  flex-direction: row;
+  padding-bottom: 2rem;
+}
+
+#footer {
+  display: flex;
   justify-content: center;
-  margin-top: 2rem;
+  align-items: center;
+  background-color: #1E1E1E;
+  height: 10vh;
+  color: white;
 }
