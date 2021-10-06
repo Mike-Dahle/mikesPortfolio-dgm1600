@@ -62,6 +62,10 @@ p {
   font-size: xx-large;
 }
 
+#welcome-section h1 {
+  font-size: 4rem;
+}
+
 #projects {
   background-color: #0A1C3F;
   display: flex;
@@ -71,7 +75,7 @@ p {
 }
 
 #projects h1 {
-  font-size: xx-large;
+  font-size: 4rem;
   padding: 2rem;
 }
 
@@ -124,7 +128,7 @@ p {
   align-items: center;
   text-align: center;
   font-size: 32px;
-  transition: transform;
+  transition: transform 0.3s ease-out;
 }
 
 #contact-links a > i {
@@ -132,7 +136,7 @@ p {
 }
 
 #contact-links a:hover {
-  transform: translate(8px);
+  transform: translateY(-6px);
 }
 
 #contact-links {
