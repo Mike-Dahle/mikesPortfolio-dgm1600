@@ -30,3 +30,17 @@ let myCar = {
 } // like a dictionary in python | can define it with const or let
 
 myCar.doors = '4';
+
+function myFunction() {
+    //this will execute a function that can be called
+}
+
+
+// Arrow Function
+
+element => console.log(element) // implicit return when only one line for the function
+
+element => {
+    let foo = 
+    return console.log(element) // explicit return for an arrow function. becuase of multiple lines
+}

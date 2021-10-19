@@ -1,9 +1,41 @@
+/*
+
+Color Scheme
+
+blue: #5B89A6
+light gold: #F2C84B
+dark gold: #D9A23D
+brown: #40342A
+orange: #BF6545
+
+*/
+
 header {
-    background-color: blue;
-    color: #fff;
+    background-color: #D9A23D;
+    color: black;
+    text-align: center;
+    font-size: xx-large;
   }
-  
-  main {
-    background-color: black;
-    color: #fff;
+
+  img {
+    border: 8px solid #F2C84B;
   }
+
+  figure {
+    background-color: #40342A;
+  }
+
+  figcaption {
+    text-align: center;
+    font-size: x-large;
+    color: #F2C84B;
+  }
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  background-color: #5B89A6;
+}
