@@ -10,32 +10,35 @@ orange: #BF6545
 
 */
 
+#body {
+  margin: 0;
+}
+
 header {
-    background-color: #D9A23D;
-    color: black;
-    text-align: center;
-    font-size: xx-large;
-  }
+  background-color: #d9a23d;
+  color: black;
+  text-align: center;
+  font-size: xx-large;
+}
 
-  img {
-    border: 8px solid #F2C84B;
-  }
+img {
+  border: 8px solid #f2c84b;
+}
 
-  figure {
-    background-color: #40342A;
-  }
+figure {
+  background-color: #40342a;
+}
 
-  figcaption {
-    text-align: center;
-    font-size: x-large;
-    color: #F2C84B;
-  }
+figcaption {
+  text-align: center;
+  font-size: x-large;
+  color: #f2c84b;
+}
 
 main {
   display: flex;
   flex-wrap: wrap;
-  width: 100vw;
   align-items: center;
   justify-content: center;
-  background-color: #5B89A6;
+  background-color: #5b89a6;
 }
