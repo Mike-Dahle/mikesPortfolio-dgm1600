@@ -1,8 +1,30 @@
+* {
+    margin: 0;
+}
+
+header {
+    height: 50px;
+    text-align: center;
+    font-size: xx-large;
+    background-color: #BF6545;
+}
+
 main {
     display: flex;
     flex-wrap: wrap;
+    background-color: #5b89a6;
+    justify-content: center;
+    align-items: center;
 }
 
 figure img {
     width: 200px;
+    margin: 2rem 2rem 0rem 2rem;
+}
+
+figcaption {
+    text-align: center;
+    font-size: x-large;
+    background-color: #f2c84b;
+    margin: 0 2rem;
 }

@@ -9,7 +9,7 @@ people.forEach((element, index) => {
     index + 1
   }.jpg`;
   const personCaption = document.createElement("figcaption");
-  personCaption.textContent = "Person name goes here";
+  personCaption.textContent = people[index].name;
 
   personFig.appendChild(personImg);
   personFig.appendChild(personCaption);
