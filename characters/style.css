@@ -1,12 +1,26 @@
 * {
     margin: 0;
+    box-sizing: border-box;
 }
 
 header {
+    display: flex;
+    justify-content: space-evenly;
     height: 50px;
     text-align: center;
     font-size: xx-large;
     background-color: #BF6545;
+}
+
+button {
+    font-size: x-large;
+    background-color: gray;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+button:hover {
+    background-color: #f2c84b;
 }
 
 main {
