@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    color: #fff;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;
+    background-color: #d9a23d;
+    padding: 1rem 0 2rem 0;
+    color: black;
+
+}
+
+figure img {
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+    outline: 2px solid #F2C84B;
+    outline-offset: .5rem;
+}
+
+figure {
+    padding: 1rem;
+}
+
+figcaption {
+    text-align: center;
+    font-size: x-large;
+    padding-top: 1rem;
+}
