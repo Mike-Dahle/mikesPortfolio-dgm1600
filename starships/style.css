@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  color: white;
+}
+
+header {
+  background-color: #d9a23d;
+  color: black;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: black;
+}
+
+figure {
+  height: 200px;
+  width: 300px;
+  padding: 1rem 1rem 2rem 1rem;
+  align-items: center;
+}
+
+figure img {
+  max-height: 200px;
+  max-width: 300px;
+  border: 2px solid #f2c84b;
+}
+
+figcaption {
+  width: 304px;
+  text-align: center;
+  font-size: x-large;
+  background-color: #5B89A699;
+}
