@@ -1,4 +1,6 @@
 * {
+  height: 100vh;
+  width: 100vh;
   margin: 0;
   list-style: none;
 }
@@ -6,7 +8,6 @@
 header {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
   background-color: #D9A23D;
   padding: 1rem 0;
 }
@@ -18,6 +19,11 @@ main {
   padding: 2rem 0;
   background-color: black;
   color: white;
+}
+
+.shipViewer {
+  display: flex;
+  align-items: flex-start;
 }
 
 footer {
