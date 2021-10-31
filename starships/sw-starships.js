@@ -1,37 +1,32 @@
 import { starships } from "../data/starships.js";
-import { getNum } from "../utils/index.js"
+import { getNum } from "../utils/index.js";
+import { removeChildren } from "../utils/index.js";
 
-let starshipList = document.querySelector("#starshipList");
+const nav = document.querySelector('.nav')
+const navList = document.querySelector('.navList')
+const shipView = document.querySelector('.shipViewer')
 
-starships.forEach((element) => {
-    const personFig = document.createElement("figure");
-    const personImg = document.createElement("img");
-    let lastNum = getNum(element.url);
-    personImg.src = `https://starwars-visualguide.com/assets/img/starships/${lastNum}.jpg`;
-    const personCaption = document.createElement("figcaption");
-    personCaption.textContent = element.name;
-    console.log(personImg)
+function populateNav() {
+  starships.forEach(starship => {
+    let anchorWrap = document.createElement('a')
+    anchorWrap.href = '#'
+    let listItem = document.createElement('li')
+    listItem.textContent = starship.name
 
-    personFig.appendChild(personImg);
-    personFig.appendChild(personCaption);
+    anchorWrap.addEventListener('click', () => populateShipView(starship))
 
-    starshipList.appendChild(personFig);
-  });
+    anchorWrap.appendChild(listItem)
+    navList.appendChild(anchorWrap)
+  })
+}
 
+populateNav()
 
-
-/*for (let i = 0; i < starships.length; i++) {
-  let figure = document.createElement("figure");
-  let figImg = document.createElement("img");
-  figImg.src = `https://starwars-visualguide.com/assets/img/starships/${i + 1}.jpg`;
-  let figCaption = document.createElement("figcaption");
-
-  //const foundStarship = starships.find(starship => getNum(starship.url) === (i + 1).toString())
-
-  figCaption.textContent = starships.name;
-
-  figure.appendChild(figImg);
-  figure.appendChild(figCaption);
-
-  starshipList.appendChild(figure);
-}*/
+function populateShipView(shipData) {
+  removeChildren(shipView)
+  console.log(`You clicked on ${shipData.name}`)
+  let shipImage = document.createElement('img')
+  let shipNum = getNum(shipData.url)
+  shipImage.src = `https://starwars-visualguide.com/assets/img/starships/${shipNum}.jpg`
+  shipView.appendChild(shipImage)
+}
