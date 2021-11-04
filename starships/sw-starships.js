@@ -35,8 +35,8 @@ populateNav();
 function populateShipView(shipData) {
   removeChildren(shipView);
   let shipImage = document.createElement("img");
-  let shipName = document.querySelector('div')
-  //shipName.textContent = shipData.name
+  let shipName = document.createElement('div')
+  shipName.textContent = shipData.name
   let shipNum = getNum(shipData.url);
   shipImage.src = `https://starwars-visualguide.com/assets/img/starships/${shipNum}.jpg`;
   shipImage.addEventListener("error", () => {
@@ -44,5 +44,5 @@ function populateShipView(shipData) {
     modal.classList.toggle("is-active");
   });
   shipView.appendChild(shipImage);
-  //shipView.appendChild(shipName)
+  shipView.appendChild(shipName)
 }

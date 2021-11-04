@@ -40,6 +40,8 @@ const otherCharacters = people.filter(person => {
   }
 })
 
+populateDOM(people);
+
 
 function populateDOM(characters) {
   while (main.firstChild) {
