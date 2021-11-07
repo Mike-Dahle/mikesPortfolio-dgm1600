@@ -7,6 +7,7 @@ for (let i = 0; i < planets.length; i++) {
   let figure = document.createElement("figure");
   let figImg = document.createElement("img");
   figImg.src = `https://starwars-visualguide.com/assets/img/planets/${i + 1}.jpg`;
+  figImg.addEventListener("error", () => figImg.src = "../images/extraPlanet.jpeg");
   let figCaption = document.createElement("figcaption");
 
   const foundPlanet = planets.find(planet => getNum(planet.url) === (i + 1).toString())

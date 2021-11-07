@@ -8,17 +8,18 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    padding-top: 2rem;
+    background-image: url(../images/star-bg.jpeg);
 }
 
 header {
     display: flex;
     justify-content: center;
+    align-items: center;
     font-size: xx-large;
     background-color: #d9a23d;
-    padding: 1rem 0 2rem 0;
+    height: 50px;
     color: black;
-
 }
 
 figure img {
