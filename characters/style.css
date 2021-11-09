@@ -47,11 +47,14 @@ button:hover {
 #charView {
     display: flex;
     flex-wrap: wrap;
+    min-width: auto;
+    min-height: auto;
     background-image: url("../images/star-bg.jpeg");
     justify-content: center;
     align-items: center;
     padding-bottom: 2rem;
 }
+
 figure {
     background-color: #5B89A6;
     margin: 5px;
