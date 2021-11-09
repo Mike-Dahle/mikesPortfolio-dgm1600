@@ -19,6 +19,10 @@ header {
   color: black;
   text-align: center;
   font-size: xx-large;
+  max-height: 50px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 img {
@@ -41,4 +45,13 @@ main {
   align-items: center;
   justify-content: center;
   background-color: #5b89a6;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 50px;
+  color: white;
+  background-color: #1e1e1e;
 }
