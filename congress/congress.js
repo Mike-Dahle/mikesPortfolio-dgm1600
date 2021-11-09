@@ -2,26 +2,47 @@ import { senators } from "../data/senators.js";
 
 const senatorsDiv = document.querySelector(".senators");
 
-function populateSenatorDiv(senators) {
-  senators.forEach((senators) => {
+function simpifiedSenators(senatorArray) {
+  return senatorArray.map((senator) => {
+    const middleName = senator.middle_name ? ` ${senator.middle_name} ` : ` `;
+    return {
+      id: senator.id,
+      name: `${senator.first_name}${middleName}${senator.last_name}`,
+      party: senator.party,
+      imgURL: `https://www.govtrack.us/static/legislator-photos/${senator.govtrack_id}-200px.jpeg`,
+      gender: senator.gender,
+      seniority: "later",
+      missedVotesPct: senator.missed_votes_pct,
+      loyaltyPct: senator.votes_with_party_pct,
+    };
+  });
+}
+
+function populateSenatorDiv(simpleSenators) {
+  simpleSenators.forEach((senator) => {
     let senFigure = document.createElement("figure");
     let senFigImg = document.createElement("img");
     let senFigCap = document.createElement("figcaption");
 
-    if (senators.party === "D") {
-      senFigImg.src =
-        "https://en.wikipedia.org/wiki/Donkey#/media/File:Donkey_in_Clovelly,_North_Devon,_England.jpg";
-    } else if (senators.party === "R") {
-      senFigImg.src =
-        "https://en.wikipedia.org/wiki/Elephant#/media/File:African_elephant_warning_raised_trunk.jpg";
-    }
+    senFigImg.src = senator.imgURL;
+
     senFigure.appendChild(senFigImg);
 
-    senFigCap.textContent = (senators.first_name.concat(senators.last_name));
+    senFigCap.textContent = senator.name;
 
     senFigure.appendChild(senFigCap);
     senatorsDiv.appendChild(senFigure);
   });
 }
 
-populateSenatorDiv(senators);
+populateSenatorDiv(simpifiedSenators(senators));
+
+
+const filterSenators = (prop, value) => {
+  return simpifiedSenators(senators).filter(senator => senator[prop] === value)
+}
+  
+const republicans = filterSenators('party', 'R')
+const femaleSenators = filterSenators('gender', 'F')
+
+console.log(republicans, femaleSenators)

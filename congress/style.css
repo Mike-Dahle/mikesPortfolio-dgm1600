@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
+header {
+    text-align: center;
+    background-color: black;
+    height: 50px;
+}
+
+main {
+    background-color: #252526;
+}
+
+.senators {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #1e1e1e;
+    padding: 1rem;
+}
+
+figcaption {
+    text-align: center;
+}
