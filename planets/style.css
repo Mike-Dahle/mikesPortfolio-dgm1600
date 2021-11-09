@@ -39,3 +39,12 @@ figcaption {
     font-size: x-large;
     padding-top: 1rem;
 }
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #1e1e1e;
+    padding: 1rem;
+}
