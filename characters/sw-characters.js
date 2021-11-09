@@ -1,10 +1,17 @@
 import { people } from "../data/people.js";
 import { getNum } from "../utils/index.js";
 
-const main = document.querySelector("main");
+const main = document.querySelector("#charView");
 
-const mainHeader = document.createElement('header')
+const mainHeader = document.createElement('nav')
+
 document.body.insertBefore(mainHeader, main)
+/*
+const homeButton = document.createElement('button')
+homeButton.textContent = 'Home'
+mainHeader.appendChild(homeButton)
+homeButton.addEventListener('click', () => '../index.html')
+*/
 
 const allButton = document.createElement('button')
 allButton.textContent = 'All Characters'
