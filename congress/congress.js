@@ -11,7 +11,7 @@ function simpifiedSenators(senatorArray) {
       party: senator.party,
       imgURL: `https://www.govtrack.us/static/legislator-photos/${senator.govtrack_id}-200px.jpeg`,
       gender: senator.gender,
-      seniority: "later",
+      seniority: senator.seniority,
       missedVotesPct: senator.missed_votes_pct,
       loyaltyPct: senator.votes_with_party_pct,
     };
@@ -25,6 +25,12 @@ function populateSenatorDiv(simpleSenators) {
     let senFigCap = document.createElement("figcaption");
 
     senFigImg.src = senator.imgURL;
+
+    if (senator.party === 'R') {
+      senFigure.style.border = 'red 3px solid';
+    } else {
+      senFigure.style.border = 'blue 3px solid';
+    }
 
     senFigure.appendChild(senFigImg);
 

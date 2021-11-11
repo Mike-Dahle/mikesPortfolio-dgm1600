@@ -21,6 +21,11 @@ main {
     align-content: center;
 }
 
+figure {
+    margin: 1rem;
+    box-shadow: 2px 2px 10px white;
+}
+
 .footer {
     display: flex;
     justify-content: center;
@@ -31,5 +36,7 @@ main {
 }
 
 figcaption {
+    font-size: medium;
     text-align: center;
+    background-color: black;
 }
