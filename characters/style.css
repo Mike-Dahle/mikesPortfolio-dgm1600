@@ -58,6 +58,11 @@ button:hover {
     padding-bottom: 2rem;
 }
 
+#charView background-image {
+    height: 100%;
+    width: 100%;
+}
+
 figure {
     /*display: flex;
     align-content: center;
