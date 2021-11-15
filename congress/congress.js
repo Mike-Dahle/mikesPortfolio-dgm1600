@@ -28,8 +28,10 @@ function populateSenatorDiv(simpleSenators) {
 
     if (senator.party === 'R') {
       senFigure.style.border = 'red 3px solid';
-    } else {
+    } else if (senator.party === 'D') {
       senFigure.style.border = 'blue 3px solid';
+    } else {
+      senFigure.style.border = 'purple 3px solid';
     }
 
     senFigure.appendChild(senFigImg);
