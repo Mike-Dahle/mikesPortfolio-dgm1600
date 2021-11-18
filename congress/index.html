@@ -1,22 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Congress</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header>
-        <h1>People of Congress</h1>
+      <h1>People of Congress</h1>
+      <nav class="navBar">
+        <button id="r">Republicans</button>
+        <button id="d">Democrats</button>
+        <button id="sen">Senators</button>
+        <button id="rep">Representatives</button>
+      </nav>
     </header>
     <main>
-        <div class="senators"></div>
+
+      <div>
+        <h2 class="seniority"></h2>
+      </div>
+
+      <div class="weasels">
+        <h2>
+          Congress Members Who have the <i>highest</i> missed vote percentage
+        </h2>
+        <ol class="weaselList"></ol>
+      </div>
+
+      <h1 id="mainHeader">Congress</h1>
+    
+      <div class="senators"></div>
+
     </main>
     <footer class="footer">
-        <p>&copy; Mike Dahle Web Design</p>
+      <p>&copy; Mike Dahle Web Design</p>
     </footer>
     <script src="/congress/congress.js" type="module"></script>
-</body>
+  </body>
 </html>

@@ -1,56 +1,90 @@
 import { senators } from "../data/senators.js";
+import { representatives } from "../data/representatives.js";
 
-const senatorsDiv = document.querySelector(".senators");
+const members = [...senators, ...representatives]; // very nice method for combining arrays
 
-function simpifiedSenators(senatorArray) {
-  return senatorArray.map((senator) => {
+const senatorDiv = document.querySelector(".senators");
+const seniorityHeading = document.querySelector(".seniority");
+const weaselOrderedList = document.querySelector(".weaselList");
+
+function simplifiedMembers(chamberFilter) {
+  const filteredArray = members.filter((member) =>
+    chamberFilter ? member.short_title === chamberFilter : member
+  );
+
+  return filteredArray.map((senator) => {
     const middleName = senator.middle_name ? ` ${senator.middle_name} ` : ` `;
     return {
       id: senator.id,
       name: `${senator.first_name}${middleName}${senator.last_name}`,
       party: senator.party,
-      imgURL: `https://www.govtrack.us/static/legislator-photos/${senator.govtrack_id}-200px.jpeg`,
+      imgURL: `https://www.govtrack.us/static/legislator-photos/${senator.govtrack_id}-100px.jpeg`,
       gender: senator.gender,
-      seniority: senator.seniority,
+      seniority: +senator.seniority,
       missedVotesPct: senator.missed_votes_pct,
       loyaltyPct: senator.votes_with_party_pct,
     };
   });
 }
 
+populateSenatorDiv(simplifiedMembers());
+
 function populateSenatorDiv(simpleSenators) {
   simpleSenators.forEach((senator) => {
     let senFigure = document.createElement("figure");
-    let senFigImg = document.createElement("img");
-    let senFigCap = document.createElement("figcaption");
+    let figImg = document.createElement("img");
+    let figCaption = document.createElement("figcaption");
 
-    senFigImg.src = senator.imgURL;
+    figImg.src = senator.imgURL;
 
-    if (senator.party === 'R') {
-      senFigure.style.border = 'red 3px solid';
-    } else if (senator.party === 'D') {
-      senFigure.style.border = 'blue 3px solid';
+    if (senator.party === "R") {
+      senFigure.style.border = "red 3px solid";
+    } else if (senator.party === "D") {
+      senFigure.style.border = "blue 3px solid";
     } else {
-      senFigure.style.border = 'purple 3px solid';
+      senFigure.style.border = "purple 3px solid";
     }
 
-    senFigure.appendChild(senFigImg);
-
-    senFigCap.textContent = senator.name;
-
-    senFigure.appendChild(senFigCap);
-    senatorsDiv.appendChild(senFigure);
+    figCaption.textContent = senator.name;
+    senFigure.appendChild(figImg);
+    senFigure.appendChild(figCaption);
+    senatorDiv.appendChild(senFigure);
   });
 }
 
-populateSenatorDiv(simpifiedSenators(senators));
+const filterSenators = (prop, value) =>
+  simplifiedMembers().filter((senator) => senator[prop] === value);
 
+const republicans = filterSenators("party", "R");
+const femaleSenators = filterSenators("gender", "F");
 
-const filterSenators = (prop, value) => {
-  return simpifiedSenators(senators).filter(senator => senator[prop] === value)
-}
-  
-const republicans = filterSenators('party', 'R')
-const femaleSenators = filterSenators('gender', 'F')
+const mostSeniorMember = simplifiedMembers().reduce((acc, senator) => {
+  return acc.seniority > senator.seniority ? acc : senator;
+});
 
-console.log(republicans, femaleSenators)
+seniorityHeading.textContent = `${mostSeniorMember.name} is the most senior member of Congress with ${mostSeniorMember.seniority} years!`;
+
+const mostLoyal = simplifiedMembers().reduce((acc, senator) => {
+  if (senator.loyaltyPct === 100) {
+    acc.push(senator);
+  }
+  return acc;
+}, []);
+
+const biggestWeasel = simplifiedMembers().reduce(
+  (acc, senator) =>
+    (acc.missedVotesPct || 0) > senator.missedVotesPct ? acc : senator,
+  {}
+);
+
+const biggestWeasels = simplifiedMembers().filter(
+  (senator) => senator.missedVotesPct >= 50
+);
+
+console.log(biggestWeasels);
+
+biggestWeasels.forEach((weasel) => {
+  let listItem = document.createElement("li");
+  listItem.textContent = weasel.name;
+  weaselOrderedList.appendChild(listItem);
+});
