@@ -1,10 +1,20 @@
 * {
-    margin: 0;
+    
     box-sizing: border-box;
     color: white;
 }
+header h1 {
+    margin: 0;
+}
+
+body {
+    margin: 0;
+}
 
 button {
+    background-color: #ffffff77;
+    border: 2px solid white;
+    border-radius: 2px;
     color: black;
 }
 
@@ -12,6 +22,7 @@ header {
     text-align: center;
     background-color: black;
     height: 50px;
+    padding: 0;
 }
 
 nav {
@@ -24,8 +35,8 @@ nav {
 
 .weasels {
     padding: 1rem;
-    background-color: #4b0d8033;
-    border-radius: 15px;
+    background-color: #4b0d80;
+    box-shadow: 0px 0px 4px 1px white;
 }
 
 main {
@@ -34,7 +45,8 @@ main {
     align-items: center;
     justify-content: center;
     background-color: #252526;
-    padding-top: 2rem;
+    padding-top: 3rem;
+    margin: 0;
 }
 
 #r:hover {
