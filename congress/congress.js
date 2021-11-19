@@ -85,6 +85,6 @@ console.log(biggestWeasels);
 
 biggestWeasels.forEach((weasel) => {
   let listItem = document.createElement("li");
-  listItem.textContent = weasel.name;
+  listItem.textContent = `${weasel.name} "${weasel.party}" With ${weasel.seniority} years in Congress.`;
   weaselOrderedList.appendChild(listItem);
 });
