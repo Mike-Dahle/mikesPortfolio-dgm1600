@@ -1,11 +1,38 @@
 import { senators } from "../data/senators.js";
 import { representatives } from "../data/representatives.js";
+import { removeChildren } from "../utils/index.js";
 
 const members = [...senators, ...representatives]; // very nice method for combining arrays
 
 const senatorDiv = document.querySelector(".senators");
 const seniorityHeading = document.querySelector(".seniority");
 const weaselOrderedList = document.querySelector(".weaselList");
+
+// All the page buttons here
+
+const allButton = document.querySelector('#all')
+const rButton = document.querySelector("#r");
+const dButton = document.querySelector("#d");
+const senButton = document.querySelector("#sen");
+const repButton = document.querySelector("#rep");
+const femButton = document.querySelector('#fem')
+const maleButton = document.querySelector('#male')
+
+
+allButton.addEventListener("click", () => chooseElement(simplifiedMembers()));
+rButton.addEventListener("click", () => chooseElement(republicans));
+dButton.addEventListener("click", () => chooseElement(democrats));
+senButton.addEventListener("click", () => chooseElement(sen));
+repButton.addEventListener("click", () => chooseElement(reps));
+femButton.addEventListener("click", () => chooseElement(femaleCongress));
+maleButton.addEventListener("click", () => chooseElement(maleCongress));
+
+// this function handles the button inputs
+
+function chooseElement(what, button) {
+  removeChildren(senatorDiv);
+  populateSenatorDiv(what);
+}
 
 function simplifiedMembers(chamberFilter) {
   const filteredArray = members.filter((member) =>
@@ -23,6 +50,7 @@ function simplifiedMembers(chamberFilter) {
       seniority: +senator.seniority,
       missedVotesPct: senator.missed_votes_pct,
       loyaltyPct: senator.votes_with_party_pct,
+      chamber: senator.short_title,
     };
   });
 }
@@ -55,8 +83,14 @@ function populateSenatorDiv(simpleSenators) {
 const filterSenators = (prop, value) =>
   simplifiedMembers().filter((senator) => senator[prop] === value);
 
+// setting const to filters for use with buttons
+
 const republicans = filterSenators("party", "R");
-const femaleSenators = filterSenators("gender", "F");
+const femaleCongress = filterSenators("gender", "F");
+const maleCongress = filterSenators("gender", "M");
+const democrats = filterSenators("party", "D");
+const reps = filterSenators("chamber", "Rep.");
+const sen = filterSenators("chamber", "Sen.");
 
 const mostSeniorMember = simplifiedMembers().reduce((acc, senator) => {
   return acc.seniority > senator.seniority ? acc : senator;

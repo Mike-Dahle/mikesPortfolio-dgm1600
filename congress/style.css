@@ -1,9 +1,10 @@
 * {
-    
+    font-size: 16px;
     box-sizing: border-box;
     color: white;
 }
 header h1 {
+    font-size: 2.5rem;
     margin: 0;
 }
 
@@ -13,9 +14,14 @@ body {
 
 button {
     background-color: #ffffff;
-    border: 2px solid white;
-    border-radius: 2px;
+    border: 1px solid white;
+    border-radius: 5px;
     color: black;
+    height: 3rem;
+    width: 7.5rem;
+    font-size: .75rem;
+    text-align: center;
+    font-weight: 700;
 }
 
 header {
@@ -49,16 +55,14 @@ main {
     margin: 0;
 }
 
-#r:hover {
-    background-color: red;
-}
-
-#d:hover {
-    background-color: blue;
+button:hover {
+    background-color: #4b0d80;
+    color: #fff;
 }
 
 #mainHeader {
     padding: 1rem;
+    font-size: 2rem;
 }
 
 .senators {
@@ -72,10 +76,17 @@ main {
 figure {
     display: flex;
     flex-direction: column;
-    width: 150px;
-    height: 200px;
+    justify-content: center;
+    align-items: center;
+    width: 106px;
+    height: 152px;
     margin: 1rem;
     box-shadow: 2px 2px 10px white;
+}
+
+figure img {
+    height: 120px;
+    width: 100px;
 }
 
 .footer {
@@ -88,8 +99,9 @@ figure {
 }
 
 figcaption {
-    height: 25px;
-    font-size: medium;
+    height: 2rem;
+    width: 100%;
+    font-size: .75rem;
     text-align: center;
     background-color: black;
 }
