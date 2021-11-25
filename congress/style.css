@@ -31,6 +31,20 @@ header {
     padding: 0;
 }
 
+header a {
+    position: absolute;
+    top: 15px;
+    left: 50px;
+    text-decoration: none;
+    text-shadow: #4b0d80 2px 2px;
+    color: #fff;
+    font-size: 1rem;
+}
+
+header a:hover {
+    color: #f2c84b;
+}
+
 nav {
     padding: 1rem;
 }
