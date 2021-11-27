@@ -12,17 +12,30 @@ orange: #BF6545
 
 #body {
   margin: 0;
+  font-size: 16px;
 }
 
 header {
-  background-color: #d9a23d;
-  color: black;
-  text-align: center;
-  font-size: xx-large;
-  max-height: 50px;
   display: flex;
+  align-items: center;
   justify-content: center;
-  align-content: center;
+  height: 50px;
+  text-align: center;
+  background-color: #D9A23D;
+}
+
+header a {
+  position: absolute;
+  top: 15px;
+  left: 50px;
+  text-decoration: none;
+  text-shadow: #fff 2px 2px 3px;
+  color: #40342A;
+  font-size: large;
+}
+
+header a:hover {
+  color: #5B89A6;
 }
 
 img {
