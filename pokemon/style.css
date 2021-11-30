@@ -1,29 +1,98 @@
 * {
-    margin: 0;
-    box-sizing: border-box;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+h1 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+
+.pokeGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .scene {
-    width: 200px;
-    height: 200px;
+  width: 214px;
+  height: 300px;
+  margin: 2vw;
+  perspective: 600px;
 }
 
 .card {
-    width: 100%;
-    height: 100%;
-    position: relative;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+}
+
+.card.is-flipped {
+    transform: rotateY(180deg);
+  }
+
+figure {
+    justify-content: center;
+    border-radius: 10px;
+}
+
+figure img {
+    width: auto;
+    height: 110px;
+    margin: 15px 0 0 50px;
 }
 
 .cardFace {
-    width: 100%;
-    height: 100%;
-    position: absolute;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
 }
 
-.front {
-    background-color: red;
+.front h2 {
+    text-transform: capitalize;
+    text-align: left;
+    margin-top: .75rem;
+    font-size: .75rem;
+    padding-left: 3.5rem;
+
 }
 
 .back {
-    background-color: blue;
+    justify-items: center;
+    align-items: center;
+}
+
+.back h4 {
+    text-align: center;
+}
+
+.back ul, h4 {
+    list-style-type: square;
+    background-color: #d1e0e699;
+}
+
+.front {
+  background-color: #fae6a7;
+  background-image: url("../images/poke-card.png");
+}
+
+.back {
+  background-image: url("../images/card-back.jpeg");
+  transform: rotateY(180deg);
+}
+
+
+header,
+nav,
+main,
+footer {
+  max-width: 90vw;
+  margin: 0 auto;
 }
