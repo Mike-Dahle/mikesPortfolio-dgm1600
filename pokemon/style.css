@@ -4,16 +4,52 @@
   font-size: 16px;
 }
 
-h1 {
-    font-size: 2rem;
-    text-align: center;
+header {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  background-color: #afd4e8;
 }
 
+header img {
+  margin: 1rem;
+}
+
+nav {
+  background-color: #ED9A9F;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  padding: .5rem;
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+}
+
+nav ul a {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: white;
+  padding: 0 1rem;
+  border-right: 1px solid white;
+  border-left: 1px solid white;
+}
+
+nav ul a:hover {
+  color: #fec30a;
+}
+
+main {
+  background-color: #fceec8;
+}
 
 .pokeGrid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .scene {
@@ -34,18 +70,18 @@ h1 {
 }
 
 .card.is-flipped {
-    transform: rotateY(180deg);
-  }
+  transform: rotateY(180deg);
+}
 
 figure {
-    justify-content: center;
-    border-radius: 10px;
+  justify-content: center;
+  border-radius: 10px;
 }
 
 figure img {
-    width: auto;
-    height: 110px;
-    margin: 15px 0 0 50px;
+  width: auto;
+  height: 110px;
+  margin: 15px 0 0 50px;
 }
 
 .cardFace {
@@ -56,31 +92,30 @@ figure img {
 }
 
 .front h2 {
-    text-transform: capitalize;
-    text-align: left;
-    margin-top: .75rem;
-    font-size: .75rem;
-    padding-left: 3.5rem;
-
+  text-transform: capitalize;
+  text-align: left;
+  margin-top: 0.75rem;
+  font-size: 0.75rem;
+  padding-left: 3.5rem;
 }
 
 .back {
-    justify-items: center;
-    align-items: center;
+  justify-items: center;
+  align-items: center;
 }
 
 .back h4 {
-    text-align: center;
+  text-align: center;
 }
 
-.back ul, h4 {
-    list-style-type: square;
-    background-color: #d1e0e699;
+.back ul,
+h4 {
+  list-style-type: square;
+  background-color: #d1e0e699;
 }
-
+/* url("../images/cards/poke-card.png"), */
 .front {
-  background-color: #fae6a7;
-  background-image: url("../images/poke-card.png");
+  background-image: url("../images/forest-bg.jpeg");
 }
 
 .back {
@@ -88,9 +123,6 @@ figure img {
   transform: rotateY(180deg);
 }
 
-
-header,
-nav,
 main,
 footer {
   max-width: 90vw;
