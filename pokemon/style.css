@@ -117,12 +117,17 @@ figure img {
   backface-visibility: hidden;
 }
 
+figure div {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 1.2rem;
+  margin-top: 1rem;
+  font-size: 0.5rem;
+  padding: 0 1.4rem;
+}
+
 .front h2 {
   text-transform: capitalize;
-  text-align: left;
-  margin-top: 1rem;
-  font-size: 0.75rem;
-  padding-left: 1.4rem;
 }
 
 .front p {

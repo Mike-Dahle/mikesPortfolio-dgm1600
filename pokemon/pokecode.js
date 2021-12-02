@@ -36,7 +36,7 @@ function populatePokeCards(singlePokemon) {
 
 function populateCardFront(pokemon) {
   const pokeFront = document.createElement("figure");
-  const cardFront = document.querySelector(".front");
+  const frontDiv = document.createElement("div");
   pokeFront.className = "cardFace front";
 
   //console.log(pokemon.types[0].type.name);
@@ -90,14 +90,18 @@ function populateCardFront(pokemon) {
   const pokeName = document.createElement("h2");
   const move1 = document.createElement('p')
   const move2 = document.createElement('p')
+  const health = document.createElement('h3')
 
   
   pokeName.textContent = pokemon.name;
+  health.textContent = `${pokemon.stats[0].base_stat} HP`
   move1.textContent = pokemon.moves[0].move.name
   move2.textContent = pokemon.moves[1].move.name
   
   pokeImg.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`;
-  pokeFront.appendChild(pokeName);
+  frontDiv.appendChild(pokeName);
+  frontDiv.appendChild(health)
+  pokeFront.appendChild(frontDiv)
   pokeFront.appendChild(pokeImg);
   pokeFront.appendChild(move1)
   pokeFront.appendChild(move2)
