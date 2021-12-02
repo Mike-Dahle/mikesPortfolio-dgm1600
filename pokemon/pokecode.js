@@ -40,6 +40,7 @@ function populateCardFront(pokemon) {
   pokeFront.className = "cardFace front";
 
   //console.log(pokemon.types[0].type.name);
+  //console.log(pokemon.moves[0].move.name)
 
   if (pokemon.types[0].type.name === "grass") {
     pokeFront.style.backgroundImage =
@@ -87,10 +88,19 @@ function populateCardFront(pokemon) {
 
   const pokeImg = document.createElement("img");
   const pokeName = document.createElement("h2");
+  const move1 = document.createElement('p')
+  const move2 = document.createElement('p')
+
+  
   pokeName.textContent = pokemon.name;
+  move1.textContent = pokemon.moves[0].move.name
+  move2.textContent = pokemon.moves[1].move.name
+  
   pokeImg.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`;
   pokeFront.appendChild(pokeName);
   pokeFront.appendChild(pokeImg);
+  pokeFront.appendChild(move1)
+  pokeFront.appendChild(move2)
 
   return pokeFront;
 }
