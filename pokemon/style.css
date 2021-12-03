@@ -126,6 +126,15 @@ figure div {
   padding: 0 1.4rem;
 }
 
+figure div h3 {
+  color: #da5e6f;
+}
+
+.front p {
+  border-bottom: 1px solid black;
+  margin: 0 1.75rem;
+}
+
 .front h2 {
   text-transform: capitalize;
 }
@@ -134,7 +143,7 @@ figure div {
   text-transform: capitalize;
   font-size: .7rem;
   margin-top: 1.1rem;
-  padding-left: 2rem;
+  padding-left: 0rem;
 }
 
 .back {
@@ -143,14 +152,26 @@ figure div {
 }
 
 .back h4 {
+  background-color: #fec30a;
   text-align: center;
 }
 
 .back ul,
 h4 {
   list-style-type: square;
-  background-color: #d1e0e699;
+  text-transform: capitalize;
+  border-radius: 5px;
 }
+
+.back h4 {
+  margin: 1rem 1rem .5rem 1rem;
+}
+
+.back ul {
+  margin: 0 1rem 1.5rem 1rem;
+  background-color: #afd4e8;
+}
+
 /* url("../images/cards/poke-card.png"), */
 .front {
   background-image: url("../images/forest-bg.jpeg");

@@ -121,6 +121,26 @@ function populateCardBack(pokemon) {
     listItem.textContent = abilityItem.ability.name;
     abilityList.appendChild(listItem);
   });
+
+  const stats = document.createElement('h4')
+  const statDiv = document.createElement('ul')  
+  const attack = document.createElement('li') 
+  const defense = document.createElement('li') 
+  const specAttack = document.createElement('li') 
+  const specDef = document.createElement('li') 
+  const height = document.createElement('li') 
+  const weight = document.createElement('li')
+  
+  stats.textContent = 'Stats'
+  attack.textContent = `${pokemon.stats[1].stat.name}: ${pokemon.stats[1].base_stat}`
+  statDiv.appendChild(attack)
+  defense.textContent = `${pokemon.stats[2].stat.name}: ${pokemon.stats[2].base_stat}`
+  statDiv.appendChild(defense)
+  specAttack.textContent = `${pokemon.stats[3].stat.name}: ${pokemon.stats[3].base_stat}`
+  statDiv.appendChild(specAttack)
+
   pokeBack.appendChild(abilityList);
+  pokeBack.appendChild(stats)
+  pokeBack.appendChild(statDiv)
   return pokeBack;
 }
