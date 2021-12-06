@@ -14,6 +14,8 @@ getAPIData("https://pokeapi.co/api/v2/pokemon?limit=151").then(async (data) => {
   }
 });
 
+// Function Populates the pokeGrid Class
+
 const pokeGrid = document.querySelector(".pokeGrid");
 
 function populatePokeCards(singlePokemon) {
@@ -81,33 +83,63 @@ function populateCardFront(pokemon) {
   } else if (pokemon.types[0].type.name === "ice") {
     pokeFront.style.backgroundImage =
       "url(../images/cards/water-card.png), url(../images/forest-bg.jpeg)";
-  }  else {
+  } else {
     pokeFront.style.backgroundImage =
       "url(../images/cards/poke-card.png), url(../images/forest-bg.jpeg)";
   }
 
   const pokeImg = document.createElement("img");
   const pokeName = document.createElement("h2");
-  const move1 = document.createElement('p')
-  const move2 = document.createElement('p')
-  const health = document.createElement('h3')
+  //const move1 = document.createElement("p");
+  //const move2 = document.createElement("p");
+  const health = document.createElement("h3");
 
-  
   pokeName.textContent = pokemon.name;
-  health.textContent = `${pokemon.stats[0].base_stat} HP`
-  move1.textContent = pokemon.moves[0].move.name
-  move2.textContent = pokemon.moves[1].move.name
+  health.textContent = `${pokemon.stats[0].base_stat} HP`;
+  //move1.textContent = pokemon.moves[0].move.name;
   
+  const spriteDiv = document.createElement('div')
+  spriteDiv.classList.add('sprites')
+  
+  const sprite1 = document.createElement('img')
+  sprite1.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`
+  spriteDiv.appendChild(sprite1)
+  const sprite2 = document.createElement('img')
+  sprite2.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${pokemon.id}.png`
+  spriteDiv.appendChild(sprite2)
+  const sprite3 = document.createElement('img')
+  sprite3.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/yellow/transparent/${pokemon.id}.png`
+  spriteDiv.appendChild(sprite3)
+
   pokeImg.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`;
   frontDiv.appendChild(pokeName);
-  frontDiv.appendChild(health)
-  pokeFront.appendChild(frontDiv)
+  frontDiv.appendChild(health);
+  pokeFront.appendChild(frontDiv);
   pokeFront.appendChild(pokeImg);
-  pokeFront.appendChild(move1)
-  pokeFront.appendChild(move2)
+  
+  if (pokemon.moves.length > 2) {
+    const move1 = document.createElement("p");
+    const move2 = document.createElement("p");
+    move1.textContent = pokemon.moves[0].move.name;
+    move2.textContent = pokemon.moves[1].move.name;
+    pokeFront.appendChild(move1);
+    pokeFront.appendChild(move2);
+  } else {
+    const move1 = document.createElement("p");
+    move1.textContent = pokemon.moves[0].move.name;
+    pokeFront.appendChild(move1);
+  }
+
+  pokeFront.appendChild(spriteDiv)
+  
+  //pokeFront.appendChild(move1);
+  //pokeFront.appendChild(move2);
 
   return pokeFront;
 }
+
+
+
 
 function populateCardBack(pokemon) {
   const pokeBack = document.createElement("div");
@@ -122,41 +154,45 @@ function populateCardBack(pokemon) {
     abilityList.appendChild(listItem);
   });
 
-  const stats = document.createElement('h4')
-  const statDiv = document.createElement('ul')  
-  const attack = document.createElement('li') 
-  const defense = document.createElement('li') 
-  const specAttack = document.createElement('li') 
-  const specDef = document.createElement('li') 
-  const height = document.createElement('li') 
-  const speed = document.createElement('li')
-  const weight = document.createElement('li')
-  
-  stats.textContent = 'Stats'
-  attack.textContent = `${pokemon.stats[1].stat.name}: ${pokemon.stats[1].base_stat}`
-  statDiv.appendChild(attack)
-  defense.textContent = `${pokemon.stats[2].stat.name}: ${pokemon.stats[2].base_stat}`
-  statDiv.appendChild(defense)
+  const stats = document.createElement("h4");
+  const statDiv = document.createElement("ul");
+  const attack = document.createElement("li");
+  const defense = document.createElement("li");
+  const specAttack = document.createElement("li");
+  const specDef = document.createElement("li");
+  const height = document.createElement("li");
+  const speed = document.createElement("li");
+  const weight = document.createElement("li");
 
-  specAttack.textContent = `${pokemon.stats[3].stat.name}: ${pokemon.stats[3].base_stat}`
-  statDiv.appendChild(specAttack)
+  stats.textContent = "Stats";
+  attack.textContent = `${pokemon.stats[1].stat.name}: ${pokemon.stats[1].base_stat}`;
+  statDiv.appendChild(attack);
 
-  specDef.textContent = `${pokemon.stats[4].stat.name}: ${pokemon.stats[4].base_stat}`
-  statDiv.appendChild(specDef)
+  defense.textContent = `${pokemon.stats[2].stat.name}: ${pokemon.stats[2].base_stat}`;
+  statDiv.appendChild(defense);
 
-  speed.textContent = `${pokemon.stats[5].stat.name}: ${pokemon.stats[5].base_stat}`
-  statDiv.appendChild(speed)
+  specAttack.textContent = `${pokemon.stats[3].stat.name}: ${pokemon.stats[3].base_stat}`;
+  statDiv.appendChild(specAttack);
 
-  height.textContent = `Height: ${pokemon.height}`
-  statDiv.appendChild(height)
+  specDef.textContent = `${pokemon.stats[4].stat.name}: ${pokemon.stats[4].base_stat}`;
+  statDiv.appendChild(specDef);
 
-  weight.textContent = `Weight: ${pokemon.weight}`
-  statDiv.appendChild(weight)
+  speed.textContent = `${pokemon.stats[5].stat.name}: ${pokemon.stats[5].base_stat}`;
+  statDiv.appendChild(speed);
 
+  height.textContent = `Height: ${Math.round(
+    pokemon.height * 3.937008
+  )} inches`;
+  statDiv.appendChild(height);
 
+  weight.textContent = `Weight: ${Math.round(
+    pokemon.weight * 0.2204623
+  )} pounds`;
+  statDiv.appendChild(weight);
 
   pokeBack.appendChild(abilityList);
-  pokeBack.appendChild(stats)
-  pokeBack.appendChild(statDiv)
+  pokeBack.appendChild(stats);
+  pokeBack.appendChild(statDiv);
+
   return pokeBack;
 }
