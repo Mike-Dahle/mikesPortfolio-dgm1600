@@ -130,6 +130,7 @@ function populateCardBack(pokemon) {
   const specDef = document.createElement('li') 
   const height = document.createElement('li') 
   const speed = document.createElement('li')
+  const weight = document.createElement('li')
   
   stats.textContent = 'Stats'
   attack.textContent = `${pokemon.stats[1].stat.name}: ${pokemon.stats[1].base_stat}`
@@ -147,7 +148,12 @@ function populateCardBack(pokemon) {
   statDiv.appendChild(speed)
 
   height.textContent = `Height: ${pokemon.height}`
-  statDiv.appendChild(speed)
+  statDiv.appendChild(height)
+
+  weight.textContent = `Weight: ${pokemon.weight}`
+  statDiv.appendChild(weight)
+
+
 
   pokeBack.appendChild(abilityList);
   pokeBack.appendChild(stats)
