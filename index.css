@@ -20,6 +20,7 @@ a {
     justify-content: center;
     align-items: center;
     background-color: #1E1E1E;
+    font-size:1.5rem;
     height: 10vh;
     color: white;
   }
@@ -70,6 +71,7 @@ a {
   }
   
   #contact p {
+    font-size: 1.75rem;
     font-style: italic;
   }
 }
@@ -156,9 +158,18 @@ p {
 }
 
 #navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100vw;
   position: fixed;
   background-color: #F031AA;
+}
+
+#navbar img {
+  width: 50px;
+  height: auto;
+  margin-left: 1rem;
 }
 
 .nav-list {
@@ -219,8 +230,9 @@ p {
   padding: .5rem;
 }
 
-
-
+figure figcaption {
+  font-size: 1.25rem;
+}
 
 
 #contact-links a > i {

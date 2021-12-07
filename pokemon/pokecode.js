@@ -100,7 +100,7 @@ function populateCardFront(pokemon) {
   
   const spriteDiv = document.createElement('div')
   spriteDiv.classList.add('sprites')
-  
+
   const sprite1 = document.createElement('img')
   sprite1.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`
   spriteDiv.appendChild(sprite1)
@@ -171,10 +171,10 @@ function populateCardBack(pokemon) {
   defense.textContent = `${pokemon.stats[2].stat.name}: ${pokemon.stats[2].base_stat}`;
   statDiv.appendChild(defense);
 
-  specAttack.textContent = `${pokemon.stats[3].stat.name}: ${pokemon.stats[3].base_stat}`;
+  specAttack.textContent = `Special-Atk: ${pokemon.stats[3].base_stat}`;
   statDiv.appendChild(specAttack);
 
-  specDef.textContent = `${pokemon.stats[4].stat.name}: ${pokemon.stats[4].base_stat}`;
+  specDef.textContent = `Special-Def: ${pokemon.stats[4].base_stat}`;
   statDiv.appendChild(specDef);
 
   speed.textContent = `${pokemon.stats[5].stat.name}: ${pokemon.stats[5].base_stat}`;
@@ -182,12 +182,12 @@ function populateCardBack(pokemon) {
 
   height.textContent = `Height: ${Math.round(
     pokemon.height * 3.937008
-  )} inches`;
+  )}"`;
   statDiv.appendChild(height);
 
   weight.textContent = `Weight: ${Math.round(
     pokemon.weight * 0.2204623
-  )} pounds`;
+  )} lbs`;
   statDiv.appendChild(weight);
 
   pokeBack.appendChild(abilityList);
