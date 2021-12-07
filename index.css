@@ -4,20 +4,146 @@
   color: aliceblue;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 a {
   text-decoration: none;
 }
 
-@media (max-width:1200px) {
+@media only screen and (min-width:801px) {
   * {
     font-size: 80%;
   }
+
+  #footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1E1E1E;
+    height: 10vh;
+    color: white;
+  }
+
+  #projects {
+    background-color: #0A1C3F;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 1000px;
+  }
+
+  #contact div {
+    height: 20vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #283537;
+  }
+
+  #contact-links {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    padding-bottom: 2rem;
+  }
+
+  #contact-pitch {
+    height: 45vh;
+    padding: 2rem;
+  }
+
+  #contact-links a {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1rem;
+    align-items: center;
+    text-align: center;
+    font-size: 2rem;
+    transition: transform 0.3s ease-out;
+  }
+
+  #contact h2 {
+    font-size: 4rem;
+    padding-bottom: 1rem;
+  }
+  
+  #contact p {
+    font-style: italic;
+  }
 }
 
-@media (max-width:780px) {
+@media only screen and (max-width:800px) {
   * {
     font-size: 60%;
+  }
+
+  #footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1E1E1E;
+    height: 10vh;
+    font-size: 1.5rem;
+    color: white;
+  }
+
+  #projects {
+    background-color: #0A1C3F;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+  }
+
+  figure {
+    height: 20rem;
+    width: 20rem;
+  }
+
+  figure img {
+    height: 100%;
+    width: auto;
+  }
+
+  #contact {
+    background-color: #283537;
+  }
+
+  #contact div {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #283537;
+  }
+
+  #contact-links {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  #contact-links a {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2rem 0 1rem 0;
+    align-items: center;
+    text-align: center;
+    font-size: 2.5rem;
+  }
+
+  #contact h2 {
+    font-size: 4rem;
+    padding: 2rem;
+  }
+  
+  #contact p {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 1rem;
   }
 }
 
@@ -30,7 +156,7 @@ p {
 }
 
 #navbar {
-  width: 100%;
+  width: 100vw;
   position: fixed;
   background-color: #F031AA;
 }
@@ -67,26 +193,17 @@ p {
   font-size: 4rem;
 }
 
-#projects {
-  background-color: #0A1C3F;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 1000px;
-}
-
 #projects h1 {
   font-size: 4rem;
   padding: 2rem;
 }
 
 .projects-grid {
-  width: 1280px;
+  width: 100vw;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
 }
 
 .project-tile {
@@ -102,38 +219,9 @@ p {
   padding: .5rem;
 }
 
-#contact div {
-  height: 20vh;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background-color: #283537;
-}
 
-#contact-pitch {
-  height: 45vh;
-  padding: 2rem;
-}
 
-#contact h2 {
-  font-size: 4rem;
-  padding-bottom: 1rem;
-}
 
-#contact p {
-  font-style: italic;
-}
-
-#contact-links a {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 1rem;
-  align-items: center;
-  text-align: center;
-  font-size: 32px;
-  transition: transform 0.3s ease-out;
-}
 
 #contact-links a > i {
   padding-right: .5rem;
@@ -143,18 +231,5 @@ p {
   transform: translateY(-6px);
 }
 
-#contact-links {
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-  padding-bottom: 2rem;
-}
 
-#footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #1E1E1E;
-  height: 10vh;
-  color: white;
-}
+
