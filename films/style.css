@@ -15,27 +15,60 @@ orange: #BF6545
   font-size: 16px;
 }
 
+@media only screen and (max-width: 800px) {
+  nav {
+    background-color: #ED9A9F;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
+  
+  nav ul {
+    text-align: center;
+    list-style-type: none;
+  }
+  
+  nav ul a {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: white;
+
+  }
+}
+
+@media only screen and (min-width: 801px) {
+  nav {
+    background-color: #ED9A9F;
+    display: flex;
+    align-content: center;
+    justify-content: flex-start;
+    padding: .5rem;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style-type: none;
+  }
+  
+  nav ul a {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: white;
+    padding: 0 1rem;
+    border-right: 1px solid white;
+  }
+}
+
 header {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 50px;
   text-align: center;
-  background-color: #D9A23D;
-}
-
-header a {
-  position: absolute;
-  top: 15px;
-  left: 50px;
-  text-decoration: none;
-  text-shadow: #fff 2px 2px 3px;
-  color: #40342A;
-  font-size: large;
-}
-
-header a:hover {
-  color: #5B89A6;
+  background-color: #131313;
+  color: white;
 }
 
 img {

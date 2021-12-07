@@ -6,17 +6,41 @@ function getAPIData(url) {
   }
 }
 
-getAPIData("https://pokeapi.co/api/v2/pokemon?limit=151").then(async (data) => {
-  for (const pokemon of data.results) {
-    await getAPIData(pokemon.url).then((pokeData) =>
-      populatePokeCards(pokeData)
-    );
-  }
-});
+function loadPokemon(limit = 151, offset = 0) {
+  getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`).then(
+    async (data) => {
+      for (const pokemon of data.results) {
+        await getAPIData(pokemon.url).then((pokeData) =>
+          populatePokeCards(pokeData)
+        );
+      }
+    }
+  );
+}
 
 // Function Populates the pokeGrid Class
 
 const pokeGrid = document.querySelector(".pokeGrid");
+
+const loadButton = document.querySelector(".loadPokemon");
+loadButton.addEventListener("click", () => loadPokemon());
+
+const newButton = document.querySelector(".newPokemon");
+newButton.addEventListener("click", () => {
+  let pokeName = prompt('What is the name of your Pokeomn?')
+  let pokeHeight = prompt('What is the Height?')
+  let pokeWeight = prompt('What is the Weight?')
+
+  let newPokemon = new pokemon(pokeName, pokeHeight, pokeWeight)
+});
+
+class pokemon {
+  constructor(name, height, weight) {
+    this.name = name,
+    this.height = height,
+    this.weight = weight
+  }
+}
 
 function populatePokeCards(singlePokemon) {
   const pokeScene = document.createElement("div");
@@ -41,82 +65,80 @@ function populateCardFront(pokemon) {
   const frontDiv = document.createElement("div");
   pokeFront.className = "cardFace front";
 
-  //console.log(pokemon.types[0].type.name);
-  //console.log(pokemon.moves[0].move.name)
-
-  if (pokemon.types[0].type.name === "grass") {
+  if (
+    pokemon.types[0].type.name === "grass" ||
+    pokemon.types[0].type.name === "bug" ||
+    pokemon.types[0].type.name === "poison"
+  ) {
     pokeFront.style.backgroundImage =
       "url(../images/cards/grass-card.png), url(../images/forest-bg.jpeg)";
   } else if (pokemon.types[0].type.name === "fire") {
     pokeFront.style.backgroundImage =
       "url(../images/cards/fire-card.png), url(../images/forest-bg.jpeg)";
-  } else if (pokemon.types[0].type.name === "water") {
+  } else if (
+    pokemon.types[0].type.name === "water" ||
+    pokemon.types[0].type.name === "ice"
+  ) {
     pokeFront.style.backgroundImage =
       "url(../images/cards/water-card.png), url(../images/forest-bg.jpeg)";
-  } else if (pokemon.types[0].type.name === "bug") {
-    pokeFront.style.backgroundImage =
-      "url(../images/cards/grass-card.png), url(../images/forest-bg.jpeg)";
-  } else if (pokemon.types[0].type.name === "poison") {
-    pokeFront.style.backgroundImage =
-      "url(../images/cards/grass-card.png), url(../images/forest-bg.jpeg)";
   } else if (pokemon.types[0].type.name === "electric") {
     pokeFront.style.backgroundImage =
       "url(../images/cards/electric-card.png), url(../images/forest-bg.jpeg)";
-  } else if (pokemon.types[0].type.name === "ground") {
+  } else if (
+    pokemon.types[0].type.name === "ground" ||
+    pokemon.types[0].type.name === "rock" ||
+    pokemon.types[0].type.name === "fighting"
+  ) {
     pokeFront.style.backgroundImage =
       "url(../images/cards/fighting-card.png), url(../images/forest-bg.jpeg)";
-  } else if (pokemon.types[0].type.name === "fighting") {
-    pokeFront.style.backgroundImage =
-      "url(../images/cards/fighting-card.png), url(../images/forest-bg.jpeg)";
-  } else if (pokemon.types[0].type.name === "psychic") {
-    pokeFront.style.backgroundImage =
-      "url(../images/cards/psychic-card.png), url(../images/forest-bg.jpeg)";
-  } else if (pokemon.types[0].type.name === "rock") {
-    pokeFront.style.backgroundImage =
-      "url(../images/cards/fighting-card.png), url(../images/forest-bg.jpeg)";
-  } else if (pokemon.types[0].type.name === "ghost") {
+  } else if (
+    pokemon.types[0].type.name === "psychic" ||
+    pokemon.types[0].type.name === "ghost"
+  ) {
     pokeFront.style.backgroundImage =
       "url(../images/cards/psychic-card.png), url(../images/forest-bg.jpeg)";
   } else if (pokemon.types[0].type.name === "dragon") {
     pokeFront.style.backgroundImage =
       "url(../images/cards/dragon-card.png), url(../images/forest-bg.jpeg)";
-  } else if (pokemon.types[0].type.name === "ice") {
-    pokeFront.style.backgroundImage =
-      "url(../images/cards/water-card.png), url(../images/forest-bg.jpeg)";
   } else {
     pokeFront.style.backgroundImage =
       "url(../images/cards/poke-card.png), url(../images/forest-bg.jpeg)";
   }
 
   const pokeImg = document.createElement("img");
-  const pokeName = document.createElement("h2");
-  //const move1 = document.createElement("p");
-  //const move2 = document.createElement("p");
   const health = document.createElement("h3");
 
-  pokeName.textContent = pokemon.name;
   health.textContent = `${pokemon.stats[0].base_stat} HP`;
-  //move1.textContent = pokemon.moves[0].move.name;
-  
-  const spriteDiv = document.createElement('div')
-  spriteDiv.classList.add('sprites')
 
-  const sprite1 = document.createElement('img')
-  sprite1.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`
-  spriteDiv.appendChild(sprite1)
-  const sprite2 = document.createElement('img')
-  sprite2.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${pokemon.id}.png`
-  spriteDiv.appendChild(sprite2)
-  const sprite3 = document.createElement('img')
-  sprite3.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/yellow/transparent/${pokemon.id}.png`
-  spriteDiv.appendChild(sprite3)
+  const spriteDiv = document.createElement("div");
+  spriteDiv.classList.add("sprites");
+
+  const sprite1 = document.createElement("img");
+  sprite1.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`;
+  spriteDiv.appendChild(sprite1);
+  const sprite2 = document.createElement("img");
+  sprite2.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${pokemon.id}.png`;
+  spriteDiv.appendChild(sprite2);
+  const sprite3 = document.createElement("img");
+  sprite3.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/yellow/transparent/${pokemon.id}.png`;
+  spriteDiv.appendChild(sprite3);
 
   pokeImg.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`;
+
+  const pokeName = document.createElement("h2");
+
+  if (pokemon.name === "nidoran-f" || pokemon.name === "nidoran-m") {
+    pokeName.textContent = "Nidoran";
+  } else {
+    pokeName.textContent = pokemon.name;
+  }
+
   frontDiv.appendChild(pokeName);
+
   frontDiv.appendChild(health);
   pokeFront.appendChild(frontDiv);
   pokeFront.appendChild(pokeImg);
-  
+
   if (pokemon.moves.length > 2) {
     const move1 = document.createElement("p");
     const move2 = document.createElement("p");
@@ -130,16 +152,10 @@ function populateCardFront(pokemon) {
     pokeFront.appendChild(move1);
   }
 
-  pokeFront.appendChild(spriteDiv)
-  
-  //pokeFront.appendChild(move1);
-  //pokeFront.appendChild(move2);
+  pokeFront.appendChild(spriteDiv);
 
   return pokeFront;
 }
-
-
-
 
 function populateCardBack(pokemon) {
   const pokeBack = document.createElement("div");
@@ -180,14 +196,10 @@ function populateCardBack(pokemon) {
   speed.textContent = `${pokemon.stats[5].stat.name}: ${pokemon.stats[5].base_stat}`;
   statDiv.appendChild(speed);
 
-  height.textContent = `Height: ${Math.round(
-    pokemon.height * 3.937008
-  )}"`;
+  height.textContent = `Height: ${Math.round(pokemon.height * 3.937008)}"`;
   statDiv.appendChild(height);
 
-  weight.textContent = `Weight: ${Math.round(
-    pokemon.weight * 0.2204623
-  )} lbs`;
+  weight.textContent = `Weight: ${Math.round(pokemon.weight * 0.2204623)} lbs`;
   statDiv.appendChild(weight);
 
   pokeBack.appendChild(abilityList);
