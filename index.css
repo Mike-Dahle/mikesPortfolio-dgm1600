@@ -74,6 +74,10 @@ a {
     font-size: 1.75rem;
     font-style: italic;
   }
+
+  #navbar {
+    background: linear-gradient(45deg, #746e6e 10%, #F031AA 10%);
+  }
 }
 
 @media only screen and (max-width:800px) {
@@ -147,6 +151,10 @@ a {
     font-style: italic;
     margin-bottom: 1rem;
   }
+
+  #navbar {
+    background: linear-gradient(75deg, #746e6e 20%, #F031AA 20%);
+  }
 }
 
 .body {
@@ -163,7 +171,6 @@ p {
   align-items: center;
   width: 100vw;
   position: fixed;
-  background: linear-gradient(45deg, #746e6e 10%, #F031AA 10%);
 }
 
 #navbar img {

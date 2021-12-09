@@ -238,6 +238,7 @@ function populateNewCard(singlePokemon) {
     pokeCard.classList.toggle("is-flipped");
   });
 
+  customCard.style.visibility = "visible";
   const customHeader = document.createElement('h6')
   customHeader.textContent = ('A new pokemon has appeared!')
 

@@ -27,14 +27,35 @@ header img {
   nav ul {
     text-align: center;
     list-style-type: none;
+    width: 100%;
+    padding: 0;
+    
   }
   
   nav ul a {
     text-decoration: none;
     font-weight: 700;
-    font-size: 1.25rem;
+    font-size: 1rem;
     color: white;
+    background-color: #afd4e8;
+    padding: .75rem 5rem;
+    border-radius: 10px;
+    border-color: 2px solid white;
+  }
 
+  nav ul li {
+    margin: .5rem;
+    padding: .25rem;
+    width: 100%;
+  }
+
+  nav button {
+    min-height: 48px;
+    width: 80%;
+    background-color: #afd4e8;
+    color: white;
+    border-radius: 10px;
+    border-color: white;
   }
 }
 
@@ -64,23 +85,25 @@ header img {
     padding: 0 1rem;
     border-right: 1px solid white;
   }
+
+  nav button {
+    background-color: #afd4e8;
+    color: white;
+    border-radius: 10px;
+    padding: .25rem;
+    border-color: white;
+  }
+  
+  nav button:hover {
+    background-color: #fec30a;
+  }
+  
+  nav ul a:hover {
+    color: #fec30a;
+  }
 }
 
-nav button {
-  background-color: #afd4e8;
-  color: white;
-  border-radius: 10px;
-  padding: .25rem;
-  border-color: white;
-}
 
-nav button:hover {
-  background-color: #fec30a;
-}
-
-nav ul a:hover {
-  color: #fec30a;
-}
 
 main {
   background-color: #fceec866;
@@ -93,6 +116,7 @@ main {
 }
 
 .customCard {
+  visibility: hidden;
   display: flex;
   flex-direction: column;
   justify-items: center;
