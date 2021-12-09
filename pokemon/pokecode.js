@@ -7,53 +7,68 @@ function getAPIData(url) {
 }
 
 function loadPokemon(limit = 151, offset = 0) {
-  getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`).then(
-    async (data) => {
-      for (const pokemon of data.results) {
-        await getAPIData(pokemon.url).then((pokeData) =>
-          populatePokeCards(pokeData)
-        );
-      }
+  getAPIData(
+    `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`
+  ).then(async (data) => {
+    for (const pokemon of data.results) {
+      await getAPIData(pokemon.url).then((pokeData) =>
+        populatePokeCards(pokeData)
+      );
     }
-  );
+  });
 }
 
 // Function Populates the pokeGrid Class
 
 const pokeGrid = document.querySelector(".pokeGrid");
-const customCard = document.querySelector(".customCard")
+const customCard = document.querySelector(".customCard");
 
-loadPokemon()
+loadPokemon();
 
 const newButton = document.querySelector(".newPokemon");
 newButton.addEventListener("click", () => {
-  let pokeName = prompt('What is the name of your Pokemon?')
-  let pokeHeight = prompt('What is the height of your Pokemon in inches?')
-  let pokeWeight = prompt('What is the weight of your pokemon in pounds?')
-  let pokeType = prompt('What type is your pokemon?: \nAvailable: Grass, Fire, Water, Ice, Electric, Psychic, Dragon, Fighting, Poison, Bug, Ground, Rock, Ghost').toLowerCase()
-  let pokeAbilities = prompt("What are your Pokemon's abilities? (seperate by comma)").split(',')
-  let pokeStats =  prompt('Enter stat numbers for attack, defense, spec-attack, and spec-def: \nexample: (22, 34, 20, 20, 15)').split(',')
-  let pokeHP = prompt("How much HP does your Pokemon have?:")
-  let pokeMoves = prompt("Enter two moves/attack names seperated by a comma:").split(',')
-  
+  let pokeName = prompt("What is the name of your Pokemon?");
+  let pokeHeight = prompt("What is the height of your Pokemon in inches?");
+  let pokeWeight = prompt("What is the weight of your pokemon in pounds?");
+  let pokeType = prompt(
+    "What type is your pokemon?: \nAvailable: Grass, Fire, Water, Ice, Electric, Psychic, Dragon, Fighting, Poison, Bug, Ground, Rock, Ghost"
+  ).toLowerCase();
+  let pokeAbilities = prompt(
+    "What are your Pokemon's abilities? (seperate by comma)"
+  ).split(",");
+  let pokeStats = prompt(
+    "Enter stat numbers for attack, defense, spec-attack, and spec-def: \nexample: (22, 34, 20, 20, 15)"
+  ).split(",");
+  let pokeHP = prompt("How much HP does your Pokemon have?:");
+  let pokeMoves = prompt(
+    "Enter two moves/attack names seperated by a comma:"
+  ).split(",");
 
-  let newPokemon = new pokemon(pokeName, pokeHeight, pokeWeight, pokeType, pokeAbilities, pokeStats, pokeHP, pokeMoves)
-  console.log(newPokemon)
-  populateNewCard(newPokemon)
-
+  let newPokemon = new pokemon(
+    pokeName,
+    pokeHeight,
+    pokeWeight,
+    pokeType,
+    pokeAbilities,
+    pokeStats,
+    pokeHP,
+    pokeMoves
+  );
+  console.log(newPokemon);
+  populateNewCard(newPokemon);
 });
 
 class pokemon {
   constructor(name, height, weight, type, abilities, stats, hp, moves) {
-    this.id = 100,
-    this.name = name,
-    this.height = height,
-    this.weight = weight,
-    this.type = type,
-    this.abilities = abilities,
-    this.stats = stats,
-    this.hp = hp,
-    this.moves = moves
+    (this.id = 100),
+      (this.name = name),
+      (this.height = height),
+      (this.weight = weight),
+      (this.type = type),
+      (this.abilities = abilities),
+      (this.stats = stats),
+      (this.hp = hp),
+      (this.moves = moves);
   }
 }
 
@@ -226,9 +241,6 @@ function populateCardBack(pokemon) {
 
 // Created New functions for making a new card so i could control the design more specifically
 
-
-
-
 function populateNewCard(singlePokemon) {
   const pokeScene = document.createElement("div");
   pokeScene.className = "scene";
@@ -239,8 +251,8 @@ function populateNewCard(singlePokemon) {
   });
 
   customCard.style.visibility = "visible";
-  const customHeader = document.createElement('h6')
-  customHeader.textContent = ('A new pokemon has appeared!')
+  const customHeader = document.createElement("h6");
+  customHeader.textContent = "A new pokemon has appeared!";
 
   const front = newCardFront(singlePokemon);
   const back = newCardBack(singlePokemon);
@@ -251,9 +263,6 @@ function populateNewCard(singlePokemon) {
   customCard.appendChild(customHeader);
   customCard.appendChild(pokeScene);
 }
-
-
-
 
 function newCardFront(singlePokemon) {
   const pokeFront = document.createElement("figure");
@@ -270,10 +279,7 @@ function newCardFront(singlePokemon) {
   } else if (singlePokemon.type === "fire") {
     pokeFront.style.backgroundImage =
       "url(../images/cards/fire-card.png), url(../images/forest-bg.jpeg)";
-  } else if (
-    singlePokemon.type === "water" ||
-    singlePokemon.type === "ice"
-  ) {
+  } else if (singlePokemon.type === "water" || singlePokemon.type === "ice") {
     pokeFront.style.backgroundImage =
       "url(../images/cards/water-card.png), url(../images/forest-bg.jpeg)";
   } else if (singlePokemon.type === "electric") {
@@ -308,7 +314,7 @@ function newCardFront(singlePokemon) {
   pokeImg.src = "../images/pokeball.png";
 
   const pokeName = document.createElement("h2");
-  
+
   pokeName.textContent = singlePokemon.name;
 
   frontDiv.appendChild(pokeName);
@@ -319,14 +325,13 @@ function newCardFront(singlePokemon) {
 
   const move1 = document.createElement("p");
   const move2 = document.createElement("p");
-  move1.textContent = singlePokemon.moves[0]
-  move2.textContent = singlePokemon.moves[1]
+  move1.textContent = singlePokemon.moves[0];
+  move2.textContent = singlePokemon.moves[1];
   pokeFront.appendChild(move1);
   pokeFront.appendChild(move2);
 
-  return pokeFront; 
+  return pokeFront;
 }
-
 
 function newCardBack(singlePokemon) {
   const pokeBack = document.createElement("div");
@@ -338,8 +343,8 @@ function newCardBack(singlePokemon) {
 
   for (let x = 0; x < singlePokemon.abilities.length; x++) {
     let listItem = document.createElement("li");
-    listItem.textContent = singlePokemon.abilities[x]
-    abilityList.appendChild(listItem); 
+    listItem.textContent = singlePokemon.abilities[x];
+    abilityList.appendChild(listItem);
   }
 
   const stats = document.createElement("h4");
@@ -355,25 +360,25 @@ function newCardBack(singlePokemon) {
   //(attack, defense, special-attack, special-defense, speed)
 
   stats.textContent = "Stats";
-  attack.textContent = `Attack: ${singlePokemon.stats[0]}`;
+  attack.textContent = `Attack: ${(singlePokemon.stats[0] = 15)}`;
   statDiv.appendChild(attack);
 
-  defense.textContent = `Defense: ${singlePokemon.stats[1]}`;
+  defense.textContent = `Defense: ${(singlePokemon.stats[1] = 15)}`;
   statDiv.appendChild(defense);
 
-  specAttack.textContent = `Special-Atk: ${singlePokemon.stats[2]}`;
+  specAttack.textContent = `Special-Atk: ${(singlePokemon.stats[2] = 20)}`;
   statDiv.appendChild(specAttack);
 
-  specDef.textContent = `Special-Def: ${singlePokemon.stats[3]}`;
+  specDef.textContent = `Special-Def: ${(singlePokemon.stats[3] = 20)}`;
   statDiv.appendChild(specDef);
 
-  speed.textContent = `Speed: ${singlePokemon.stats[4]}`;
+  speed.textContent = `Speed: ${(singlePokemon.stats[4] = 10)}`;
   statDiv.appendChild(speed);
 
-  height.textContent = `Height: ${singlePokemon.height}"`;
+  height.textContent = `Height: ${(singlePokemon.height = 12)}"`;
   statDiv.appendChild(height);
 
-  weight.textContent = `Weight: ${singlePokemon.weight} lbs`;
+  weight.textContent = `Weight: ${(singlePokemon.weight = 100)} lbs`;
   statDiv.appendChild(weight);
 
   pokeBack.appendChild(abilityList);
