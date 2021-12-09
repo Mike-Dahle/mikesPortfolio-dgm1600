@@ -21,6 +21,7 @@ function loadPokemon(limit = 151, offset = 0) {
 // Function Populates the pokeGrid Class
 
 const pokeGrid = document.querySelector(".pokeGrid");
+const customCard = document.querySelector(".customCard")
 
 loadPokemon()
 
@@ -226,6 +227,8 @@ function populateCardBack(pokemon) {
 // Created New functions for making a new card so i could control the design more specifically
 
 
+
+
 function populateNewCard(singlePokemon) {
   const pokeScene = document.createElement("div");
   pokeScene.className = "scene";
@@ -235,14 +238,21 @@ function populateNewCard(singlePokemon) {
     pokeCard.classList.toggle("is-flipped");
   });
 
+  const customHeader = document.createElement('h6')
+  customHeader.textContent = ('A new pokemon has appeared!')
+
   const front = newCardFront(singlePokemon);
   const back = newCardBack(singlePokemon);
 
   pokeCard.appendChild(front);
   pokeCard.appendChild(back);
   pokeScene.appendChild(pokeCard);
-  pokeGrid.appendChild(pokeScene);
+  customCard.appendChild(customHeader);
+  customCard.appendChild(pokeScene);
 }
+
+
+
 
 function newCardFront(singlePokemon) {
   const pokeFront = document.createElement("figure");

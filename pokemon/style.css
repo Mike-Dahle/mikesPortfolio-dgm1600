@@ -92,6 +92,23 @@ main {
   justify-content: center;
 }
 
+.customCard {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  margin: 1rem 0;
+  background-color: #fceec8;
+  border: 2px solid #fec30a;
+  box-shadow: 0px 0px 6px black;
+}
+
+.customCard h6 {
+  text-align: center;
+  font-size: 1.25rem;
+  margin: 1.5rem 0 .5rem 0;
+}
+
 .scene {
   width: 214px;
   height: 300px;
@@ -199,10 +216,11 @@ h4 {
   background-color: #afd4e8;
 }
 
-/* url("../images/cards/poke-card.png"), */
+/* url("../images/cards/poke-card.png"), 
 .front {
   background-image: url("../images/forest-bg.jpeg");
 }
+*/
 
 .back {
   background-image: url("../images/card-back.jpeg");
