@@ -10,9 +10,10 @@ orange: #BF6545
 
 */
 
-#body {
+* {
   margin: 0;
   font-size: 16px;
+  box-sizing: border-box;
 }
 
 @media only screen and (max-width: 800px) {
@@ -21,6 +22,7 @@ orange: #BF6545
     display: flex;
     align-content: center;
     justify-content: center;
+    min-height: 48px;
   }
   
   nav ul {
@@ -39,11 +41,12 @@ orange: #BF6545
 
 @media only screen and (min-width: 801px) {
   nav {
-    background-color: #ED9A9F;
+    background-color:#ED9A9F;
     display: flex;
-    align-content: center;
+    align-items: center;
+    justify-items: center;
     justify-content: flex-start;
-    padding: .5rem;
+    min-height: 48px;
   }
   
   nav ul {
@@ -65,18 +68,22 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 50px;
+  height: 2rem;
+  padding: .5rem;
   text-align: center;
-  background-color: #131313;
+  background-color: #F2C84B;
   color: white;
 }
 
 img {
   border: 8px solid #f2c84b;
+  width: 100%;
+  height: auto;
 }
 
 figure {
   background-color: #40342a;
+  margin: 2rem 2vw;
 }
 
 figcaption {
@@ -101,3 +108,4 @@ main {
   color: white;
   background-color: #1e1e1e;
 }
+
