@@ -360,25 +360,25 @@ function newCardBack(singlePokemon) {
   //(attack, defense, special-attack, special-defense, speed)
 
   stats.textContent = "Stats";
-  attack.textContent = `Attack: ${(singlePokemon.stats[0] = 15)}`;
+  attack.textContent = `Attack: ${(singlePokemon.stats[0])}`;
   statDiv.appendChild(attack);
 
-  defense.textContent = `Defense: ${(singlePokemon.stats[1] = 15)}`;
+  defense.textContent = `Defense: ${(singlePokemon.stats[1])}`;
   statDiv.appendChild(defense);
 
-  specAttack.textContent = `Special-Atk: ${(singlePokemon.stats[2] = 20)}`;
+  specAttack.textContent = `Special-Atk: ${(singlePokemon.stats[2])}`;
   statDiv.appendChild(specAttack);
 
-  specDef.textContent = `Special-Def: ${(singlePokemon.stats[3] = 20)}`;
+  specDef.textContent = `Special-Def: ${(singlePokemon.stats[3])}`;
   statDiv.appendChild(specDef);
 
-  speed.textContent = `Speed: ${(singlePokemon.stats[4] = 10)}`;
+  speed.textContent = `Speed: ${(singlePokemon.stats[4])}`;
   statDiv.appendChild(speed);
 
-  height.textContent = `Height: ${(singlePokemon.height = 12)}"`;
+  height.textContent = `Height: ${(singlePokemon.height)}"`;
   statDiv.appendChild(height);
 
-  weight.textContent = `Weight: ${(singlePokemon.weight = 100)} lbs`;
+  weight.textContent = `Weight: ${(singlePokemon.weight)} lbs`;
   statDiv.appendChild(weight);
 
   pokeBack.appendChild(abilityList);
