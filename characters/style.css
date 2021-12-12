@@ -4,69 +4,119 @@
     box-sizing: border-box;
 }
 
-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 50px;
-    text-align: center;
-    background-color: #BF6545;
+@media only screen and (max-width: 800px) {
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: .5rem;
+        height: 50px;
+        text-align: center;
+        background-color: #BF6545;
+    }
+    
+    header h1 {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    header a {
+        top: 15px;
+        left: 50px;
+        text-decoration: none;
+        text-shadow: black 2px 2px 3px;
+        color: #5B89A6;
+        font-size: large;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-image: url('../images/star-bg.jpeg');
+        padding: 1rem;
+    }
+
+    button {
+        text-align: center;
+        font-size: 1.5rem;
+        width: 80%;
+        height: 48px;
+        margin-bottom: .5rem;
+        background-color: #5B89A6;
+        border: 1px solid white;
+    }
+
+
 }
 
-header h1 {
-    font-size: 1.5rem;
-    font-weight: 700;
+
+@media only screen and (min-width: 801px) {
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+        text-align: center;
+        background-color: #BF6545;
+    }
+    
+    header h1 {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+    
+    header a {
+        position: absolute;
+        top: 15px;
+        left: 50px;
+        text-decoration: none;
+        text-shadow: black 2px 2px 3px;
+        color: #5B89A6;
+        font-size: large;
+    }
+    
+    header a:hover {
+        color: #f2c84b;
+    }
+    
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: url('../images/star-bg.jpeg');
+        padding: 1rem;
+    }
+    
+    button {
+        text-align: center;
+        font-size: medium;
+        background-color: #5B89A6;
+        border-color: white;
+        border-radius: 10px;
+        margin: .5rem 2rem;
+    }
+    
+    button:hover {
+        background-color: #f2c84b;
+    }
 }
 
-header a {
-    position: absolute;
-    top: 15px;
-    left: 50px;
-    text-decoration: none;
-    text-shadow: black 2px 2px 3px;
-    color: #5B89A6;
-    font-size: large;
-}
 
-header a:hover {
-    color: #f2c84b;
-}
-
-nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url('../images/star-bg.jpeg');
-    padding: 1rem;
-}
-
-button {
-    text-align: center;
-    font-size: medium;
-    background-color: #5B89A6;
-    border-color: white;
-    border-radius: 10px;
-    margin: .5rem 2rem;
-}
-
-button:hover {
-    background-color: #f2c84b;
-}
 
 #charView {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
-    height: 100%;
-    background-image: url("../images/star-bg.jpeg");
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     padding-bottom: 2rem;
 }
 
-#charView background-image {
-    height: 100%;
+main {
     width: 100%;
+    height: auto;
+    background-image: url("../images/star-bg.jpeg");
 }
 
 figure {
@@ -74,25 +124,25 @@ figure {
     align-content: center;
     justify-content: center;
     flex-direction: column;*/
-    width: 300px;
-    height: 400px;
+    width: 15.625rem;
+    height: auto;
     background-color: #5B89A6;
     margin: 15px;
-    padding-bottom: .5rem;
-    border-radius: 15px;
+    border: 3px solid #5B89A6;
 }
 
 figure img {
-    width: 225px;
-    margin: 2rem 2rem 0rem 2rem;
+    width: 100%;
+    height: auto;
+
 }
 
 figcaption {
-    width: 225px;
+    width: auto;
+    height: 100%;
     text-align: center;
     font-size: 1.5rem;
     background-color: #f2c84b;
-    margin: 0 2rem;
 }
 
 .footer {
