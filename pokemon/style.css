@@ -50,14 +50,20 @@ header img {
   }
 
   nav button {
+    font-weight: 700;
     min-height: 48px;
     width: 80%;
     background-color: #afd4e8;
     color: white;
     border-radius: 10px;
     border-color: white;
+    box-shadow: 0px 1px 4px black;
   }
 }
+
+
+
+
 
 @media only screen and (min-width: 801px) {
   nav {
@@ -65,11 +71,11 @@ header img {
     display: flex;
     align-content: center;
     justify-content: flex-start;
-    padding: .5rem;
+    padding: .5rem 0;
   }
 
   nav button {
-    margin-left: 1rem;
+    margin-left: 2vw;
   }
   
   nav ul {
@@ -80,30 +86,30 @@ header img {
   nav ul a {
     text-decoration: none;
     font-weight: 700;
-    font-size: 1.25rem;
     color: white;
-    padding: 0 1rem;
-    border-right: 1px solid white;
   }
 
   nav button {
+    font-weight: 700;
+    min-height: 48px;
+    width: 15rem;
     background-color: #afd4e8;
     color: white;
     border-radius: 10px;
-    padding: .25rem;
     border-color: white;
+    box-shadow: 0px 1px 4px black;
   }
   
   nav button:hover {
     background-color: #fec30a;
   }
   
-  nav ul a:hover {
-    color: #fec30a;
-  }
 }
 
 
+
+
+/* start of regular CSS */
 
 main {
   background-color: #fceec866;
