@@ -107,6 +107,8 @@ header img {
   
   label {
     margin: 2vw;
+    font-size: 1rem;
+    font-weight: 700;
   }
 }
 
