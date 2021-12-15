@@ -104,32 +104,32 @@ function populateCardFront(pokemon) {
       "url(../images/cards/grass-card.png), url(../images/forest-bg.jpeg)";
   } else if (pokemon.types[0].type.name === "fire") {
     pokeFront.style.backgroundImage =
-      "url(../images/cards/fire-card.png), url(../images/forest-bg.jpeg)";
+      "url(../images/cards/fire-card.png), url(../images/fire-bg.jpeg)";
   } else if (
     pokemon.types[0].type.name === "water" ||
     pokemon.types[0].type.name === "ice"
   ) {
     pokeFront.style.backgroundImage =
-      "url(../images/cards/water-card.png), url(../images/forest-bg.jpeg)";
+      "url(../images/cards/water-card.png), url(../images/water-bg.jpeg)";
   } else if (pokemon.types[0].type.name === "electric") {
     pokeFront.style.backgroundImage =
-      "url(../images/cards/electric-card.png), url(../images/forest-bg.jpeg)";
+      "url(../images/cards/electric-card.png), url(../images/thunder-bg.jpeg)";
   } else if (
     pokemon.types[0].type.name === "ground" ||
     pokemon.types[0].type.name === "rock" ||
     pokemon.types[0].type.name === "fighting"
   ) {
     pokeFront.style.backgroundImage =
-      "url(../images/cards/fighting-card.png), url(../images/forest-bg.jpeg)";
+      "url(../images/cards/fighting-card.png), url(../images/earth-bg.jpeg)";
   } else if (
     pokemon.types[0].type.name === "psychic" ||
     pokemon.types[0].type.name === "ghost"
   ) {
     pokeFront.style.backgroundImage =
-      "url(../images/cards/psychic-card.png), url(../images/forest-bg.jpeg)";
+      "url(../images/cards/psychic-card.png), url(../images/psychic-bg.jpeg)";
   } else if (pokemon.types[0].type.name === "dragon") {
     pokeFront.style.backgroundImage =
-      "url(../images/cards/dragon-card.png), url(../images/forest-bg.jpeg)";
+      "url(../images/cards/dragon-card.png), url(../images/dragon-bg.jpeg)";
   } else {
     pokeFront.style.backgroundImage =
       "url(../images/cards/poke-card.png), url(../images/forest-bg.jpeg)";
@@ -278,29 +278,29 @@ function newCardFront(singlePokemon) {
       "url(../images/cards/grass-card.png), url(../images/forest-bg.jpeg)";
   } else if (singlePokemon.type === "fire") {
     pokeFront.style.backgroundImage =
-      "url(../images/cards/fire-card.png), url(../images/forest-bg.jpeg)";
+      "url(../images/cards/fire-card.png), url(../images/fire-bg.jpeg)";
   } else if (singlePokemon.type === "water" || singlePokemon.type === "ice") {
     pokeFront.style.backgroundImage =
-      "url(../images/cards/water-card.png), url(../images/forest-bg.jpeg)";
+      "url(../images/cards/water-card.png), url(../images/water-bg.jpeg)";
   } else if (singlePokemon.type === "electric") {
     pokeFront.style.backgroundImage =
-      "url(../images/cards/electric-card.png), url(../images/forest-bg.jpeg)";
+      "url(../images/cards/electric-card.png), url(../images/thunder-bg.jpeg)";
   } else if (
     singlePokemon.type === "ground" ||
     singlePokemon.type === "rock" ||
     singlePokemon.type === "fighting"
   ) {
     pokeFront.style.backgroundImage =
-      "url(../images/cards/fighting-card.png), url(../images/forest-bg.jpeg)";
+      "url(../images/cards/fighting-card.png), url(../images/earth-bg.jpeg)";
   } else if (
     singlePokemon.type === "psychic" ||
     singlePokemon.type === "ghost"
   ) {
     pokeFront.style.backgroundImage =
-      "url(../images/cards/psychic-card.png), url(../images/forest-bg.jpeg)";
+      "url(../images/cards/psychic-card.png), url(../images/psychic-bg.jpeg)";
   } else if (singlePokemon.type === "dragon") {
     pokeFront.style.backgroundImage =
-      "url(../images/cards/dragon-card.png), url(../images/forest-bg.jpeg)";
+      "url(../images/cards/dragon-card.png), url(../images/dragon-bg.jpeg)";
   } else {
     pokeFront.style.backgroundImage =
       "url(../images/cards/poke-card.png), url(../images/forest-bg.jpeg)";
