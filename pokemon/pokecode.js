@@ -1,3 +1,6 @@
+import { removeChildren } from "../utils/index.js";
+
+
 function getAPIData(url) {
   try {
     return fetch(url).then((data) => data.json());
@@ -386,4 +389,18 @@ function newCardBack(singlePokemon) {
   pokeBack.appendChild(statDiv);
 
   return pokeBack;
+}
+
+
+const typeSelector = document.querySelector('.typeSelector')
+typeSelector.addEventListener('change', (event) => {
+  const typeChoice = event.target.value.toLowerCase()
+  const userChoice = loadPokemon().filter
+  removeChildren(pokeGrid)
+  allByType.forEach((item) => populatePokeCard(item))
+})
+
+
+function filterPokemon(type) {
+  removeChildren(pokeGrid)
 }

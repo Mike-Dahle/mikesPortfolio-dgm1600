@@ -80,7 +80,7 @@ a {
   }
 
   #navbar {
-    background: linear-gradient(45deg, #746e6e 10%, #F031AA 10%);
+    background: linear-gradient(45deg, #746e6e 10rem, #F031AA 10rem);
   }
 }
 
@@ -157,7 +157,7 @@ a {
   }
 
   #navbar {
-    background: linear-gradient(75deg, #746e6e 20%, #F031AA 20%);
+    background: linear-gradient(90deg, #746e6e 7rem, #F031AA 7rem);
   }
 }
 
