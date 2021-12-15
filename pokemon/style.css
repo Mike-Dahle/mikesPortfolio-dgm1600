@@ -34,14 +34,19 @@ header img {
   }
   
   nav ul a {
-    box-sizing: border-box;
+    display: inline-block;
     text-decoration: none;
+    height: 48px;
+    width: 80%;
+    text-align: center;
     font-weight: 700;
     font-size: 1rem;
-    color: white;
     background-color: #afd4e8;
+    border: 2px solid white;
+    color: white;
+    padding-top: 13px;
     border-radius: 10px;
-    border-color: 2px solid white;
+    box-shadow: 0px 1px 4px black;
   }
 
   nav ul li {
@@ -51,6 +56,7 @@ header img {
   }
 
   nav button {
+    font-size: 1rem;
     font-weight: 700;
     min-height: 48px;
     width: 80%;
@@ -59,6 +65,7 @@ header img {
     border-radius: 10px;
     border-color: white;
     box-shadow: 0px 1px 4px black;
+    border: 2px solid white;
   }
 
   label {
@@ -106,12 +113,29 @@ header img {
   }
   
   nav ul a {
+    display: inline-block;
     text-decoration: none;
+    height: 48px;
+    width: 15rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     font-weight: 700;
+    font-size: 1rem;
+    background-color: #afd4e8;
+    border: 2px solid white;
     color: white;
+    padding-top: 13px;
+    border-radius: 10px;
+    box-shadow: 0px 1px 4px black;
+  }
+
+  nav a:hover {
+    background-color: #fec30a;
   }
 
   nav button {
+    font-size: 1rem;
     font-weight: 700;
     min-height: 48px;
     width: 15rem;
@@ -120,6 +144,7 @@ header img {
     border-radius: 10px;
     border-color: white;
     box-shadow: 0px 1px 4px black;
+    border: 2px solid white;
   }
   
   nav button:hover {

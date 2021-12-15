@@ -222,6 +222,7 @@ p {
 
 .projects-grid {
   width: 100vw;
+  height: auto;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -230,8 +231,8 @@ p {
 
 .project-tile {
   margin: 2rem 1rem;
-  max-height: 320px;
-  max-width: 320px;
+  max-height: 20rem;
+  max-width: 20rem;
 }
 
 .project-tile figcaption{
