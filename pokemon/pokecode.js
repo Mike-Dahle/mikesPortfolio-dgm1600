@@ -21,12 +21,17 @@ function loadPokemon(limit = 151, offset = 0) {
   });
 }
 
+
+
 // Function Populates the pokeGrid Class
 
 const pokeGrid = document.querySelector(".pokeGrid");
 const customCard = document.querySelector(".customCard");
 
+
+
 loadPokemon();
+
 
 const newButton = document.querySelector(".newPokemon");
 newButton.addEventListener("click", () => {
@@ -83,6 +88,7 @@ function populatePokeCards(singlePokemon) {
   pokeCard.addEventListener("click", () => {
     pokeCard.classList.toggle("is-flipped");
   });
+
 
   const front = populateCardFront(singlePokemon);
   const back = populateCardBack(singlePokemon);
@@ -391,16 +397,48 @@ function newCardBack(singlePokemon) {
   return pokeBack;
 }
 
+getAllSimplePokemon();
+const allPokemon = []
+
+async function getAllSimplePokemon() {
+  
+  await getAPIData(
+    `https://pokeapi.co/api/v2/pokemon?limit=151&offset=0`,
+  ).then(async (data) => {
+    for (const pokemon of data.results) {
+      await getAPIData(pokemon.url).then((pokeData) => {
+        const mappedPokemon = {
+          name: pokeData.name,
+          abilities: pokeData.abilities,
+          height: pokeData.height,
+          id: pokeData.id,
+          name: pokeData.name,
+          types: pokeData.types,
+          weight: pokeData.weight,
+          moves: pokeData.moves,
+          stats: pokeData.stats
+        }
+        allPokemon.push(mappedPokemon)
+      })
+    }
+  })
+  return allPokemon
+}
+
+function getAllPokemonByType(type) {
+  return allPokemon.filter((pokemon) => pokemon.types[0].type.name == type)
+}
 
 const typeSelector = document.querySelector('.typeSelector')
 typeSelector.addEventListener('change', (event) => {
-  const typeChoice = event.target.value.toLowerCase()
-  const userChoice = loadPokemon().filter
-  removeChildren(pokeGrid)
-  allByType.forEach((item) => populatePokeCard(item))
-})
-
-
-function filterPokemon(type) {
-  removeChildren(pokeGrid)
-}
+  if (event.target.value.toLowerCase() === 'all') {
+    removeChildren(pokeGrid);
+    loadPokemon();
+  } else {
+      const usersTypeChoice = event.target.value.toLowerCase()
+      const allByType = getAllPokemonByType(usersTypeChoice)
+      removeChildren(pokeGrid)
+      allByType.forEach((item) => populatePokeCards(item))
+  }
+});
+  
