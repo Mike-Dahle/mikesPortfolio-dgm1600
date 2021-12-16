@@ -25,6 +25,7 @@
   justify-content: space-evenly;
   align-items: center;
   padding: 2rem 0;
+  min-height: 100vh;
   background-image: url("../images/star-bg.jpeg");
   color: white;
   overscroll-behavior: contain;
