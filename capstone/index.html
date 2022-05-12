@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Studio Ghibli Collection</title>
+    <link rel="stylesheet" href="/capstone/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="spacer"><a href="../index.html">Back to Portfolio</a></div>
+      <div class="spacer"><h1>STUDIO GHIBLI</h1></div>
+      <div class="spacer">
+        <img
+          src="/capstone/images/ghibli.png"
+          alt="ghibli logo"
+          height="45px"
+          width="auto"
+        />
+      </div>
+    </header>
+    <div id="hero">
+      <img src="/capstone/images/ghibliLogo.svg" alt="Studio Ghibli Logo"
+      width="600px" height="288.68598px"">
+    </div>
+
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="modalInside">
+          <div>
+            <h2 id="modalTitle"></h2>
+            <img
+              src="#"
+              alt="Movie poster"
+              id="modalImage"
+              height="200px"
+              width="auto"
+            />
+            <p id="modalInfo"></p>
+            <div id="tomatoScore">
+              <img
+                src="/capstone/images/tomato.png"
+                width="15px"
+                height="auto"
+              />
+              <p id="tomato">Rotten Tomatoes: <span id="score"></span></p>
+            </div>
+          </div>
+          <div id="modalInfo">
+            <iframe
+              src="#"
+              frameborder="0"
+              width="560"
+              height="315"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              id="trailer"
+            ></iframe>
+            <h2 id="synopsis">Synopsis:</h2>
+            <p id="videoDescription"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="bio">
+      <figure>
+        <img
+          src="/capstone/images/miyazaki.jpg"
+          alt="Picture of Hayao Miyazaki"
+          id="bioPic"
+        />
+        <figcaption>Hayao Miyazaki</figcaption>
+      </figure>
+      <div id="bioText">
+        <h2>Studio Ghibli Co-Founder</h2>
+        <p>
+          Miyazaki's works are characterized by the recurrence of themes such as
+          humanity's relationship with nature and technology, the wholesomeness
+          of natural and traditional patterns of living, the importance of art
+          and craftsmanship, and the difficulty of maintaining a pacifist ethic
+          in a violent world. The protagonists of his films are often strong
+          girls or young women, and several of his films present morally
+          ambiguous antagonists with redeeming qualities. Miyazaki's works have
+          been highly praised and awarded; he was named a Person of Cultural
+          Merit for outstanding cultural contributions in November 2012, and
+          received the Academy Honorary Award for his impact on animation and
+          cinema in November 2014. Miyazaki has frequently been cited as an
+          inspiration for numerous animators, directors, and writers. (<a href="https://en.wikipedia.org/wiki/Hayao_Miyazaki#Studio_Ghibli" target="_blank">wikipedia</a>)
+        </p>
+      </div>
+    </div>
+
+    <div id="mainDiv"></div>
+  </body>
+  <script type="module" src="/capstone/js/index.js"></script>
+</html>

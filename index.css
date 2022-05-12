@@ -5,12 +5,13 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
   font-size: 16px;
+  letter-spacing: .15rem;
 }
 a {
   text-decoration: none;
 }
 
-@media only screen and (min-width:801px) {
+@media only screen and (min-width: 801px) {
   * {
     font-size: 100%;
   }
@@ -19,14 +20,14 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #1E1E1E;
-    font-size:1.5rem;
+    background-color: #1e1e1e;
+    font-size: 1.5rem;
     height: 10vh;
     color: white;
   }
 
   #projects {
-    background-color: #0A1C3F;
+    background-color: #0a1c3f;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -52,7 +53,7 @@ a {
   #contact-pitch {
     display: flex;
     flex-direction: column;
-    height: 45vh;
+    height: 50vh;
     padding: 2rem 0 0 0;
     text-align: center;
     justify-items: center;
@@ -70,21 +71,28 @@ a {
   }
 
   #contact h2 {
-    font-size: 4rem;
+    font-size: 2rem;
     padding-bottom: 1rem;
   }
-  
+
   #contact p {
-    font-size: 1.75rem;
+    font-size: 1rem;
     font-style: italic;
   }
 
   #navbar {
-    background: linear-gradient(45deg, #746e6e 10rem, #F031AA 10rem);
+    background: linear-gradient(45deg, #746e6e 10rem, #f031aa 10rem);
+  }
+
+  #comp {
+    background-color: #360093;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
   }
 }
 
-@media only screen and (max-width:800px) {
+@media only screen and (max-width: 800px) {
   * {
     font-size: 60%;
   }
@@ -93,14 +101,14 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #1E1E1E;
+    background-color: #1e1e1e;
     height: 10vh;
     font-size: 1.5rem;
     color: white;
   }
 
   #projects {
-    background-color: #0A1C3F;
+    background-color: #0a1c3f;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -149,7 +157,7 @@ a {
     font-size: 4rem;
     padding: 2rem;
   }
-  
+
   #contact p {
     font-size: 1.5rem;
     font-style: italic;
@@ -157,7 +165,15 @@ a {
   }
 
   #navbar {
-    background: linear-gradient(90deg, #746e6e 7rem, #F031AA 7rem);
+    background: linear-gradient(90deg, #746e6e 7rem, #f031aa 7rem);
+  }
+
+  #comp {
+    background-color: #360093;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
   }
 }
 
@@ -175,6 +191,7 @@ p {
   align-items: center;
   width: 100vw;
   position: fixed;
+  z-index: 1000;
 }
 
 #navbar img {
@@ -197,11 +214,11 @@ p {
   font-size: xx-large;
 }
 .nav-list a:hover {
-  background-color:#582172;
+  background-color: #582172;
 }
 
 #welcome-section {
-  background-color: #4715A3;
+  background-color: #4715a3;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -235,25 +252,135 @@ p {
   max-width: 20rem;
 }
 
-.project-tile figcaption{
+.project-tile figcaption {
   text-align: center;
-  background: #F1D556;
-  color: #0A1C3F;
-  padding: .5rem;
+  background: #f1d556;
+  color: #0a1c3f;
+  padding: 0.5rem;
 }
 
 figure figcaption {
   font-size: 1.25rem;
 }
 
+#contact h2 {
+  margin-top: 2rem;
+}
+
+#contact p {
+  margin-bottom: 2rem;
+}
+
+#comp h2 {
+  font-size: 4rem;
+}
+
+#comp p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+/* CSS styling for fancy button */
+
+.btn {
+  position: relative;
+  color: white;
+  width: 256px;
+  height: 64px;
+  line-height: 64px;
+  font-size: 1.25rem;
+  font-weight: bolder;
+  transition: all 0.3s;
+  
+}
+
+.btn::before,
+.btn::after {
+  content: "";
+  position: absolute;
+  transition: all 0.3s;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.col {
+  height: 100%;
+}
+
+div[class*="container"] {
+  text-align: center;
+  width: 100%;
+  height: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-two::before,
+.btn-two::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  transition: all 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.btn-two:hover::after {
+  animation-name: rotatecw;
+  animation-duration: 2s;
+}
+.btn-two:hover::before {
+  animation-name: rotateccw;
+  animation-duration: 3s;
+}
+.btn-two:hover::after,
+.btn-two:hover::before {
+  left: 96px;
+  width: 64px;
+
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes rotatecw {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateccw {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+/* End of Button */
+
+#compImage {
+  width: auto;
+  max-height: 70vh;
+  margin-bottom: 1rem;
+  position: relative;
+  top: -2rem;
+}
 
 #contact-links a > i {
-  padding-right: .5rem;
+  padding-right: 0.5rem;
 }
 
 #contact-links a:hover {
   transform: translateY(-6px);
 }
-
-
-

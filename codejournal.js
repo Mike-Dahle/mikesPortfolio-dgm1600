@@ -41,6 +41,15 @@ function myFunction() {
 element => console.log(element) // implicit return when only one line for the function
 
 element => {
-    let foo = 
+    let foo = ""
     return console.log(element) // explicit return for an arrow function. becuase of multiple lines
+}
+
+switch (key) {
+    case value:
+        
+        break;
+
+    default:
+        break;
 }
