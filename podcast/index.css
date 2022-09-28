@@ -12,6 +12,11 @@
     flex-direction: column;
   }
 
+  h2 {
+    font-size: 2rem;
+    align-self: center;
+  }
+
   header {
     display: flex;
     flex-direction: column;
@@ -44,6 +49,17 @@
 
   #intro img:hover {
     box-shadow: 0px 0px 8px .5px gold;
+  }
+
+  #production {
+    margin: 1rem 2vw;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #production img {
+    width: 30vw;
+    height: auto;
   }
 
   #soundcloud {
