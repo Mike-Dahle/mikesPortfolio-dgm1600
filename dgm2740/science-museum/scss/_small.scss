@@ -14,6 +14,7 @@ body {
 
 
 /* HEADER  */
+#headerWrapper {background-color: lighten($colorHeader, 60%);}
 header {
     display: flex;
     align-items: flex-end;
@@ -28,7 +29,7 @@ header {
         font-weight: $lightWeight;
         color: $primaryColor;
     }
-    h2 {color: $textColor;}
+    h2 {color: $textColor; display: none;}
 } // end header
 
 /* NAVIGATION STUFF GOES HERE  */
