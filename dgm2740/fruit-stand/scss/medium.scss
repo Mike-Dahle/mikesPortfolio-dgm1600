@@ -1,0 +1,20 @@
+/* NAVIGATION STUFF GOES HERE  */
+
+nav {
+    ul {
+        display: flex;
+        justify-content: space-evenly; 
+    }
+    ul li a {
+        border: none;
+    }
+}
+
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+    
+    figure {
+        width: 32%;
+    }
+}

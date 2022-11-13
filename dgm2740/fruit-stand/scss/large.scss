@@ -1,0 +1,24 @@
+header, nav, main, footer {
+    max-width: 1140px;
+    margin: auto;
+}
+
+/* NAVIGATION STUFF GOES HERE  */
+
+nav {
+    ul {
+        display: flex;
+        justify-content: flex-start; 
+    }
+    ul li a {
+        border: none;
+        padding: .7rem 2rem;
+        font-size: .8rem;
+    }
+}
+
+#gallery {
+    figure {
+        width: 24%;
+    }
+}
