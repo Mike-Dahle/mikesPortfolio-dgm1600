@@ -128,16 +128,16 @@ padding: 1rem 2vw;
         a {
             display: block;
             text-decoration: none;
-            background-color: darken($primaryColor, 20%);
+            background-color: darken($primaryColor, 22.5%);
             color: white;
             padding: 1rem 0;
             margin: 1rem 4%;
             border-radius: $cbr;
         }
         a:hover {
-            background-color: darken(#ffb01e, 15%);
+            background-color: darken(#ffb01e, 17.5%);
         }
-    }
+    } 
 
 }
 
