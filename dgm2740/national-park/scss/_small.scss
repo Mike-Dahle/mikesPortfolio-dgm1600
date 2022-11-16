@@ -112,7 +112,7 @@ padding: 1rem 2vw;
         margin: 1rem 1%;
         text-align: center;
         section {
-            background-color: darken($secondaryColor, 10%);
+            background-color: darken($secondaryColor, 20%);
             color: #fff;
             padding: 1rem 0;
             border-top-left-radius: $cbr - 1;
@@ -128,14 +128,14 @@ padding: 1rem 2vw;
         a {
             display: block;
             text-decoration: none;
-            background-color: #ffb01e;
+            background-color: darken($primaryColor, 20%);
             color: white;
             padding: 1rem 0;
             margin: 1rem 4%;
             border-radius: $cbr;
         }
         a:hover {
-            background-color: darken(#ffb01e, 10%);
+            background-color: darken(#ffb01e, 15%);
         }
     }
 
