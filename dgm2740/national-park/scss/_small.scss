@@ -40,7 +40,7 @@ header {
 
 /* NAVIGATION STUFF GOES HERE  */
 
-#navWrapper {background-color: lighten($colorHeader, 10%);}
+#navWrapper {background-color: darken($colorHeader, 15%);}
 nav {
     button {
         padding: .5rem;
@@ -71,7 +71,7 @@ nav {
     }
 
     ul li a:hover {
-        background-color: darken($colorHeader, 2.5%);
+        background-color: darken($colorHeader, 6.5%);
         color: white;
     }
 
@@ -112,7 +112,7 @@ padding: 1rem 2vw;
         margin: 1rem 1%;
         text-align: center;
         section {
-            background-color: $secondaryColor;
+            background-color: darken($secondaryColor, 10%);
             color: #fff;
             padding: 1rem 0;
             border-top-left-radius: $cbr - 1;
@@ -143,7 +143,7 @@ padding: 1rem 2vw;
 
 
 /* FOOTER  */
-#footerWrapper {background-color: $colorHeader; }
+#footerWrapper {background-color: darken($colorHeader, 15%);}
 footer {
     font-size: .85rem;
 	padding: 1rem 0;
