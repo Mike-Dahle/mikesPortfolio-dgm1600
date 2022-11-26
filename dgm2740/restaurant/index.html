@@ -90,17 +90,20 @@
         <h2>Our Founder</h2>
 
         <div>
-          <figure>
-            <img
-              src="/dgm2740/restaurant/images/founder300.jpeg"
-              alt="restaurant-founder"
-              class="founder"
-              srcset="
-                /dgm2740/restaurant/images/founder450.jpeg  900x,
-                /dgm2740/restaurant/images/founder600.jpeg 1200x
-              "
+          <picture class="founder">
+            <source
+              media="(max-width: 600px)"
+              srcset="/dgm2740/restaurant/images/founder300.jpeg"
             />
-          </figure>
+            <source
+              media="(max-width: 900px)"
+              srcset="/dgm2740/restaurant/images/founder450.jpeg"
+            />
+            <img
+              src="/dgm2740/restaurant/images/founder600.jpeg"
+              alt="restaurant-founder"
+            />
+          </picture>
           <p>
             Nec, vut eu mid dictumst enim rhoncus non ac enim scelerisque amet
             dictumst porttitor, ultricies nisi pulvinar, dolor diam amet! Augue,
