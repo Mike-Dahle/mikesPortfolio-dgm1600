@@ -7,7 +7,7 @@
 
 /*----------- HEADER --------------*/
 
-div.nav ul.open {width: 50%;}
+div.nav ul.open {width: 250px;}
 
 main{
     #bandMembers{
@@ -16,7 +16,7 @@ main{
         flex-wrap: wrap;
         
     }
-    #memberCard {
+    .memberCard {
         h2 {font-size: 1.25rem;}
         p {font-weight: 300;}
         width: 49%;
