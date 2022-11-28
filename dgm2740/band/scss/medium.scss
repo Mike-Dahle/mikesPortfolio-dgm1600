@@ -1,0 +1,35 @@
+
+
+
+/*----------- BODY --------------*/
+
+
+
+/*----------- HEADER --------------*/
+
+div.nav ul.open {width: 50%;}
+
+main{
+    #bandMembers{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        
+    }
+    #memberCard {
+        h2 {font-size: 1.25rem;}
+        p {font-weight: 300;}
+        width: 49%;
+        padding: 1rem;
+        margin: .5%;
+    }
+}
+
+
+
+
+
+
+
+/*----------- FOOTER --------------*/
+    

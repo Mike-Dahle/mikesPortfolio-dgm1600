@@ -1,0 +1,186 @@
+@import "variables";
+
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+/*  apply a natural box layout model to all elements  */
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/*----------- BODY --------------*/
+body {
+    font-family: $defaultFont;
+    font-size: 16px;
+    font-weight: $lightWeight;
+    min-width: 320px;
+}
+
+
+/*----------- HEADER --------------*/
+header {
+    display: flex;
+    justify-content: space-between;
+    .leftHeader {display: flex;}
+    img {
+        margin-right: .5rem;
+    }
+    padding: 1rem 0 .5rem 2vw;
+    background-color: darken($primaryColor, 10%);
+}
+header h1 {margin: 0; font-size: 2rem; color: $textColor2;}
+header h2 {margin: 0; font-weight: $lightWeight; font-size: 1rem; color: $textColor2;}
+
+/*----------- NAVIGATION --------------*/
+div.nav {
+
+    button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: .5rem 2vw .5rem 2vw;
+        background: transparent;
+        border: none;
+        font-size: 1.5rem;
+        color: rgba($color: #fff, $alpha: 0.9);
+    }
+
+    button span:nth-child(1) {display: block;}
+    button span:nth-child(2) {display: none;}
+
+    button.open span:nth-child(1) {display: none;}
+    button.open span:nth-child(2) {display: block;}
+
+    ul {
+        z-index: 1;
+        position: absolute;
+        right: 0;
+        top: 2rem;
+        display: none;
+        width: 100%;
+    }
+
+    ul.open {
+        display: block;
+        width: 100%;
+        padding: 0;
+    }
+
+    ul li {
+        border-bottom: solid 1px rgba($color: #fff, $alpha: 0.3);
+        list-style: none;
+        padding: 0;
+        background-color: darken($primaryColor, 10%);
+
+        a {
+            color: rgba($color: #fff, $alpha: .9);
+            text-decoration: none;
+            display: block;
+            padding: 1rem 2vw;
+            text-align: right;
+            font-weight: $lightWeight;
+        }
+
+        a:hover {
+            background-color: lighten($primaryColor, 5%);
+            color: $textColor2;
+            text-decoration: underline;
+        }
+    }
+
+    ul li.active a {
+        background-color: $primaryColor;
+        color: $textColor2;
+    }
+
+}
+
+/*----------- MAIN --------------*/
+main {
+    padding: 0 2%;
+    min-height: 10rem;
+    #pageTitle {color: lighten($primaryColor, 5%);}
+    #bandMembers{
+        display: flex;
+        flex-direction: column;
+    }
+    #memberCard {
+        h2 {font-size: 1.25rem;}
+        p {font-weight: 300;}
+        width: 99%;
+        padding: .5%;
+        margin: .5%;
+    }
+    figure {
+        width: 80%;
+    }
+    figure.triangle img {
+        margin: .5rem;
+        width: 100%;
+        height: auto;
+        float: right;
+        clip-path: polygon(0 0, 100% 0, 100% 100%);
+        shape-outside: polygon(0 0, 100% 0, 100% 100%);
+    }
+    figure.leftChev img {
+        margin: .5rem;
+        width: 80%;
+        height: auto;
+        float: right;
+        clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+        shape-outside: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+    }
+    figure.rightChev img {
+        margin: .5rem;
+        width: 80%;
+        height: auto;
+        float: right;
+        clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+        shape-outside: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+    }
+    figure.circle img {
+        margin: .5rem;
+        width: 80%;
+        height: auto;
+        float: right;
+        clip-path: circle(50% at 50% 50%);
+        shape-outside: circle(50% at 50% 50%);
+    }
+}
+section.theGallery {display: flex; flex-direction: column; align-items: center;}
+section.theGallery figure {
+    width: 100%;
+    height: 0;
+    padding-bottom: 60%;
+    /* 👆 image height / width * 100% */
+    position: relative;
+  }
+section.theGallery figure img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+  }
+
+
+/*----------- FOOTER --------------*/
+footer {
+    background-color: $primaryColor;
+    color: $textColor2;
+    padding: .5rem 2%;
+    text-align: center;
+    a {color: $textColor2;}
+}
+
+
+
+/*----- Clearfix: Force an Element not to collapse -----*/
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
