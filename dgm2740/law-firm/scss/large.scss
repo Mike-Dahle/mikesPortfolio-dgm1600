@@ -1,0 +1,40 @@
+header, nav, main, footer {
+    max-width: 64rem;
+    margin:auto;
+    .phoneNumber {display: block;}
+}
+
+nav {
+    background-color: rgba($color: darken($primaryBlue, 10%), $alpha: .25);
+    button {
+            display: none;
+    }
+
+    ul,
+    ul.open {
+            position: static;
+            display: flex;
+            justify-content: right;
+            align-items: flex-end;
+            border: none;
+
+
+    }
+
+    ul li {
+            border: none;
+    }
+
+    ul li a {
+            border: none;
+            padding: .7rem 2rem;
+            font-size: .8rem;
+    }
+}
+
+/* Columns */
+
+@for $i from 0 to 12 {
+    $w: ($i / 12) * 100%;
+    .large-#{$i} {flex-basis: $w;}
+}
