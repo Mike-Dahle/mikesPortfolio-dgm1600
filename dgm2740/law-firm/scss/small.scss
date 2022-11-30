@@ -180,7 +180,7 @@ div.small-hide {display: none;}
   color: #fff;
   
 
-  #card {
+  .card {
     background-color: $accent;
     a {color: #fff; text-decoration: none;}
     a:hover {color: lighten($primaryBlue, 30%);}
@@ -224,7 +224,7 @@ div.small-hide {display: none;}
   }
 }
 
-#card {
+.card {
   margin-bottom: 1rem;
   background-color: darken($color: $headerColor, $amount: 10%);
   border: 1px solid $headerColor;
@@ -234,8 +234,8 @@ div.small-hide {display: none;}
   h2, p, a {padding: 0 .5rem;}
 }
 
-div#card .blogLink {text-align: center; padding: .5rem 0; background-color: $primaryBlue; a:hover{color: lighten($headerColor, 60%);}}
-div#card .faqLink {background-color: $headerColor; padding: .5rem;}
+div.card .blogLink {text-align: center; padding: .5rem 0; background-color: $primaryBlue; a:hover{color: lighten($headerColor, 60%);}}
+div.card .faqLink {background-color: $headerColor; padding: .5rem;}
 
 /*----------- FOOTER --------------*/
 
