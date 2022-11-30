@@ -1,8 +1,8 @@
-header, nav, main, footer {
+header, nav, main, footer, .socials {
     max-width: 64rem;
-    margin:auto;
-    .phoneNumber {display: block;}
+    margin:auto; 
 }
+
 
 nav {
     background-color: rgba($color: darken($primaryBlue, 10%), $alpha: .25);
