@@ -1,0 +1,30 @@
+header, nav, main, footer {
+    max-width: 80rem;
+    margin:auto; 
+}
+header img {margin: 0 2vw;}
+
+main section.container {
+    display: grid;
+    figure {margin: 0;}
+    gap: 1rem;
+    img {width: 100%; height: auto; margin: 0;} 
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    grid-template-rows: auto;
+    .mainStory {grid-row: 1/ span 2; grid-column: 1/ span 3;}
+    .newsA {grid-row: 1; grid-column: 4;}
+    .newsB {grid-row: 2; grid-column: 4;}
+    .newsC {grid-row: 3; grid-column: 1;}
+    .newsD {grid-row: 3; grid-column: 2;}
+    .newsE {grid-row: 3; grid-column: 3;}
+    .newsF {grid-row: 3; grid-column: 4;}
+}
+
+footer.footer {
+    max-width: 64rem;
+    display: grid;
+    
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    div {display: flex; flex-direction: column; align-items: flex-start; justify-self: center}
+    .bottom {display: flex; flex-direction: row; grid-row: 2; grid-column: 1/ span 4;}
+}
