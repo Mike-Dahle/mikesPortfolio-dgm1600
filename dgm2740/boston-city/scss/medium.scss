@@ -1,0 +1,16 @@
+main section.cardGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    align-self: center;
+    justify-self: center;
+    .card {
+        width: 46vw;
+        height: 15rem;
+    }
+    .a {grid-row: 1; grid-column: 1;}
+    .b {grid-row: 1; grid-column: 2;}
+    .c {grid-row: 2; grid-column: 1;}
+    .d {grid-row: 2; grid-column: 2;}
+
+}

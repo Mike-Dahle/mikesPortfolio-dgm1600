@@ -1,8 +1,7 @@
-function toggleMenu() {
-    document.getElementById("primaryNav").classList.toggle("open")
-    document.getElementById("hamburgerBtn").classList.toggle("open")
-}
+const hb = document.querySelector('#hamburgerBtn')
+const pn = document.querySelector('#primaryNav')
 
-const x = document.getElementById("hamburgerBtn")
-
-x.onclick = toggleMenu
+hb.addEventListener('click', ()=>{
+    hb.classList.toggle('open');
+    pn.classList.toggle('open');
+})

@@ -1,0 +1,15 @@
+header, nav, main, footer {
+    max-width: 64rem;
+    margin: auto; 
+}
+
+main section.cardGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    .card {
+        width: 21%;
+        height: 15rem;
+    }
+
+}

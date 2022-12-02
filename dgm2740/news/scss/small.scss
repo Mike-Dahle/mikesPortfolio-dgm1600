@@ -31,31 +31,37 @@ html {
     background-color: $primaryRed;
     margin-bottom: 1rem;
     button {
-      padding: 0.5rem 2vw 0.5rem 2vw;
-      background: transparent;
+      position: relative;
+      width: 44px;
+      height: 44px;
+      background: none;
       border: none;
-      font-size: 1.5rem;
-      color: rgba($color: #fff, $alpha: 0.9);
+      //color: rgba($color: #fff, $alpha: 0.9);
+      .line {
+        position: absolute;
+        height: 2px;
+        width: 60%;
+        left: 20%;
+        background-color: #fff;
+        transition: all .3s ease;
+      }
+      .top {top: 29%;}
+      .middle {top: 48%;}
+      .bottom {top: 67%;}
     }
   
-    button span:nth-child(1) {
-      display: block;
-    }
-  
-    button span:nth-child(2) {
-      display: none;
-    }
-  
-    button.open span:nth-child(1) {
-      display: none;
-    }
-  
-    button.open span:nth-child(2) {
-      display: block;
+    #hamburgerBtn.open {
+      .top {
+        transform: rotate(45deg);
+        top: 48%;
+      }
+      .middle, .bottom {
+        transform: rotate(-45deg);
+        top: 48%;
+      }
     }
   
     ul {
-      z-index: 1;
       display: none;
       width: 100%;
     }

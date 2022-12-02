@@ -1,0 +1,54 @@
+@import "variables";
+
+/*--Material Icons Styling--*/
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 300,
+  'GRAD' 200,
+  'opsz' 48
+}
+
+/*----------- MAIN --------------*/
+
+main section.cardGrid {
+    padding: 0 2vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    .card {
+        margin-bottom: 1rem;
+        padding: 1rem 0;
+        border: 1px solid black;
+        background-color: rgb(56, 56, 56);
+        width: 96vw;
+        height: 15rem;
+        text-align: center;
+        color: #fff;
+        h2{font-size: 1rem;}
+        span{font-size: 3rem;}
+    }
+
+}
+
+
+/*----------- FOOTER --------------*/
+
+footer {
+    background-color: black;
+    color: #fff;
+    padding: 0.5rem 2%;
+    text-align: center;
+  
+    a {
+      color: #fff;
+    }
+  }
+  
+  /*----- Clearfix: Force an Element not to collapse -----*/
+  .clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
