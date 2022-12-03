@@ -1,3 +1,67 @@
+nav button {display: none;}
+
+nav {
+    background: $menuColor;
+    
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        margin-left: 2%;
+        border-left: 1px solid rgba($color: #000000, $alpha: .1);
+    }
+
+    ul li {
+        border: none;
+        border-right: 1px solid rgba($color: #000000, $alpha: .1);
+    }
+
+    ul li a {
+            display: block;
+            border: none;
+            padding: .7rem 2rem;
+            font-size: .8rem;
+            color: rgba($color: $gold, $alpha: .9);
+            text-decoration: none;
+            background-color: rgba($color: #fff, $alpha: .0);
+            transition: background 0.3s linear;
+    }
+
+    ul li a:hover {background: rgba($color: #000000, $alpha: .5); color: $gold;}
+
+    #primaryNav li.parent > a:after {
+        content: "\25BC";
+        font-size: .65rem;
+        color: rgba(255, 255, 255, 0.5);
+        float: left;
+    }
+    ul li ul {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        background-color: darken(rgba(85, 85, 85, 0.75), 5%);
+        border: none;
+        position: absolute;
+        width: 14rem;
+        left: -999rem;
+        z-index: 99;
+        
+    }
+    ul li ul li {
+        align-content: flex-start;
+        border: none;
+        border-top: solid 1px rgba($color: #000000, $alpha: .2);
+    }
+    ul li:hover ul {
+        left: auto;
+        margin-left: 0;
+    }
+    li.active a {background-color: darken($blue, 10%); color: #fff;}
+    
+
+}
+
 main section.cardGrid {
     display: grid;
     grid-template-columns: 1fr 1fr;

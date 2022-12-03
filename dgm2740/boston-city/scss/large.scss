@@ -3,13 +3,18 @@ header, nav, main, footer {
     margin: auto; 
 }
 
+
 main section.cardGrid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
     .card {
-        width: 21%;
+        width: 21vw;
         height: 15rem;
+        max-width: 215.04px;
     }
-
+    .a {grid-row: 1; grid-column: 1;}
+    .b {grid-row: 1; grid-column: 2;}
+    .c {grid-row: 1; grid-column: 3;}
+    .d {grid-row: 1; grid-column: 4;}
 }
