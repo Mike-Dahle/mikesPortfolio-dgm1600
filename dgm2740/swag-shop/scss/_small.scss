@@ -1,0 +1,185 @@
+@import "variables";
+
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+
+/*----------- apply a natural box layout model to all elements --------------*/
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+
+/*----------- BODY --------------*/
+body {
+    font-size: 16px;
+    font-family: $font;
+}
+#pageWrapper {
+    position: relative;
+    overflow-x: hidden;
+}
+.moveOver > .content{
+    transform: translateX(-200px);
+}
+.content {transition: transform 500ms ease;}
+
+
+/*----------- HEADER --------------*/
+header {
+    display: grid;
+    grid-template-columns: 136px auto 48px;
+    padding: .5rem 2%;
+    background-color: darken($header, 20%);
+    align-items: center;
+    button {
+        width: 48px;
+        height: 48px;
+        margin: 0;
+        align-self: start;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        text-align: right;
+        color: #fff;
+    }
+}
+header h1 {margin: 0; margin-left: 1rem; font-size: 2.5rem; color: #fff;}
+
+/*----------- NAVIGATION --------------*/
+nav {
+    background-color: #ff5db3;
+    width: 200px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateX(100%);
+    div {
+        display: block;
+        text-align: center;
+        padding: 1.5rem;
+        font-size: 1.1rem;
+        background-color: #ea007e;
+        color: #000;
+        text-shadow: .5px .5px 2px white;
+    }
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    ul li a {
+        display: block;
+        color: #000;
+        margin: 0;
+        text-shadow: .5px .5px 2px white;
+        border-bottom: 1px solid rgba($color: #000000, $alpha: 1.0);
+        padding: .9rem .5rem;
+        text-decoration: none;
+        text-align: right;
+    }
+    
+    ul li a:hover {
+        background-color: darken($header, 10%);
+        color: #fff;
+        text-shadow: none;
+    }
+    ul li.active a {
+        background-color: darken($pink, 15%);
+        color: #fff;
+        text-shadow: none;
+    }
+    input.submitBtn:hover {background-color: lighten($pink, 10%);}
+}
+
+/*----------- MAIN --------------*/
+main {
+    padding: 0 2%;
+    min-height: 20rem;
+    h1 {color: $pink;}
+}
+
+/*----------- FORM --------------*/
+
+form fieldset {
+    margin: 2rem 0;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: .5rem 2%;
+}
+
+form legend {
+    color: darken($pink, 15%);
+    margin: 0 1rem;
+    padding: 0 .5rem;
+}
+
+form label.top, form div {
+    display: block;
+    padding-top: 1rem;
+    color: #030c19;
+    font-size: .8rem;
+}
+
+form label.top input, form label.top select {
+    -webkit-appearance: none;
+    display: block;
+    font-size: 1rem;
+    border: solid 1px #999;
+    padding: .75rem;
+    color: #555;
+    width: 100%;
+    max-width: 20rem;
+    background-color: rgba($color: #000000, $alpha: .1);
+}
+
+form label.top input {border-radius: 10rem;}
+
+form label.sbs {
+    input {margin-right: 4px;}
+    display: block;
+    padding: .75rem 0;
+    color: #555;
+}
+
+form input.submitBtn {
+    border: none;
+    background-color: $pink;
+    color: #fff;
+    border-radius: 2rem;
+    padding: .75rem 1.5rem;
+    margin: 0 0 2rem 2%;
+    width: 96%;
+    max-width: 20rem ;
+}
+
+form label.top input:required {
+    border-left: red solid 6px;
+}
+
+form label.top input:required:valid {
+    border-left: green solid 6px;
+}
+
+
+/*----------- FOOTER --------------*/
+footer {
+    background-color: darken($header, 20%);
+    color: #fff;
+    padding: .5rem 2%;
+    text-align: center;
+    a {
+        color: #fff;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+
+
+/*----- Clearfix: Force an Element not to collapse -----*/
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}

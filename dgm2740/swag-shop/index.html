@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Swag Shop Assignment for DGM2740">
+<meta name="author" content="Mike Dahle">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+
+<!-- This start file was build by Paul Cheney  -->
+<title>Swag Shop</title>
+
+<!-- TELLS PHONES NOT TO LIE ABOUT THEIR WIDTH & stops the font from enlarging when a phone is turned sideways-->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+
+<!-- STYLE SHEETS -->
+<link href="css/styles.css" rel="stylesheet">
+
+
+
+     
+</head>
+<body> 
+    <div id="pageWrapper">
+        <div class="content">
+        <!-- HEADER HERE -->
+            <header>
+                <img src="images/logo1x.png" alt="swag-shop-logo" width="136" height="100" srcset="
+                    images/logo1x.png 1x,
+                    images/logo2x.png 2x,
+                    images/logo3x.png 3x
+                    " class="logo" />
+                <h1>Swag Shop</h1>
+                <button id="hamburgerBtn">&#9776;</button>
+            </header>
+            
+            
+        <!-- NAVIGATION HERE -->
+            <nav class="clearfix">
+                <div>Order</div>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Deals</a></li>
+                    <li class="active"><a href="#">Order</a></li>
+                    <li><a href="#">Customer Reviews</a></li>   
+                </ul>
+            </nav>
+            
+            
+        <!-- CONTENT HERE -->
+            <main>
+                <h1>Order</h1>
+                <form method="get" action="thanks.html">
+                    <fieldset>
+                        <legend>Customer Information</legend>
+                        <label class="top">First Name* <input type="text" name="fname" required></label>
+                        <label class="top">Last Name* <input type="text" name="lname" required></label>
+                        <label class="top">Email* <input type="text" name="email" placeholder="johndoe@gmail.com" required></label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Swag Information</legend>
+                        <label class="top">Date Needed <input type="date" name="dateNeeded"></label>
+                        <label class="top">Business Name <input type="text" name="business"></label>
+                        <label class="top">Business URL <input type="url" name="url" placeholder="https://example.com"></label>
+                        <label class="top">Color
+                            <select name="color">
+                                <option value="">Please Select &#9662;</option>
+                                <option value="blue">Blue</option>
+                                <option value="green">Green</option>
+                                <option value="indigo">Indigo</option>
+                                <option value="orange">Orange</option>
+                                <option value="red">Red</option>
+                                <option value="violet">Violet</option>
+                                <option value="yellow">Yellow</option>
+                            </select>
+                        </label>
+                        <label class="top">Quantity <input type="number" name="quantity"></label>
+                        <label class="sbs"><input type="radio" name="material" value="aluminum">Aluminum</label>
+                        <label class="sbs"><input type="radio" name="material" value="plastic">Plastic</label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Payment Information</legend>
+                        <label class="top">Name on Card*<input type="text" name="cardName" required></label>
+                        <label class="top">Card Number*<input type="number" name="cardNumber" required></label>
+                        <label class="top">Expiration Date*<input type="date" name="expiration" required></label>
+                    </fieldset>
+
+                    <input type="submit" value="Order My Swag" class="submitBtn">
+
+                </form>
+            </main>
+            
+        <!-- FOOTER HERE -->   
+            <footer>
+                &copy; 2022 &bull; Mike Dahle &bull; <a href="#">login</a>
+            </footer>
+        </div>
+    </div>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
