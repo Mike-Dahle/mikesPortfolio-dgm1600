@@ -20,7 +20,9 @@ div#pageWrapper {
 /*----------- BODY --------------*/
 body {
     font-size: 16px;
-    font-family: Verdana, sans-serif;
+    font-family: $font;
+    h1, h2, a {font-weight: $bold;}
+    p {font-weight: $regular;}
     line-height: 1.6;
 }
 
@@ -69,7 +71,7 @@ nav ul li a {
     color: $grey;
     padding: .5rem 0;
     text-decoration: none;
-    font-size: .9rem;
+    font-size: 1.25rem;
     text-align: center;
 }
 
