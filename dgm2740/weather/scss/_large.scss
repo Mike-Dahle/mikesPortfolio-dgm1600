@@ -1,0 +1,12 @@
+header, nav, main, footer {
+    max-width: 64rem;
+    margin:auto;
+}
+
+section#mainContent {
+    display: grid;
+    flex-basis: 20%;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+}
