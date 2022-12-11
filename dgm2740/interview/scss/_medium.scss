@@ -46,7 +46,6 @@ nav {
         grid-template-columns: 1fr 1fr 1fr 1fr;
         padding: 1rem 2%;
         color: white;
-        h1 {color: $goldText;}
         h2{color: $goldText; font-size: 1.625rem; margin: 0;}
         
         div:nth-child(1) {
@@ -54,9 +53,9 @@ nav {
             p#qoute {font-style: italic; font-weight: $medium; font-size: .8125rem; margin: 0;}
         }
         div:nth-child(2) {
+            margin-top: 0;
             text-align: right; 
             grid-area: b; 
-            h1 {font-size: 2.25rem; margin: 0;}
             p {font-size: 1.25rem; margin: 0; margin-bottom: .5rem;}
             h2 {margin-bottom: .5rem;}
         }
@@ -71,12 +70,6 @@ main {
     padding: 0 2vw;
     .heroImage {width: 100%; height: auto; margin: 0; margin-bottom: 1rem; padding: 0;}
     .moreSection {
-        h1 {
-            font-size: 2rem;
-            font-weight: $medium;
-            color: $headertext;
-            margin-bottom: -1rem;
-        }
         h2 {
             font-size: 1.625rem;
             font-weight: $medium;
@@ -84,17 +77,25 @@ main {
         }
     }
     .aboutOne {
+        div:nth-child(1) {grid-area: first;}
+        div:nth-child(2) {grid-area: second;}
+        div:nth-child(3) {grid-area: third;}
+        div:nth-child(4) {grid-area: fourth;}
         background: radial-gradient(ellipse at top, #eeeeee, transparent),
         radial-gradient(ellipse at bottom, #fff, transparent);
         margin: 1rem 0;
         display: grid;
-        flex-basis: 23%;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        flex-basis: 48%;
+        grid-template-columns: 1fr 1fr;
         grid-template-rows: auto;
         gap: 1%;
         div:nth-child(4) {
             margin-bottom: 0rem;
         }
+        grid-template-areas: 
+        "first second"
+        "third fourth"
+        ;
     }
 
     .aboutTwo {
@@ -147,13 +148,24 @@ main {
 /*----------- footer --------------*/
 
 .sponsors {
+    #sponsor1 {grid-area: one;}
+    #sponsor2 {grid-area: two;}
+    #sponsor3 {grid-area: three;}
+    #sponsor4 {grid-area: four;}
+    #sponsor5 {grid-area: five;}
+    #sponsor6 {grid-area: six;}
     padding: 1rem 0;
-    display: flex;
-    flex-direction: row;
-    flex-basis: 16.6%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
     img {width: auto;}
-    justify-content: space-evenly;
+    justify-items: center;
     align-items: center;
+    grid-template-areas: 
+    "one two"
+    "three four"
+    "five six"
+    ;
 }
 
 .footerWrap {

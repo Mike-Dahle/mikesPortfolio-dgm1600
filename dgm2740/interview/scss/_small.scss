@@ -101,7 +101,6 @@ nav {
         grid-template-columns: 1fr;
         padding: 1rem 2%;
         color: white;
-        h1 {color: $goldText;}
         h2{color: $goldText; font-size: 1.625rem; margin: 0;}
         
         div:nth-child(1) {
@@ -112,7 +111,7 @@ nav {
             margin-top: 2rem;
             text-align: right; 
             grid-area: b; 
-            h1 {font-size: 2.25rem; margin: 0;}
+            h2#success {font-size: 2.25rem; margin: 0;}
             p {font-size: 1.25rem; margin: 0; margin-bottom: .5rem;}
             h2 {margin-bottom: .5rem;}
         }
@@ -128,11 +127,12 @@ main {
     padding: 0 2vw;
     .heroImage {width: 100%; height: auto; margin: 1rem 0; padding: 0;}
     .moreSection {
-        h1 {
+        h2#more {
             font-size: 2rem;
             font-weight: $medium;
             color: $headertext;
-            margin-bottom: 0;
+            margin-top: 2rem;
+            margin-bottom: -1rem;
         }
         h2 {
             font-size: 1.625rem;
@@ -221,7 +221,7 @@ main {
     padding: 1rem 0;
     display: flex;
     flex-direction: column;
-    img {margin-top: 2rem; width: 50%;}
+    img {margin-top: 2rem;}
     justify-content: space-evenly;
     align-items: center;
 }
