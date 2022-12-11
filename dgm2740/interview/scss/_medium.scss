@@ -1,0 +1,163 @@
+header {
+    #hamburgerBtn {display: none;}
+}
+
+nav {
+    background-color: white;
+    width: auto;
+    position: static;
+    transform: translateX(0);
+    width: auto;
+    ul {
+        margin-left: 2%;
+        display: flex;
+        justify-content: flex-end;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    ul li a {
+        border: none;
+        display: block;
+        color: $greyText;
+        padding: .5rem 1rem;
+        text-decoration: none;
+        font-size: 1.25rem;
+    }
+    
+    
+    ul li a:hover {
+        text-decoration: underline;
+        color: darken($greyText, 15%);
+    }
+}
+
+
+
+/*----------- Main --------------*/
+
+.bannerWrap {
+    box-sizing: border-box;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: black;
+    section {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        padding: 1rem 2%;
+        color: white;
+        h1 {color: $goldText;}
+        h2{color: $goldText; font-size: 1.625rem; margin: 0;}
+        
+        div:nth-child(1) {
+            grid-area: a;
+            p#qoute {font-style: italic; font-weight: $medium; font-size: .8125rem; margin: 0;}
+        }
+        div:nth-child(2) {
+            text-align: right; 
+            grid-area: b; 
+            h1 {font-size: 2.25rem; margin: 0;}
+            p {font-size: 1.25rem; margin: 0; margin-bottom: .5rem;}
+            h2 {margin-bottom: .5rem;}
+        }
+        grid-template-areas: 
+        "a a a b"
+        ;
+    }
+}
+
+
+main {
+    padding: 0 2vw;
+    .heroImage {width: 100%; height: auto; margin: 0; margin-bottom: 1rem; padding: 0;}
+    .moreSection {
+        h1 {
+            font-size: 2rem;
+            font-weight: $medium;
+            color: $headertext;
+            margin-bottom: -1rem;
+        }
+        h2 {
+            font-size: 1.625rem;
+            font-weight: $medium;
+            color: $headertext;
+        }
+    }
+    .aboutOne {
+        background: radial-gradient(ellipse at top, #eeeeee, transparent),
+        radial-gradient(ellipse at bottom, #fff, transparent);
+        margin: 1rem 0;
+        display: grid;
+        flex-basis: 23%;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        gap: 1%;
+        div:nth-child(4) {
+            margin-bottom: 0rem;
+        }
+    }
+
+    .aboutTwo {
+        background: radial-gradient(ellipse at top, #eeeeee, transparent),
+        radial-gradient(ellipse at bottom, #fff, transparent);
+        margin: 1rem 0;
+        display: grid;
+        flex-basis: 31%;
+        gap: 1%;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        #divA {grid-area: divA;}
+        #divB {grid-area: divB;}
+        figure {
+            position: relative;
+            margin: 0;
+            grid-area: fig;
+            img {width: 100%; height: auto; margin: 0;}
+            figcaption {
+                a {
+                    font-size: 1.375rem;
+                    font-weight: $medium;
+                    display: block;
+                    width: 100%;
+                    text-decoration: none;
+                    color: white;
+                    background-color: $headertext;
+                    padding: .5rem 2%;
+                    border-radius: 15px;
+                }
+                a:hover {
+                    background-color: darken($headertext, 15%);
+                }
+                p {
+                    font-size: .8125rem;
+                    font-weight: $medium;
+                    color: $greyText;
+                }
+            }
+        }
+        #divC {grid-area: divC;}
+        grid-template-areas: 
+        "divA divB fig"
+        "divC divC fig"
+        ;
+        
+    }
+}
+
+/*----------- footer --------------*/
+
+.sponsors {
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: row;
+    flex-basis: 16.6%;
+    img {width: auto;}
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.footerWrap {
+    width: 100vw;
+    background: linear-gradient(#0480b1, #013f63);
+    padding: 1rem 0;
+}
