@@ -61,7 +61,7 @@ main {
     display: grid;
     padding: 0 2vw;
 }
-div#colorUnderline {height: 1rem; margin-left: 2vw; margin-top: -1rem; width: 38vw; background-color: #ECB439;}
+div#colorUnderline {height: 1rem; margin-left: 2vw; margin-top: -1rem; width: 38vw; background-color: #EAD78B;}
 
 .header-two {margin-bottom: 1rem;}
 
@@ -72,44 +72,28 @@ div#colorUnderline {height: 1rem; margin-left: 2vw; margin-top: -1rem; width: 38
     img {margin: 0 auto;}
 }
 .images-one {
-    display: grid;
-    align-content: center;
-    justify-content: center;
-    position: relative;
-    background-color: $grayBackground;
+    margin: 4rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
     padding: 1rem 2vw;
-    p.caption {
-        background-color: #D0E2FF;
-        padding: 1rem;
-        position: absolute;
-        bottom: -2rem;
-        left: 2vw;
-    }
 }
-.section-two {
-    padding: 0 2vw;
+div.section-two {
+    background-color: #8F8CBB;
+    .header-two, p {color: white;}
+    padding: 2rem 2vw;
     margin-top: 4rem;
 }
 .images-two {
-    margin-top: 8rem;
-    display: grid;
-    align-content: center;
-    justify-content: center;
-    position: relative;
-    background-color: $grayBackground;
+    gap: 1rem;
+    margin-top: 4rem;
+    display: flex;
     padding: 1rem 2vw;
-    p.caption {
-        background-color: #D0E2FF;
-        padding: 1rem;
-        position: absolute;
-        bottom: -2rem;
-        left: 2vw;
-    }
 }
 
 .section-three {
     padding: 0 2vw;
-    margin: 6rem 0 4rem  0;
+    margin: 4rem 0;
 }
 
 
