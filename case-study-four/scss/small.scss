@@ -71,7 +71,7 @@ div#colorUnderline {height: 1rem; margin-left: 2vw; margin-top: -1rem; width: 38
     display: grid;
     img {margin: 0 auto;}
 }
-.timeline {width: 100%; height: auto;}
+div.timeline {width: 100%; padding: 0 2vw; img {height: auto; width: 100%;}}
 .section-two {
   background-color: rgba($color: #F1C21B, $alpha: .3);
     padding: 2rem 2vw;
@@ -83,7 +83,7 @@ div#colorUnderline {height: 1rem; margin-left: 2vw; margin-top: -1rem; width: 38
     margin: 6rem 0 4rem  0;
     #conclusion {display: flex; flex-basis: 50%; p {padding-right: 1rem;}}
 }
-#figma {margin-bottom: 2rem;}
+#figma {margin-bottom: 2rem; align-self: center;}
 
 
 #footer {

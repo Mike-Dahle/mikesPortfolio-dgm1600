@@ -234,7 +234,8 @@ p {
   font-size: 4rem;
 }
 
-#projects h1 {
+#projects h1, #studies h1 {
+  text-align: center;
   font-size: 4rem;
   padding: 2rem;
 }
