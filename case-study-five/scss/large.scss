@@ -11,7 +11,10 @@ nav, main, footer {
 
 }
 .section-one {grid-template-columns: 1fr 1fr;}
-.images-one {grid-template-columns: 1fr 1fr 1fr;}
+.images-one {
+    grid-template-columns: 1fr 1fr 1fr;
+    //.section-two {}
+}
 .images-two {
     grid-template-columns: 1fr 1fr;
     :nth-child(1) {position: absolute; top: -6rem; left: 2vw;}

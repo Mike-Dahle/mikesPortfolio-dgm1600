@@ -61,55 +61,48 @@ main {
     display: grid;
     padding: 0 2vw;
 }
-div#colorUnderline {height: 1rem; margin-left: 2vw; margin-top: -1rem; width: 38vw; background-color: #ECB439;}
+div#colorUnderline {height: 1rem; margin-left: 2vw; margin-top: -1rem; width: 38vw; background-color: #6929C4;}
 
 .header-two {margin-bottom: 1rem;}
 
 .section-one {
     padding: 0 2vw;
-    margin: 2rem 0;
+    margin: 2rem 0 6rem 0;
     display: grid;
     img {margin: 0 auto;}
 }
-.images-one {
-    display: grid;
+.images-one { 
     align-content: center;
     justify-content: center;
     position: relative;
-    background-color: $grayBackground;
+    background-color: rgba($color: #8D8D8D, $alpha: .32);
     padding: 1rem 2vw;
-    p.caption {
-        background-color: #D0E2FF;
-        padding: 1rem;
-        position: absolute;
-        bottom: -2rem;
-        left: 2vw;
+    .image-grid {
+      position: relative;
+      top: -3rem;
+      display: flex; 
+      gap: 1rem; 
+      align-items: center; 
+      figcaption {
+        text-align: center;
+        a {color: #0F62FE; text-decoration: none;}
+        a:hover {color: #0043CE; text-decoration: underline;}
+      }
     }
 }
 .section-two {
     padding: 0 2vw;
-    margin-top: 4rem;
 }
-.images-two {
-    margin-top: 8rem;
+.file-icons {
+    margin-top: 4rem;
     display: grid;
-    align-content: center;
     justify-content: center;
-    position: relative;
-    background-color: $grayBackground;
-    padding: 1rem 2vw;
-    p.caption {
-        background-color: #D0E2FF;
-        padding: 1rem;
-        position: absolute;
-        bottom: -2rem;
-        left: 2vw;
-    }
+    width: 100%;
 }
 
 .section-three {
     padding: 0 2vw;
-    margin: 6rem 0 4rem  0;
+    margin: 4rem 0
 }
 
 
