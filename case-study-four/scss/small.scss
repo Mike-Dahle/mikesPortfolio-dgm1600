@@ -1,0 +1,97 @@
+@import "variables";
+
+* {
+    margin: 0;
+    padding: 0;
+    color: rgb(20, 20, 20);
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-size: 16px;
+    font-family: $bodyText;
+    letter-spacing: .15rem;
+  }
+
+main {
+    min-height: 100vh;
+    h1, h2 {font-family: $headerText;}
+    h1 {font-size: 2.75rem;}
+    h2 {font-size: 2rem;}
+    p {line-height: 1.5rem;}
+}
+
+
+#navbar {
+    background-color: #262626;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    z-index: 1000;
+    a {
+        text-decoration: none;
+        color: white;
+      }
+    img {
+        width: 50px;
+        height: auto;
+        margin-left: 1rem;
+      }
+      .nav-list {
+        display: flex;
+        justify-content: flex-end;
+        list-style-type: none;
+        margin-right: 1rem;
+      }
+      
+      .nav-list a {
+        display: block;
+        text-decoration: none;
+        padding: 1rem;
+        font-size: xx-large;
+      }
+      .nav-list a:hover {
+        color: lighten(#582172, 40%);
+        text-decoration: underline;
+      }
+  }
+
+
+  
+#header {
+    display: grid;
+    padding: 0 2vw;
+}
+div#colorUnderline {height: 1rem; margin-left: 2vw; margin-top: -1rem; width: 38vw; background-color: #0E6027;}
+
+.header-two {margin-bottom: 1rem;}
+
+.section-one {
+    padding: 0 2vw;
+    margin: 2rem 0;
+    display: grid;
+    img {margin: 0 auto;}
+}
+.timeline {width: 100%; height: auto;}
+.section-two {
+  background-color: rgba($color: #F1C21B, $alpha: .3);
+    padding: 2rem 2vw;
+    margin-top: 4rem;
+}
+
+.section-three {
+    padding: 0 2vw;
+    margin: 6rem 0 4rem  0;
+    #conclusion {display: flex; flex-basis: 50%; p {padding-right: 1rem;}}
+}
+#figma {margin-bottom: 2rem;}
+
+
+#footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #161616;
+    font-size: 1.5rem;
+    height: 10vh;
+    color: white;
+  }

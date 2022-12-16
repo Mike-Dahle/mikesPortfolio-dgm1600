@@ -1,0 +1,125 @@
+@import "variables";
+
+* {
+    margin: 0;
+    padding: 0;
+    color: rgb(20, 20, 20);
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-size: 16px;
+    font-family: $bodyText;
+    letter-spacing: .15rem;
+  }
+
+main {
+    min-height: 100vh;
+    h1, h2 {font-family: $headerText;}
+    h1 {font-size: 3rem;}
+    h2 {font-size: 2rem;}
+    p {line-height: 1.5rem;}
+}
+
+
+#navbar {
+    background-color: #262626;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    z-index: 1000;
+    a {
+        text-decoration: none;
+        color: white;
+      }
+    img {
+        width: 50px;
+        height: auto;
+        margin-left: 1rem;
+      }
+      .nav-list {
+        display: flex;
+        justify-content: flex-end;
+        list-style-type: none;
+        margin-right: 1rem;
+      }
+      
+      .nav-list a {
+        display: block;
+        text-decoration: none;
+        padding: 1rem;
+        font-size: xx-large;
+      }
+      .nav-list a:hover {
+        color: lighten(#582172, 40%);
+        text-decoration: underline;
+      }
+  }
+
+
+  
+#header {
+    display: grid;
+    padding: 0 2vw;
+}
+div#colorUnderline {height: 1rem; margin-left: 2vw; margin-top: -1rem; width: 38vw; background-color: #ECB439;}
+
+.header-two {margin-bottom: 1rem;}
+
+.section-one {
+    padding: 0 2vw;
+    margin: 2rem 0;
+    display: grid;
+    img {margin: 0 auto;}
+}
+.images-one {
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    position: relative;
+    background-color: $grayBackground;
+    padding: 1rem 2vw;
+    p.caption {
+        background-color: #D0E2FF;
+        padding: 1rem;
+        position: absolute;
+        bottom: -2rem;
+        left: 2vw;
+    }
+}
+.section-two {
+    padding: 0 2vw;
+    margin-top: 4rem;
+}
+.images-two {
+    margin-top: 8rem;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    position: relative;
+    background-color: $grayBackground;
+    padding: 1rem 2vw;
+    p.caption {
+        background-color: #D0E2FF;
+        padding: 1rem;
+        position: absolute;
+        bottom: -2rem;
+        left: 2vw;
+    }
+}
+
+.section-three {
+    padding: 0 2vw;
+    margin: 6rem 0 4rem  0;
+}
+
+
+
+#footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #161616;
+    font-size: 1.5rem;
+    height: 10vh;
+    color: white;
+  }
