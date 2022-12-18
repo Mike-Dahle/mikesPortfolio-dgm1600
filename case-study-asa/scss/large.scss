@@ -1,0 +1,13 @@
+nav, main, footer {
+    max-width: 82rem;
+    margin: 0 auto;
+}
+
+
+#header {
+    grid-template-columns: auto 30%;
+    h1, h2 {margin-top: 2rem;}
+    h2 {text-align: right;}
+
+}
+.section-one {grid-template-columns: 1fr 1fr;}

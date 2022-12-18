@@ -1,0 +1,131 @@
+@import "variables";
+
+* {
+    margin: 0;
+    padding: 0;
+    color: rgb(20, 20, 20);
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-size: 16px;
+    font-family: $bodyText;
+    letter-spacing: .15rem;
+  }
+
+main {
+    min-height: 100vh;
+    h1, h2 {font-family: $headerText;}
+    h1 {font-size: 3rem;}
+    h2 {font-size: 2rem;}
+    p {line-height: 1.5rem;}
+    background-color: rgb(245, 245, 245);
+}
+
+
+#navbar {
+    background-color: #262626;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    z-index: 1000;
+    a {
+        text-decoration: none;
+        color: white;
+      }
+    img {
+        width: 50px;
+        height: auto;
+        margin-left: 1rem;
+      }
+      .nav-list {
+        display: flex;
+        justify-content: flex-end;
+        list-style-type: none;
+        margin-right: 1rem;
+      }
+      
+      .nav-list a {
+        display: block;
+        text-decoration: none;
+        padding: 1rem;
+        font-size: xx-large;
+      }
+      .nav-list a:hover {
+        color: lighten(#582172, 40%);
+        text-decoration: underline;
+      }
+  }
+
+
+  
+#header {
+    display: grid;
+    padding: 0 2vw;
+}
+div#colorUnderline {height: 1rem; margin-left: 2vw; margin-top: -1rem; width: 38vw; background-color: #f7363a;}
+
+.header-two {margin-bottom: 1rem;}
+
+.section-one {
+    padding: 0 2vw;
+    margin: 2rem 0;
+    display: grid;
+    img {
+      margin: 0 auto;
+    }
+}
+section.divider {
+  background-color: #f7363a;
+  margin-top: 2rem;
+  padding: 4rem 2vw;
+  h2 {
+    color: white;
+    text-align: center;
+  }
+}
+.example-text {text-align: center;}
+.images-one {
+    justify-content: center;
+    margin: 4rem 0 0 0;
+    display: flex;
+    flex-basis: 46%;
+    img {max-width: 46%; height: auto; box-shadow: .5px .5px 10px black;}
+    
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 2vw;
+}
+div.section-two {
+    background-color: #000;
+    .header-two, p {color: white;}
+    padding: 2rem 15vw;
+    margin-top: 4rem;
+}
+.images-two {
+    gap: 1rem;
+    margin-top: 4rem;
+    display: flex;
+    padding: 1rem 2vw;
+}
+
+.section-three {
+    padding: 0 2vw;
+    margin: 4rem 0;
+    .conclusion-content {
+      display: flex;
+      p {max-width: 56vw; padding-right: 1rem;}
+      iframe {width: 36vw; height: auto;}
+    }
+}
+
+
+
+#footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #161616;
+    font-size: 1.5rem;
+    height: 10vh;
+    color: white;
+  }
