@@ -26,18 +26,10 @@ span {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #161616;
+    background-color: #000000;
     font-size: 1.5rem;
     height: 10vh;
     color: white;
-  }
-
-  #projects {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 1000px;
   }
 
   #contact div {
@@ -88,12 +80,6 @@ span {
     background-color: #262626;
   }
 
-  #comp {
-    background-color: #262626;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-  }
 }
 
 @media only screen and (max-width: 800px) {
@@ -113,14 +99,15 @@ span {
   #projects {
     display: flex;
     flex-wrap: wrap;
+    max-width: 1440px;
     justify-content: center;
     align-items: center;
     width: 100vw;
   }
 
   figure {
-    height: 20rem;
-    width: 20rem;
+    height: 30rem;
+    width: 30rem;
   }
 
   figure img {
@@ -215,7 +202,7 @@ p {
 }
 
 #welcome-section {
-  background-image: url(/images/trees.png);
+  background: url(/images/trees.png), rgba(0, 0, 0, .2);
   width: 100%;
   height: 100vh;
   display: flex;
@@ -238,32 +225,40 @@ p {
   text-align: center;
   font-size: 4rem;
   padding: 2rem;
+  background-color: #373737;
 }
 
 .projects-grid {
-  width: 100vw;
+  max-width: 1440px;
   height: auto;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  padding-bottom: 2rem;
+  margin: 0 auto;
 }
 
 .project-tile {
-  margin: 2rem 1rem;
-  max-height: 20rem;
-  max-width: 20rem;
+  position: relative;
+  margin: 0;
+  height: 30rem;
+  width: 30rem;
 }
 
 .project-tile figcaption {
+  display: none;
+  position: absolute;
+  transform: translateY(-30.2rem);
   text-align: center;
-  background: #f1d556;
-  color: #0a1c3f;
-  padding: 0.5rem;
+  width: 30rem;
+  height: 30rem;
+  background: rgba(0, 0, 0, .5);
+  color: #fffffe;
+  font-size: 4rem;
+  padding: 1.5rem;
 }
 
-figure figcaption {
-  font-size: 1.25rem;
+.project-tile figcaption:hover {
+  display: block;
 }
 
 #contact h2 {
@@ -274,111 +269,6 @@ figure figcaption {
   margin-bottom: 2rem;
 }
 
-#comp h2 {
-  font-size: 4rem;
-}
-
-#comp p {
-  font-size: 1.25rem;
-  margin-bottom: 2rem;
-}
-
-/* CSS styling for fancy button */
-
-.btn {
-  position: relative;
-  color: #0f62fe;
-  width: 256px;
-  height: 64px;
-  line-height: 64px;
-  font-size: 1.25rem;
-  font-weight: bolder;
-  transition: all 0.3s;
-  
-}
-
-.btn::before,
-.btn::after {
-  content: "";
-  position: absolute;
-  transition: all 0.3s;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-
-.col {
-  height: 100%;
-}
-
-div[class*="container"] {
-  text-align: center;
-  width: 100%;
-  height: 33%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.btn-two::before,
-.btn-two::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
-  transition: all 0.3s;
-  border: 1px solid #0f62fe;
-}
-
-.btn-two:hover::after {
-  animation-name: rotatecw;
-  animation-duration: 2s;
-}
-.btn-two:hover::before {
-  animation-name: rotateccw;
-  animation-duration: 3s;
-}
-.btn-two:hover::after,
-.btn-two:hover::before {
-  left: 96px;
-  width: 64px;
-
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-
-@keyframes rotatecw {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes rotateccw {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(-360deg);
-  }
-}
-
-/* End of Button */
-
-#compImage {
-  width: auto;
-  max-height: 70vh;
-  margin-bottom: 1rem;
-  position: relative;
-  top: -2rem;
-}
 
 #contact-links a > i {
   padding-right: 0.5rem;
@@ -392,3 +282,4 @@ div[class*="container"] {
   transform: translateY(-6px);
   color: #a6c8ff;
 }
+
