@@ -258,7 +258,7 @@ p {
 }
 
 .project-tile figcaption:hover {
-  display: block;
+  display: none;
 }
 
 #contact h2 {
@@ -282,4 +282,5 @@ p {
   transform: translateY(-6px);
   color: #a6c8ff;
 }
+
 
