@@ -1,0 +1,65 @@
+* {
+    color: white;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Ember Background GIF */
+
+.fullscreen-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+  }
+  
+  .fullscreen-bg img {
+    min-width: 100%;
+    min-height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  /* Navigation Styling Start */
+
+  #controls {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    top: 35px;
+    right: 2vw;
+  }
+  #play-pause-btn {
+    margin-right: 1rem;
+}
+
+  .search-container {position:relative; padding:0; margin:0;}
+  input { height:30px; width: 25vw; margin:0; padding-left: 32px; border-radius: 20px; border: none;}
+  #search-icon { position:absolute; color: black; left: 8px; top: 4px;} 
+
+  nav {
+    display: flex;
+    align-items: center;
+  }
+
+  span {
+    color: white;
+    cursor: pointer;
+    font-size: 48px;
+  }
+
+  body {
+    background: rgba(0, 0, 0, .5);
+    padding: 0 2vw;
+  }
+  
+  h1 {color: white; font-size: 32px; justify-self: center; font-family: 'Cinzel', serif;}
+  

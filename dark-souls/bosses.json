@@ -1,0 +1,32 @@
+{
+    "bosses": [
+        {
+            "name": "Asylum Demon",
+            "description": "The large demon found during the tutorial in the Northern Undead Asylum. This boss is very similar to the Vanguard in Demon's Souls in both attack style and appearance in the story.",
+            "image": "Boss image URL",
+            "location": "Undead Asylum",
+            "health": "825",
+            "drops": {
+                "souls": "2000",
+                "item-one": "Humanity",
+                "item-two": "Big Pilgrims Key",
+                "item-three": "Demon's Great Hammer"
+            },
+            "attacks": {
+                "one": {
+                    "name": "Hammer Drive",
+                    "description": "The Hammer Drive is a pinpoint attack used by the Asylum Demon, when standing directly in front of him. While it is impossible to block, it has both poor range and tracking, so simply move out of the way when you see the Demon raise his hammer vertically."
+                },
+                "two": {
+                    "name": "Long Range Hammer",
+                    "description": "The Long Range Hammer is used when the player is on the other side of the room OR is not within typical hit range, from the Asylum Demon; he raises his club above/behind his head and then launches a straight forward long range attack with his hammer, which has slight area of effect upon impact. This attack can track your movement somewhat so beware of dodging too early."
+                },
+                "three": {
+                    "name": "Ground Pound",
+                    "description": "The Ground Pound move is used when the player is very close to, and/or in front of the Asylum Demon. It is characterized by the Demon flying up into the air momentarily then thrusting his weight and hammer down into the ground, either crushing the player or damaging them with area of effect shock-waves. The resulting damage varies, depending on how far the character is from the Demon but ranges a maximum of 10 feet, or roughly a little less than two character's heights. This attack will also track you, including when the Demon is in the air, so continue moving. A variation of this attack involves the Demon flying up in the air, and then sweeping his hammer sideways from left to right while turning. This attack has good tracking and can easily knock a player down or into a wall. Rolling away from the attack at the beginning of the sweep is effective, but trying to circle past the Demon can result in a knockdown."
+                }
+            },
+            "strategy": "To receive his Demon's Great Hammer you must slay him the very first time you meet him, before going through the gate to the left where most of your equipment is found. It is also possible to obtain another Demon's Great Hammer later after returning to the Asylum, if you trade a Sack to Snuggly. So do not worry if you are unable to defeat the Asylum Demon the first time you face it.\nThe second encounter will start you on the ledge above the room, begin with a plunging attack to take off a large chunk of his health. It is recommended that you two hand your weapon, for maximum damage and to do a jumping attack, instead of simply falling down from the ledge and pressing R1; it counts the jump attack damage along with the plunge attack.\nThe fight is not too difficult, as your foe is slow, and so are his attacks. Stay close to him and circle either to his right or left. Wait for him to begin any attack, and counter or just cycle around foe and his attacks are slow. Try to get behind his left leg so when he turns around he pushes you with him which enables you to almost constantly attack him without having to dodge. Players with offensive spells or pyromancies can also elect to stand off and simply kill him with ranged attacks, although you will not obtain the proper catalysts or pyromancy flame until after the first encounter. Do not spend too much time on the balcony ledge above him, as he will bring the fight to you, as mentioned previously.\nWhile defeating the Asylum Demon during the first encounter in NG can be difficult due to a lack of good equipment and no Estus flask(s), it can be accomplished either through careful maneuvering and/or a smart selection of a starting Gift. Although the Master Key is generally recommended as a starting Gift, the selection of the Black Firebomb(s) will enable players to kill the Asylum Demon easily during the first encounter and obtain his Demon's Great Hammer."
+        }
+    ]
+}
