@@ -22,6 +22,11 @@ span {
     font-size: 100%;
   }
 
+  .hero-text {
+    font-size: 4rem;
+    text-shadow: 2px 2px 6px black;
+  }
+
   #footer {
     display: flex;
     justify-content: center;
@@ -161,6 +166,37 @@ span {
   }
 }
 
+
+/* This is my hero image and parallax css */
+
+.parallax {
+	background-image: url('../images/trees.png');
+	height: 100vh;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+}
+
+.hero-image {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+
+.hero-text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	color: white;
+}
+
 .body {
   font-family: "Gemunu Libre", sans-serif;
 }
@@ -199,26 +235,6 @@ p {
 }
 .nav-list a:hover {
   background-color: #582172;
-}
-
-#welcome-section {
-  background: url(/images/trees.png), rgba(0, 0, 0, .2);
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: xx-large;
-}
-
-#welcome-section background-image {
-  height: 2304;
-  width: auto;
-}
-
-#welcome-section h1 {
-  font-size: 4rem;
 }
 
 #projects h1, #studies h1 {
