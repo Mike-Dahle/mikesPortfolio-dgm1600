@@ -63,3 +63,8 @@
   
   h1 {color: white; font-size: 32px; justify-self: center; font-family: 'Cinzel', serif;}
   
+  nav, body, footer {
+    max-width: 80rem;
+    background-color: black;
+    z-index: 1;
+  }
