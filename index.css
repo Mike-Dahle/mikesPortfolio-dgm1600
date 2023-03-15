@@ -13,6 +13,7 @@ a {
 body {
   background-color: #161616;
 }
+
 span {
   color: #a6c8ff;
 }
@@ -85,12 +86,58 @@ span {
     background-color: #262626;
   }
 
+  #hamburgerBtn {display: none;}
+
+  #navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    position: fixed;
+    z-index: 1000;
+  }
+  
+  #navbar img {
+    width: 50px;
+    height: auto;
+    margin-left: 1rem;
+  }
+  
+  .nav-list {
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    margin-right: 1rem;
+  }
+  
+  .nav-list a {
+    display: block;
+    text-decoration: none;
+    padding: 1rem;
+    font-size: x-large;
+  }
+  .nav-list a:hover {
+    background-color: #582172;
+  }
+
 }
+
+/* Start of Mobile Style */
 
 @media only screen and (max-width: 800px) {
   * {
-    font-size: 60%;
+    font-size: 100%;
   }
+
+  #pageWrapper {
+    position: relative;
+    overflow-x: hidden;
+  }
+  .moveOver > .content{
+    transform: translateX(-200px);
+  }
+  .content {transition: transform 500ms ease;}
+
 
   #footer {
     display: flex;
@@ -157,15 +204,60 @@ span {
     background-color: #262626;
   }
 
-  #comp {
-    background-color: #262626;
+  #navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    position: fixed;
+    z-index: 1000;
+  }
+  
+  #navbar img {
+    width: 50px;
+    height: auto;
+    margin-left: 1rem;
+  }
+  
+  .nav-list {
+    margin-top: 48px;
+    background-color: #333333;
+    transform: translateX(100%);
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+    list-style-type: none;
+    width: 200px;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    
   }
+  
+  .nav-list a {
+    display: block;
+    text-decoration: none;
+    padding: 1rem;
+    font-size: xx-large;
+  }
+  
+  
 }
 
+/* End of Mobile Style */
+
+button {
+  width: 48px;
+  height: 48px;
+  margin: 0;
+  align-self: start;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  text-align: right;
+  color: #fff;
+}
 
 /* This is my hero image and parallax css */
 
@@ -203,38 +295,6 @@ span {
 
 p {
   font-family: "Roboto", sans-serif;
-}
-
-#navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100vw;
-  position: fixed;
-  z-index: 1000;
-}
-
-#navbar img {
-  width: 50px;
-  height: auto;
-  margin-left: 1rem;
-}
-
-.nav-list {
-  display: flex;
-  justify-content: flex-end;
-  list-style-type: none;
-  margin-right: 1rem;
-}
-
-.nav-list a {
-  display: block;
-  text-decoration: none;
-  padding: 1rem;
-  font-size: xx-large;
-}
-.nav-list a:hover {
-  background-color: #582172;
 }
 
 #projects h1, #studies h1 {
