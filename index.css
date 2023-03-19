@@ -314,7 +314,7 @@ p {
 }
 
 figcaption {
-  
+  display: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -327,7 +327,7 @@ figcaption {
   font-size: 4rem;
 }
 
-figcaption:hover {
+figure:hover figcaption {
   display: block;
 }
 
