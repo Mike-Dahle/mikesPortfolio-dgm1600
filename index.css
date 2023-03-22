@@ -120,6 +120,7 @@ span {
     background-color: #582172;
   }
 
+  nav button {display: none;}
 }
 
 /* Start of Mobile Style */
@@ -211,15 +212,23 @@ span {
     width: 50px;
     height: auto;
     margin-left: 1rem;
+    padding: 1rem 0;
   }
   
+  #hamburgerBtn {
+    font-size: 3rem;
+    display: block;
+  }
+
   .nav-list {
-    background-color: #333333;
-    transform: translateX(200px);
+    background-color: rgba(0, 0, 0, .75);
+    /*transform: translateX(200px);*/
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: end;
     list-style-type: none;
-    width: 200px;
+    width: 100vw;
     height: 100vh;
     position: absolute;
     top: 0;
@@ -231,13 +240,28 @@ span {
     display: block;
     text-decoration: none;
     padding: 1rem;
-    font-size: xx-large;
+    margin: 0 4rem 1rem 0;
+    font-size: 5rem;
+  }
+
+  #closeBtn {
+    font-size: 5rem;
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 1rem;
+  }
+  
+  .hidden {
+    display: none;
   }
   
   
 }
 
 /* End of Mobile Style */
+
+
 
 button {
   width: 50px;
