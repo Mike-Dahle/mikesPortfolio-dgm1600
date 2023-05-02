@@ -1,0 +1,159 @@
+@import "variables";
+
+* {
+    margin: 0;
+    padding: 0;
+    color: rgb(20, 20, 20);
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-size: 16px;
+    font-family: $bodyText;
+    letter-spacing: .15rem;
+  }
+
+main {
+    min-height: 100vh;
+    h1, h2 {font-family: $headerText;}
+    h1 {font-size: 2.75rem;}
+    h2 {font-size: 2rem;}
+    p {line-height: 1.5rem;}
+}
+
+
+#navbar {
+    background-color: #262626;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    z-index: 1000;
+    a {
+        text-decoration: none;
+        color: white;
+      }
+    img {
+        width: 50px;
+        height: auto;
+        margin-left: 1rem;
+      }
+      .nav-list {
+        display: flex;
+        justify-content: flex-end;
+        list-style-type: none;
+        margin-right: 1rem;
+      }
+      
+      .nav-list a {
+        display: block;
+        text-decoration: none;
+        padding: 1rem;
+        font-size: xx-large;
+      }
+      .nav-list a:hover {
+        color: lighten(#582172, 40%);
+        text-decoration: underline;
+      }
+  }
+
+
+  
+#header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 2vw;
+    background-image: url('../images/redwoods.jpeg');
+    background-size: cover;
+    height: 400px;
+    h1 {color: white; z-index: 100;}
+    position: relative; /* Make sure the header is positioned relatively so the absolute position of the overlay will be relative to it */
+    
+}
+#header::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Set the overlay to black with 50% opacity */
+}
+
+
+div#colorUnderline {
+  height: 1rem; 
+  margin-left: 2vw;
+  margin-top: -1rem; 
+  width: 38vw; 
+  background-color: rgb(119, 57, 22);
+  z-index: 100;
+}
+
+.header-two {margin-bottom: 1rem;}
+
+.section-one {
+    padding: 0 2vw;
+    margin: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+    p {max-width: 65vw;}
+    img {
+      height: 50vh;
+      width: auto;}
+}
+div.timeline {width: 100%; padding: 0 2vw; img {height: auto; width: 100%;}}
+.section-two {
+    padding: 2rem 2vw;
+    margin-top: 4rem;
+    background-image: url('../images/figma-screenshot.png');
+    background-size: cover;
+    height: 400px;
+    h2, p {color: white; z-index: 100; background-color: rgba(32, 54, 21, .80); padding: 1rem;}
+    position: relative; /* Make sure the header is positioned relatively so the absolute position of the overlay will be relative to it */
+    
+}
+#header::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+}
+
+
+.section-three {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+    padding: 0 2vw;
+    margin: 6rem 0 4rem  0;
+    h1 {margin: 0;}
+    p {width: 60vw;}
+    img {width: auto; height: 75vh;}
+}
+
+.section-four {
+  #figma h2 {padding: 0 2vw;}
+}
+
+iframe {
+  margin: 1rem 0 2rem 0;
+  padding: 0 2vw;
+  min-width: 100%;
+  min-height: 100vh;
+}
+
+
+#footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #161616;
+    font-size: 1.5rem;
+    height: 10vh;
+    color: white;
+  }
