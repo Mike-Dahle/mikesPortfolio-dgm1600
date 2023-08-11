@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: #1e1e1e;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-size: 16px;
+    letter-spacing: .15rem;
+  }
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
+  body {
+    background-color: #fff;
+  }
+  
+  span {
+    color: #a6c8ff;
+  }
+  
+  .mainContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 2vw;
+  }
+
+  h2 {margin-bottom: 1.5rem;}
+  p {margin-bottom: 1rem;}
+
+  .benefit-list {
+    display: flex;
+    margin-bottom: 2rem;
+}
+  .benefit-list div {margin-left: 2rem;}
+
+  @media only screen and (min-width: 801px) {
+    * {
+      font-size: 100%;
+    }
+  
+    .hero-text {
+      font-size: 4rem;
+      text-shadow: 2px 2px 6px black;
+    }
+
+    div.hero-text h1 {color: #fff;}
+    div.hero-text p {color: #fff;}
+  
+    #footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #000000;
+      font-size: 1.5rem;
+      height: 10vh;
+      color: white;
+    }
+  
+    
+  
+    #navbar {
+      background-color: #262626;
+    }
+  
+    #hamburgerBtn {display: none;}
+  
+    #navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100vw;
+      position: fixed;
+      z-index: 1000;
+    }
+    
+    #navbar img {
+      width: 50px;
+      height: auto;
+      margin-left: 1rem;
+    }
+    
+    .nav-list {
+      display: flex;
+      justify-content: flex-end;
+      list-style-type: none;
+      margin-right: 1rem;
+    }
+    
+    .nav-list a {
+      display: block;
+      text-decoration: none;
+      padding: 1rem;
+      font-size: 1.5rem;
+    }
+    .nav-list a:hover {
+      background-color: #582172;
+    }
+  
+    nav button {display: none;}
+
+    section {
+        max-width: 1080px;
+        margin-top: 3rem;
+    }
+  }
+  
+  /* Start of Mobile Style */
+  
+  @media only screen and (max-width: 800px) {
+    * {
+      font-size: 50%;
+    }
+  
+    .hero-text h1, p {
+      font-size: 2.5rem;
+      text-shadow: 2px 2px 6px black;
+    }
+  
+    #footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 10vh;
+      font-size: 1.5rem;
+      color: white;
+    }
+  
+    #navbar {
+      background-color: #262626;
+    }
+  
+    #navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100vw;
+      position: fixed;
+      z-index: 1000;
+    }
+    
+    #navbar img {
+      width: 50px;
+      height: auto;
+      margin-left: 1rem;
+      padding: 1rem 0;
+    }
+    
+    #hamburgerBtn {
+      font-size: 3rem;
+      display: block;
+    }
+  
+    .nav-list {
+      background-color: rgba(0, 0, 0, .75);
+      /*transform: translateX(200px);*/
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: end;
+      list-style-type: none;
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+    }
+  
+    .nav-list a {
+      display: block;
+      text-decoration: none;
+      padding: 1rem;
+      margin: 0 4rem 1rem 0;
+      font-size: 5rem;
+    }
+  
+    #closeBtn {
+      font-size: 5rem;
+      color: white;
+      position: absolute;
+      top: 0;
+      right: 1rem;
+    }
+    
+    .hidden {
+      display: none;
+    }
+    
+  }
+  
+  /* End of Mobile Style */
+  
+
+  /* This is my hero image and parallax css */
+  
+  .parallax {
+      background-image: url('../images/adhd-hero.jpg');
+      height: 100vh;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+  }
+  
+  .hero-image {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+  }
+  
+  .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+  }
+  
+  .body h2 {
+    font-size: 2rem;
+    font-family: "Gemunu Libre", sans-serif;
+}
+
+  .body p {font-family: 'Open Sans', sans-serif;}
+  
+  
