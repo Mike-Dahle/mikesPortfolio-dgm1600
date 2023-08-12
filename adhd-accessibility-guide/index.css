@@ -65,6 +65,22 @@
 
   section {margin-bottom: 4rem;}
 
+  .resources {width: 1080px;}
+
+  .resources #links { display: flex; flex-direction: column;}
+  
+  .resources a {
+    box-sizing: border-box;
+    color: rgb(0, 178, 178);
+    margin: 0.5rem 0;
+  }
+  
+  .resources a:hover {
+    color: rgb(0, 143, 233);
+    text-decoration: underline;
+  }
+  
+
   @media only screen and (min-width: 801px) {
     * {
       font-size: 100%;
