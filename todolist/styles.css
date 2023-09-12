@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+:root {
+  --main-blue: #1572a1;
+  --main-green: #16843b;
+  --main-grey: #f2f2f2;
+  --main-red: #e74c3c;
+  --main-white: #fff;
+  --sub-blue: #86c6f4;
+  --sub-grey: #ccc;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background: var(--main-green);
+}
+
+button {
+  height: 100%;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  background: var(--main-blue);
+  color: var(--main-white);
+  cursor: pointer;
+}
+
+.wrapper {
+  margin: 120px auto;
+  max-width: 400px;
+  width: 100%;
+  border-radius: 5px;
+  background: var(--main-white);
+  padding: 25px;
+}
+
+.wrapper header {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.wrapper .inputField {
+  display: flex;
+  height: 45px;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.inputField input {
+  width: 85%;
+  height: 100%;
+  border: 1px solid var(--sub-grey);
+  font-size: 17px;
+  border-radius: 3px;
+  padding-left: 15px;
+}
+
+.inputField button {
+  width: 45px;
+  margin-left: 10px;
+  font-size: 22px;
+}
+
+.wrapper .todoList {
+  max-height: 250px;
+  overflow-y: scroll;
+}
+
+.todoList::-webkit-scrollbar {
+  width: 0;
+}
+.todoList li {
+  list-style: none;
+  height: 45px;
+  line-height: 45px;
+  position: relative;
+  background: var(--main-grey);
+  margin-bottom: 8px;
+  border-radius: 3px;
+  padding-left: 15px;
+  cursor: default;
+  overflow: hidden;
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+.todoList li span {
+  position: absolute;
+  right: -45px;
+  width: 45px;
+  color: var(--main-white);
+  text-align: center;
+  background: var(--main-red);
+  border-radius: 0 3px 3px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.todoList li span.editBtn {
+  position: absolute;
+  right: -45px;
+  width: 45px;
+  color: var(--main-white);
+  text-align: center;
+  background: var(--yellow);
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.todoList li:hover span {
+  right: 0;
+}
+
+.wrapper .footer {
+  /*   width: 100%; */
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.footer button {
+  font-size: 16px;
+  padding: 6px 10px;
+}
