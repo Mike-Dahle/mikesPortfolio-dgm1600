@@ -12,10 +12,10 @@
 </head>
 <body>
     <div class="wrapper">
-        <header>Todo List</header>
+        <header>To-do List</header>
         <div class="inputField">
-          <input type="text" placeholder="Enter new task" />
-          <button><i class="fas fa-plus"></i></button>
+          <input type="text" placeholder="Enter new task" id="textField"/>
+          <button class="add"><i class="fas fa-plus"></i></button>
         </div>
         <ul class="todoList">
           <!-- <li class="done">
@@ -28,8 +28,8 @@
           </li> -->
         </ul>
         <div class="footer">
-          <span>You have 1 pending tasks.</span>
-          <button>Clear Done</button>
+          <span class="pending"></span>
+          <button class="delete">Clear Done</button>
         </div>
       </div>
       <script src="../data/todolist.js"></script>
