@@ -100,7 +100,7 @@ button {
   width: 45px;
   color: var(--main-white);
   text-align: center;
-  background: var(--main-red);
+  background: red;
   border-radius: 0 3px 3px 0;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -112,7 +112,7 @@ button {
   width: 45px;
   color: var(--main-white);
   text-align: center;
-  background: var(--yellow);
+  background: gold;
 
   cursor: pointer;
   transition: all 0.3s ease;
@@ -120,6 +120,11 @@ button {
 
 .todoList li:hover span {
   right: 0;
+  background: rgb(213, 0, 0);
+}
+
+.todoList li:hover span.editBtn {
+  right: 45px;
 }
 
 .wrapper .footer {
