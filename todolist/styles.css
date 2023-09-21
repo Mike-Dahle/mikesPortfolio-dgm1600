@@ -120,7 +120,6 @@ button {
 
 .todoList li:hover span {
   right: 0;
-  background: rgb(213, 0, 0);
 }
 
 .todoList li:hover span.editBtn {
