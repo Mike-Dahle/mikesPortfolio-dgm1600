@@ -9,20 +9,19 @@ const clearBtn = document.querySelector('.clear')
 
 const tasks = []
 
+// Create a new task
+function createTask(task) {
+    tasks.push({
+      todo: task,
+      done: false,
+      Id: tasks.length,
+      editing: false
+    },)
+  }
+
 pendingText.textContent = `You have ${pendingTasks(tasks)} remaining task(s)`
 
-clearBtn.addEventListener('click', () => {
-    tasks.forEach((task) => {
-        if (task.done === true) {
-            doneTasks = []
-            doneTasks.push(task)
-            clearDone(doneTasks)
-        }
-    })
-});
-
-
-
+clearBtn.addEventListener('click', () => {clearDone(tasks)})
 
 // Populate the todo list
 function populatetodoList(tasks) {
@@ -35,22 +34,30 @@ function populatetodoList(tasks) {
     // Create list elements for each todo
     tasks.forEach((task) => {
         const li = document.createElement('li')
+        li.id = task.Id
         const spanOne = document.createElement('span');
         const spanTwo = document.createElement('span');
         const trashIcon = document.createElement('i');
         const editIcon = document.createElement('i');
+        const completedIcon = document.createElement('i');
 
         trashIcon.classList.add('fa', 'fa-trash');
         editIcon.classList.add('fa', 'fa-edit');
         spanOne.classList.add('editBtn');
 
-        li.textContent = task.todo
-        li.addEventListener('click', () => markDone(li.textContent))
-        
+        li.textContent = task.todo;
+        li.appendChild(spanOne);
+        li.appendChild(spanTwo);
+        li.appendChild(completedIcon);
+        li.addEventListener('click', (event) => {
+            if (event.target === li) {
+                markDone(li.textContent);
+            }
+        });
 
-        //check if task is done, if so add the done class
+        // check if task is done, if so add the done class
         if (task.done === true) {
-            li.classList.add('done')
+            li.classList.add('done');
         }
 
         spanOne.appendChild(editIcon);
@@ -83,14 +90,7 @@ function markDone(taskName) {
 }
 
 
-// Create a new task
-function createTask(task) {
-  tasks.push({
-    todo: task,
-    done: false,
-    Id: tasks.length,
-  },)
-}
+
 
 
 // Add a new task to the list
@@ -121,15 +121,15 @@ function editTask() {
     })
 }
 
-function clearDone(doneTasks) {
-  /*   console.log(doneTasks)
-    forEach(task => {const index = tasks.findIndex((task) => task.done === true);
+function clearDone(tasks) {
+  tasks.filter((task) => task.done === true).forEach((task) => {
+    const index = tasks.findIndex((task) => task.done === true);
     if (index > -1) {
-        tasks.splice(index, 1);  
-    }})
-    populatetodoList(tasks);
-    pendingText.textContent = `You have ${pendingTasks(tasks)} remaining task(s)` */
-}
+        tasks.splice(index, 1);
+        populatetodoList(tasks);
+    }
+  }
+)}
     
 
 function pendingTasks(arr) {

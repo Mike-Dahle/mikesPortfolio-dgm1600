@@ -96,8 +96,9 @@ button {
 
 .todoList li span {
   position: absolute;
-  right: -45px;
+  right: 0;
   width: 45px;
+  z-index: 1;
   color: var(--main-white);
   text-align: center;
   background: red;
@@ -108,7 +109,7 @@ button {
 
 .todoList li span.editBtn {
   position: absolute;
-  right: -45px;
+  right: 45px;
   width: 45px;
   color: var(--main-white);
   text-align: center;
@@ -118,13 +119,12 @@ button {
   transition: all 0.3s ease;
 }
 
-.todoList li:hover span {
-  right: 0;
+.todoList li span.completeBtn {
+  background: var(--main-blue);
+  position: absolute;
+  right: -90px;
 }
 
-.todoList li:hover span.editBtn {
-  right: 45px;
-}
 
 .wrapper .footer {
   /*   width: 100%; */
