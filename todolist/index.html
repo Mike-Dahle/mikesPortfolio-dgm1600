@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To Do List</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-  />
-</head>
-<body>
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
     <div class="wrapper">
-        <header>To-do List</header>
-        <div class="inputField">
-          <input type="text" placeholder="Enter new task" id="textField"/>
-          <button class="add"><i class="fas fa-plus"></i></button>
-        </div>
-        <ul class="todoList">
-          <!-- <li class="done">
+      <header>To-do List</header>
+      <div class="inputField">
+        <input type="text" placeholder="Enter new task" id="textField" />
+        <button class="add"><i class="fas fa-plus"></i></button>
+      </div>
+      <ul class="todoList">
+        <!-- <li class="done">
             Todo Item 1 (Done example)<span> <i class="fa fa-trash"></i></span>
           </li>
           <li>
@@ -26,13 +26,27 @@
             <span class="editBtn"><i class="fa fa-edit"></i></span>
             <span> <i class="fa fa-trash"></i></span>
           </li> -->
-        </ul>
-        <div class="footer">
-          <span class="pending"></span>
-          <button class="clear">Clear Done</button>
-        </div>
+      </ul>
+      <div class="footer">
+        <span class="pending"></span>
+        <button class="clear">Clear Done</button>
       </div>
-      <script src="../data/todolist.js"></script>
-</body>
+    </div>
 
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <form>
+          <h3>What should this task be called now?</h3>
+          <input type="text" id="editField" onsubmit="" />
+          <div class="modalDiv">
+            <button class="update" onclick="submit">Update</button>
+            <button class="close">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="../data/todolist.js"></script>
+  </body>
 </html>

@@ -18,6 +18,8 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   height: 100vh;
   width: 100%;
   background: var(--main-green);
@@ -78,6 +80,7 @@ button {
   width: 0;
 }
 .todoList li {
+  display: flex;
   list-style: none;
   height: 45px;
   line-height: 45px;
@@ -88,6 +91,10 @@ button {
   padding-left: 15px;
   cursor: default;
   overflow: hidden;
+}
+
+.todoList li p {
+  width: 100%;
 }
 
 .done {
@@ -137,4 +144,61 @@ button {
 .footer button {
   font-size: 16px;
   padding: 6px 10px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%; /* Could be more or less, depending on screen size */
+}
+
+.modal-content input {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.modalDiv {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modalDiv button {
+  width: 45%;
+  height: 2rem;
+  font-size: 1rem;
+  color: white;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.update:hover,
+.close:hover,
+.close:focus {
+  color: white;
+  background-color: #145d82;
+  text-decoration: none;
+  cursor: pointer;
 }
