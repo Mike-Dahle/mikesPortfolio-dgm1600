@@ -16,7 +16,6 @@ function createTask(task) {
       todo: task,
       done: false,
       Id: Date.now(),
-      editing: false
     },)
   }
 
@@ -41,8 +40,7 @@ function populatetodoList(tasks) {
         const trashIcon = document.createElement('i');
         const editIcon = document.createElement('i');
         const taskText = document.createElement('p');
-        const modal = document.getElementById("myModal");
-        const closeModal = document.getElementsByClassName("close")[0];
+        
         taskText.textContent = task.todo;
 
         trashIcon.classList.add('fa', 'fa-trash');
@@ -56,12 +54,12 @@ function populatetodoList(tasks) {
 
         // check if task is done, if so add the done class
         if (task.done === true) {
-            li.classList.add('done');
+            taskText.style.textDecoration = 'line-through';
         }
 
         spanOne.appendChild(editIcon);
         spanTwo.appendChild(trashIcon);
-        spanOne.addEventListener('click', () => {modal.style.display = "block";})
+        spanOne.addEventListener('click', () => {editTask(task.Id)});
         spanTwo.addEventListener('click', (event) => {
             const li = event.target.closest('li'); // Find the closest parent 'li' element
             if (li) {
@@ -70,23 +68,14 @@ function populatetodoList(tasks) {
             }
         });
 
+        taskText.addEventListener('click', (event) => {markDone(task.Id);})
+
         li.appendChild(spanOne);
         li.appendChild(spanTwo);
         todoList.appendChild(li)
         pendingText.textContent = `You have ${pendingTasks(tasks)} remaining task(s)`
         console.log(tasks)
     })
-}
-
-// Mark a task as done
-function markDone(finishedID) {
-
-    const taskToUpdate = tasks.find((task) => task.id === finishedID);
-
-    if (taskToUpdate) {
-        taskToUpdate.done = !taskToUpdate.done; // Toggle the 'done' property
-        populatetodoList(tasks);
-    }
 }
 
 // Add a new task to the list
@@ -109,11 +98,7 @@ function deleteTask(text) {
     }
     pendingText.textContent = `You have ${pendingTasks(tasks)} remaining task(s)`
 }
-      
-function editTask(id) {
-    editingItem = id;
-    editingItem.contentEditable = true; 
-}
+
 
 function clearDone(tasks) {
   tasks.filter((task) => task.done === true).forEach((task) => {
@@ -130,8 +115,21 @@ function pendingTasks(arr) {
     return arr.filter((arr) => arr.done === false).length
 }
 
+
+function editTask(taskID) {
+    const taskToUpdate = tasks.find((task) => task.Id === taskID);
+
+    if (taskToUpdate) {
+        const newName = prompt('Enter new task name', taskToUpdate.todo);
+        if (newName !== null) {
+            taskToUpdate.todo = newName;
+            populatetodoList(tasks);
+            taskToUpdate.done = false;
+        }
+    }
+}
 function markDone(finishedID) {
-    const taskToUpdate = tasks.find((task) => task.Id == finishedID);
+    const taskToUpdate = tasks.find((task) => task.Id === finishedID);
 
     if (taskToUpdate) {
         taskToUpdate.done = !taskToUpdate.done; // Toggle the 'done' property
