@@ -18,6 +18,7 @@
 }
 
 body {
+  position: relative;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -140,4 +141,42 @@ button {
 .footer button {
   font-size: 16px;
   padding: 6px 10px;
+}
+
+.addCat {
+  font-size: 16px;
+  padding: 6px 10px;
+  background: var(--main-blue);
+  color: var(--main-white);
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+.addCat:hover {
+  background: rgb(16, 167, 164);
+}
+
+.categoryCard {
+  position: absolute;  
+  top: 0;
+  left: 2vw;
+  width: 24rem;
+  min-height: 16rem;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  background: var(--main-white);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.categoryList {
+  list-style: none;
+  margin-top: 1rem;
+  color: black;
+}
+
+.categoryList li {
+  margin-bottom: 0.5rem;
 }

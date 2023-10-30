@@ -12,7 +12,7 @@
   </head>
   <body>
     <div class="wrapper">
-      <header>To-do List</header>
+      <header>To-do List<span><button class="addCat">Add Category</button></span></header>
       <div class="inputField">
         <input type="text" placeholder="Enter new task" id="textField" />
         <button class="add"><i class="fas fa-plus"></i></button>
@@ -31,6 +31,11 @@
         <span class="pending"></span>
         <button class="clear">Clear Done</button>
       </div>
+    </div>
+
+    <div class="categoryCard">
+      <h2>Categories</h2>
+      <ul class="categoryList"></ul>
     </div>
     <script src="../data/todolist.js"></script>
   </body>

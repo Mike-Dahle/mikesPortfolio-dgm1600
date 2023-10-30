@@ -9,6 +9,8 @@ const clearBtn = document.querySelector('.clear')
 
 const tasks = []
 
+const categories = ['Work', 'School', 'Home', 'Other']
+
 
 // Create a new task
 function createTask(task) {
@@ -25,6 +27,8 @@ clearBtn.addEventListener('click', () => {clearDone(tasks)})
 
 // Populate the todo list
 function populatetodoList(tasks) {
+
+    populateCategories(categories);
 
     // Clear the list
     while (todoList.firstChild) {
@@ -135,4 +139,14 @@ function markDone(finishedID) {
         taskToUpdate.done = !taskToUpdate.done; // Toggle the 'done' property
         populatetodoList(tasks);
     }
+}
+
+
+function populateCategories() {
+    const categoryList = document.querySelector('.categoryList');
+    categories.forEach((category) => {
+        const li = document.createElement('li');
+        li.textContent = category;
+        categoryList.appendChild(li);
+    })
 }
