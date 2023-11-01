@@ -12,7 +12,7 @@
   </head>
   <body>
     <div class="wrapper">
-      <header>To-do List<span><button class="addCat">Add Category</button></span></header>
+      <header>To-do List</header>
       <div class="inputField">
         <input type="text" placeholder="Enter new task" id="textField" />
         <button class="add"><i class="fas fa-plus"></i></button>
@@ -35,7 +35,14 @@
 
     <div class="categoryCard">
       <h2>Categories</h2>
-      <ul class="categoryList"></ul>
+      <ul class="categoryList">
+        
+      </ul>
+    <div>
+      <form onsubmit="addCategory(); return false;" class="addNewCategory">
+        <input type="text" placeholder="Enter new category" id="categoryTextField" />
+        <button class="addCategory"><i class="fas fa-plus" onclick="submit"></i></button>
+      </form>
     </div>
     <script src="../data/todolist.js"></script>
   </body>

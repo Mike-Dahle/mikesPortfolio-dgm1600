@@ -11,6 +11,7 @@ const tasks = []
 
 const categories = ['Work', 'School', 'Home', 'Other']
 
+populateCategories(categories);
 
 // Create a new task
 function createTask(task) {
@@ -27,8 +28,6 @@ clearBtn.addEventListener('click', () => {clearDone(tasks)})
 
 // Populate the todo list
 function populatetodoList(tasks) {
-
-    populateCategories(categories);
 
     // Clear the list
     while (todoList.firstChild) {
@@ -144,9 +143,64 @@ function markDone(finishedID) {
 
 function populateCategories() {
     const categoryList = document.querySelector('.categoryList');
+    
+    // Clear out existing li elements
+    categoryList.innerHTML = '';
+
     categories.forEach((category) => {
         const li = document.createElement('li');
-        li.textContent = category;
+        li.classList.add('categories');
+        li.innerHTML = 
+        `<p>${category}</p>
+            <div>
+                <button class="catDelete" onclick="deleteCategory('${category}')"><span class="fa fa-trash"></span></button>
+                <button class="catEdit" onclick="editCategory('${category}')"><span class="fa fa-edit"></span></button>
+            </div>`;
         categoryList.appendChild(li);
-    })
+    });
 }
+
+function addCategory() {
+    // Get the input field
+    const categoryInput = document.getElementById('categoryTextField');
+  
+    // Get the value of the input field
+    const newCategory = categoryInput.value;
+  
+    // Check if the input field is not empty
+    if (newCategory.trim() !== '') {
+      // Add the new category to the categories array
+      categories.push(newCategory);
+  
+      // Clear the input field
+      categoryInput.value = '';
+      populateCategories();
+    } else {
+      alert('Please enter a category');
+    }
+  }
+
+  function deleteCategory(category) {
+    // Find the index of the category in the categories array
+    const index = categories.indexOf(category);
+  
+    // If the category was found, remove it from the categories array
+    if (index !== -1) {
+      categories.splice(index, 1);
+    }
+  
+    // Update the displayed list
+    populateCategories();
+  }
+
+  function editCategory(category) {
+    const catToEdit = categories.indexOf(category);
+
+    if (catToEdit !== -1) {
+        const newName = prompt('Enter new category name', categories[catToEdit]);
+        if (newName !== null) {
+            categories[catToEdit] = newName;
+            populateCategories();
+        }
+    }
+  }

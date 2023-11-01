@@ -143,31 +143,48 @@ button {
   padding: 6px 10px;
 }
 
-.addCat {
+.addCategory {
   font-size: 16px;
-  padding: 6px 10px;
+  height: 32px;
+  width: 32px;
   background: var(--main-blue);
   color: var(--main-white);
   cursor: pointer;
   margin-left: 1rem;
 }
 
-.addCat:hover {
-  background: rgb(16, 167, 164);
+.addCategory:hover {
+  background: rgb(194, 217, 255);
+  color: var(--main-blue);
+  border: var(--main-blue) 1px solid;
+}
+
+.addNewCategory {
+  display: flex;
+  justify-content: space-between;
+  height: 32px;
+  width: 100%;
+}
+
+#categoryTextField {
+  width: fit-content;
+  height: 100%;
+  border: 1px solid var(--sub-grey);
+  font-size: 17px;
+  border-radius: 3px;
+  padding-left: 8px;
 }
 
 .categoryCard {
   position: absolute;  
   top: 0;
-  left: 2vw;
-  width: 24rem;
-  min-height: 16rem;
+  left: 0;
+  width: 16rem;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  margin-top: 1rem;
   padding: 0.5rem 1rem;
-  border-radius: 5px;
-  background: var(--main-white);
+  background: rgb(242, 242, 242);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -177,6 +194,36 @@ button {
   color: black;
 }
 
-.categoryList li {
-  margin-bottom: 0.5rem;
+.categoryList button {
+  width: 32px;
+  height: 32px;
+}
+
+.catDelete {
+  background: red;
+  color: var(--main-white);
+}
+
+.catDelete:hover {
+  background: white;
+  color: red;
+  border: red 1px solid;
+}
+
+.catEdit {
+  background: gold;
+  color: var(--main-white);
+}
+
+.catEdit:hover {
+  background: white;
+  color: gold;
+  border: gold 1px solid;
+}
+
+.categories {
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  margin-bottom: 1rem;
 }
