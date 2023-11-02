@@ -9,16 +9,18 @@ const clearBtn = document.querySelector('.clear')
 
 const tasks = []
 
-const categories = ['Work', 'School', 'Home', 'Other']
+const categories = ['All', 'Work', 'School', 'Home']
+
 
 populateCategories(categories);
 
 // Create a new task
-function createTask(task) {
+function createTask(task, category) {
     tasks.push({
       todo: task,
       done: false,
       Id: Date.now(),
+      category: category
     },)
   }
 
@@ -83,8 +85,10 @@ function populatetodoList(tasks) {
 
 // Add a new task to the list
 addTask.addEventListener('click', () => {
+    const categorySelect = document.querySelector('.categorySelector');
+    const category = categorySelect.value;
     if (input.value !== '') {
-        createTask(input.value)
+        createTask(input.value, category)
         input.value = ''
         todoList.innerHTML = ''
         populatetodoList(tasks) 
@@ -143,12 +147,18 @@ function markDone(finishedID) {
 
 function populateCategories() {
     const categoryList = document.querySelector('.categoryList');
+    const categorySelector = document.querySelector('.categorySelector');
     
     // Clear out existing li elements
     categoryList.innerHTML = '';
+    categorySelector.innerHTML = '';
 
     categories.forEach((category) => {
         const li = document.createElement('li');
+        const option = document.createElement('option');
+        option.innerHTML = 
+        `<option value="${category}">${category}</option>`;
+        categorySelector.appendChild(option);
         li.classList.add('categories');
         li.innerHTML = 
         `<p>${category}</p>

@@ -38,7 +38,7 @@ button {
 
 .wrapper {
   margin: 120px auto;
-  max-width: 400px;
+  max-width: 500px;
   width: 100%;
   border-radius: 5px;
   background: var(--main-white);
@@ -167,7 +167,7 @@ button {
 }
 
 #categoryTextField {
-  width: fit-content;
+  width: 80%;
   height: 100%;
   border: 1px solid var(--sub-grey);
   font-size: 17px;
