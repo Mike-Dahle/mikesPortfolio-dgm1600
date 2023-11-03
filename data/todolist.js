@@ -36,6 +36,13 @@ function populatetodoList(tasks) {
         todoList.removeChild(todoList.firstChild);
     }
 
+    categories.forEach((category) => {
+        const ul = document.createElement('ul');
+        ul.setAttribute('id', category);
+        ul.innerHTML = `<h2>${category}</h2>`;
+        todoList.appendChild(ul);
+    });
+
     // Create list elements for each todo
     tasks.forEach((task) => {
         const li = document.createElement('li')
@@ -45,7 +52,6 @@ function populatetodoList(tasks) {
         const trashIcon = document.createElement('i');
         const editIcon = document.createElement('i');
         const taskText = document.createElement('p');
-        
         taskText.textContent = task.todo;
 
         trashIcon.classList.add('fa', 'fa-trash');
@@ -77,7 +83,12 @@ function populatetodoList(tasks) {
 
         li.appendChild(spanOne);
         li.appendChild(spanTwo);
-        todoList.appendChild(li)
+        
+        const categoryUl = document.getElementById(task.category);
+        if (categoryUl) {
+            categoryUl.appendChild(li);
+        }
+
         pendingText.textContent = `You have ${pendingTasks(tasks)} remaining task(s)`
         console.log(tasks)
     })
@@ -122,7 +133,6 @@ function pendingTasks(arr) {
     return arr.filter((arr) => arr.done === false).length
 }
 
-
 function editTask(taskID) {
     const taskToUpdate = tasks.find((task) => task.Id === taskID);
 
@@ -135,6 +145,7 @@ function editTask(taskID) {
         }
     }
 }
+
 function markDone(finishedID) {
     const taskToUpdate = tasks.find((task) => task.Id === finishedID);
 
@@ -143,7 +154,6 @@ function markDone(finishedID) {
         populatetodoList(tasks);
     }
 }
-
 
 function populateCategories() {
     const categoryList = document.querySelector('.categoryList');
@@ -163,7 +173,7 @@ function populateCategories() {
         li.innerHTML = 
         `<p>${category}</p>
             <div>
-                <button class="catDelete" onclick="deleteCategory('${category}')"><span class="fa fa-trash"></span></button>
+                <button class="catDelete" onclick="deleteCategory('${category}', '${tasks}')"><span class="fa fa-trash"></span></button>
                 <button class="catEdit" onclick="editCategory('${category}')"><span class="fa fa-edit"></span></button>
             </div>`;
         categoryList.appendChild(li);
@@ -190,7 +200,9 @@ function addCategory() {
     }
   }
 
-  function deleteCategory(category) {
+  function deleteCategory(category, tasks) {
+    
+
     // Find the index of the category in the categories array
     const index = categories.indexOf(category);
   

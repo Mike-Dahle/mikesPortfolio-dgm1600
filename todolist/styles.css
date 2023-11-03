@@ -38,7 +38,7 @@ button {
 
 .wrapper {
   margin: 120px auto;
-  max-width: 500px;
+  max-width: 600px;
   width: 100%;
   border-radius: 5px;
   background: var(--main-white);
@@ -73,7 +73,7 @@ button {
 }
 
 .wrapper .todoList {
-  max-height: 250px;
+  max-height: 60vh;
   overflow-y: scroll;
 }
 
@@ -226,4 +226,8 @@ button {
   align-items: center;
   justify-content:space-between;
   margin-bottom: 1rem;
+}
+
+.categorySelector {
+  padding-left: .5rem;
 }
